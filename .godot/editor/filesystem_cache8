@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1714156331
+::res://::1714156504
 icon.svg::CompressedTexture2D::1637912819358601862::1710905769::1714135279::1::::<><>::
 Mundo_de_pruebas.tscn::PackedScene::2656361746737307800::1714155415::0::1::::<><>::uid://b17xjreeh5m6::::res://Assets/smallburg_terrain_spring.png<>uid://b045tr1im1vjh::::res://Assets/bushes_destruction.png<>uid://bf7fdv8oug2ox::::res://Assets/SmallBurg_outside_assets.png<>uid://d0n68v3wymcg0::::res://Player.tscn
 Player.gd::GDScript::-1::1714155863::0::1::::<>CharacterBody2D<>::

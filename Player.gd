@@ -69,6 +69,8 @@ func _input(event):
 		else:
 			can_move(true)
 
+#test text
+
 var movement_blocker := true
 func can_move(can : bool):
 	movement_blocker = can
