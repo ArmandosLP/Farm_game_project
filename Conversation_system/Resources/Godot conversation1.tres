@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ConversationText" load_steps=4 format=3 uid="uid://dbdugjueyuf5g"]
+
+[ext_resource type="Texture2D" uid="uid://xlogjwwxwj5g" path="res://icon.svg" id="1_mcj6x"]
+[ext_resource type="Resource" uid="uid://bklywcbhp00fo" path="res://Conversation_system/Resources/Godot option1.tres" id="1_qrnsn"]
+[ext_resource type="Script" path="res://Conversation_system/Resource_scripts/ConversationText.gd" id="1_xsq21"]
+
+[resource]
+script = ExtResource("1_xsq21")
+face_image = ExtResource("1_mcj6x")
+text = Array[String](["Hola!
+Soy el motor de desarollo para videojuegos godot.
+Que opinas de mi?"])
+skip_animation = false
+conversation_options = ExtResource("1_qrnsn")

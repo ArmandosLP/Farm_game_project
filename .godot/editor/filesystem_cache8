@@ -1,0 +1,33 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1714155291
+icon.svg::CompressedTexture2D::1637912819358601862::1710905769::1714135279::1::::<><>::
+Mundo_de_pruebas.tscn::PackedScene::2656361746737307800::1714138892::0::1::::<><>::uid://b17xjreeh5m6::::res://Assets/smallburg_terrain_spring.png<>uid://b045tr1im1vjh::::res://Assets/bushes_destruction.png<>uid://bf7fdv8oug2ox::::res://Assets/SmallBurg_outside_assets.png<>uid://d0n68v3wymcg0::::res://Player.tscn
+Player.gd::GDScript::-1::1714136787::0::1::::<>CharacterBody2D<>::
+Player.tscn::PackedScene::8942762358084514061::1714138900::0::1::::<><>::res://Player.gd<>uid://8ahjsn3uruk2::::res://Assets/Character1_sprite.png
+::res://Assets/::1713780286
+bushes_destruction.png::CompressedTexture2D::4202865102821264285::1710906578::1713504618::1::::<><>::
+Character1_sprite.png::CompressedTexture2D::2316673897951948231::1710946501::1713779845::1::::<><>::
+placeholder.jpg::CompressedTexture2D::8253060860687759365::1713780285::1713780286::1::::<><>::
+SmallBurg_outside_assets.png::CompressedTexture2D::2803735086990711759::1713394342::1713504618::1::::<><>::
+smallburg_terrain_spring.png::CompressedTexture2D::125847181431149671::1710906994::1713504618::1::::<><>::
+::res://Assets/Text_fonts/::1713785173
+m5x7.ttf::FontFile::5481546339644410831::1713776159::1713776161::1::::<><>::
+::res://Conversation_system/::1714124791
+::res://Conversation_system/Resources/::1714138892
+Godot conversation1.tres::Resource/ConversationText::7236869586419119798::1714136747::0::1::::<><>::uid://xlogjwwxwj5g::::res://icon.svg<>uid://bklywcbhp00fo::::res://Conversation_system/Resources/Godot option1.tres<>res://Conversation_system/Resource_scripts/ConversationText.gd
+Godot conversation2a.tres::Resource/ConversationText::8270302978108909478::1714136747::0::1::::<><>::res://Conversation_system/Resource_scripts/ConversationText.gd<>uid://xlogjwwxwj5g::::res://icon.svg
+Godot conversation2b.tres::Resource/ConversationText::1425590402909516797::1714137262::0::1::::<><>::uid://vvlxtkurywoe::::res://Conversation_system/Resources/Godot option2.tres<>uid://xlogjwwxwj5g::::res://icon.svg<>res://Conversation_system/Resource_scripts/ConversationText.gd
+Godot option1.tres::Resource/ConversationOptions::3112513877590994676::1714136814::0::1::::<><>::uid://uktjbdj0mb6l::::res://Conversation_system/Resources/Godot conversation2b.tres<>res://Conversation_system/Resource_scripts/ConversationOptions.gd<>res://Conversation_system/Resource_scripts/Option.gd<>uid://dp3gxgdh2j8lu::::res://Conversation_system/Resources/Godot conversation2a.tres
+Godot option2.tres::Resource/ConversationOptions::1518027623738271368::1714137427::0::1::::<><>::res://Conversation_system/Resource_scripts/ConversationOptions.gd<>res://Conversation_system/Resource_scripts/Option.gd<>uid://b3ks7fv6q53qf::::res://Conversation_system/Resources/recursive_option.tres
+recursive_option.tres::Resource/Option::4373502430862093605::1714138892::0::1::::<><>::res://Conversation_system/Resource_scripts/Option.gd
+::res://Conversation_system/Resource_scripts/::1714138892
+ConversationOptions.gd::GDScript::-1::1714136058::0::1::::ConversationOptions<>Resource<>::
+ConversationText.gd::GDScript::-1::1714136079::0::1::::ConversationText<>Resource<>::
+Option.gd::GDScript::-1::1714138892::0::1::::Option<>Resource<>::
+::res://Conversation_system/Scenes/::1714138892
+Conversation_button.tscn::PackedScene::6895170899827879496::1714134573::0::1::::<><>::uid://ckdkjdb6ovipj::::res://Assets/Text_fonts/m5x7.ttf<>res://Conversation_system/Scripts/Conversation_button.gd
+Conversation_displayer.tscn::PackedScene::5018512816958855124::1714138892::0::1::::<><>::res://Conversation_system/Scripts/Conversation_displayer.gd<>uid://dpt3ya20krrfp::::res://Assets/placeholder.jpg<>uid://ckdkjdb6ovipj::::res://Assets/Text_fonts/m5x7.ttf
+::res://Conversation_system/Scripts/::1714137827
+Conversation_button.gd::GDScript::-1::1714126495::0::1::::Conversation_button<>Button<>::
+Conversation_displayer.gd::GDScript::-1::1714135977::0::1::::Conversation_Displayer<>CanvasLayer<>::
+Conversation_system_autoload.gd::GDScript::-1::1714137827::0::1::::<>Control<>::

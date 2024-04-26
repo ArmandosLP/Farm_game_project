@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="ConversationOptions" load_steps=8 format=3 uid="uid://bklywcbhp00fo"]
+
+[ext_resource type="Resource" uid="uid://uktjbdj0mb6l" path="res://Conversation_system/Resources/Godot conversation2b.tres" id="1_b8qqs"]
+[ext_resource type="Script" path="res://Conversation_system/Resource_scripts/ConversationOptions.gd" id="1_xgtwn"]
+[ext_resource type="Script" path="res://Conversation_system/Resource_scripts/Option.gd" id="2_1bymh"]
+[ext_resource type="Resource" uid="uid://dp3gxgdh2j8lu" path="res://Conversation_system/Resources/Godot conversation2a.tres" id="3_6ht8w"]
+
+[sub_resource type="Resource" id="Resource_b3eku"]
+script = ExtResource("2_1bymh")
+text = "Esta muy bien!"
+conversation = ExtResource("1_b8qqs")
+
+[sub_resource type="Resource" id="Resource_4widf"]
+script = ExtResource("2_1bymh")
+text = "No esta mal."
+conversation = ExtResource("3_6ht8w")
+
+[sub_resource type="Resource" id="Resource_rwpu8"]
+script = ExtResource("2_1bymh")
+text = "No me gusta."
+conversation = ExtResource("3_6ht8w")
+
+[resource]
+script = ExtResource("1_xgtwn")
+options = Array[ExtResource("2_1bymh")]([SubResource("Resource_b3eku"), SubResource("Resource_4widf"), SubResource("Resource_rwpu8")])
+can_be_skiped = false
+show_responses_at_the_end_of_text = true
+response_on_skipping = 0

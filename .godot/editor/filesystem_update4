@@ -1,0 +1,10 @@
+res://Mundo_de_pruebas.tscn
+res://Conversation_system/Resources/recursive_option.tres
+res://Conversation_system/Resources/Godot option2.tres
+res://Conversation_system/Resources/Godot conversation2b.tres
+res://Conversation_system/Resources/Godot conversation2a.tres
+res://Conversation_system/Resources/Godot option1.tres
+res://Conversation_system/Resources/Godot conversation1.tres
+res://Player.tscn
+res://Conversation_system/Scenes/Conversation_displayer.tscn
+res://Player.gd
