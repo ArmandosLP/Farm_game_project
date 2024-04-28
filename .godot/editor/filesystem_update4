@@ -1,9 +1,4 @@
-res://Player.tscn
-res://Conversation_system/Resources/recursive_option.tres
-res://Conversation_system/Resources/Godot option2.tres
-res://Conversation_system/Resources/Godot conversation2b.tres
-res://Conversation_system/Resources/Godot conversation2a.tres
-res://Conversation_system/Resources/Godot option1.tres
-res://Conversation_system/Resources/Godot conversation1.tres
-res://Player.gd
-res://Conversation_system/Resource_scripts/ConversationOptions.gd
+res://Map/Player.tscn
+res://Conversation_system_v2/Scenes/Conversation_button.tscn
+res://Conversation_system_v2/Scenes/Conversation_displayer.tscn
+res://System/Cursor/cursor_layout.tscn

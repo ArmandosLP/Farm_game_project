@@ -1,0 +1,172 @@
+extends Control
+
+#Conversacion placeholder. No sirve de mucho, mas que ocupar el puesto de la conversacion actual hasta ser remplazado
+var conversation : Array[Resource]
+
+#Preloads de la interzaces usadas para mostrar al jugador. Se guardan en constantes por lo que no pueden ser remplazados
+const conversation_displayer_preload = preload("res://Conversation_system_v2/Scenes/Conversation_displayer.tscn")
+const button_displayer_preload = preload("res://Conversation_system_v2/Scenes/Conversation_button.tscn")
+
+#Animation player que sirve para mostrar el texto de forma sueva
+#La unicas animaciones que tiene son "Show text" que hace que el texto se muestre poco a poco
+#Y reset, que debe ser ejecutado para evitar solapamientos entre "Show text"
+var animation_player : AnimationPlayer
+
+#El texto que se muestra al jugador se guarda aqui, animation player se encargade mostrarlo poco a poco, con la animacion "Show text"
+var text_displayer : RichTextLabel
+
+#La unica instancia de conversation display, si el jugador no se encuentra en una conversacion, esta se vuelve invisible. Pero nunca se borra
+var conversation_displayer : Conversation_Displayer
+
+#Variable que cuenta la fase de la conversacion actual.
+var iterator = 0
+
+#Metodo ready, se carga nada mas se encienda el juego debido a que el script esta en los autoloads del proyecto
+func _ready():
+	#Se instancia por primera y ultima vez el display de conversaciones
+	conversation_displayer = conversation_displayer_preload.instantiate()
+	#Se agrega como hijo de este mismo nodo, que al ser un autoload, este siempre se encuentra cargado
+	add_child(conversation_displayer)
+	#Se vuelve invisible
+	conversation_displayer.visible = false
+	#El animation player se encuentra dentro del display, asi que se crea un acceso directo aqui
+	animation_player = conversation_displayer.animation_player
+	#El nodo del texto tambien se encuentra dentro del display, se crea otro acceso directo
+	text_displayer = conversation_displayer.text_displayer
+
+	
+#Termina una conversacion de forma abrupta.
+#Su uso esta automatizado con las demas metodos.
+#NO DEBE SER UTILIZADO POR EL DISEÑADOR AMENOS QUE SEA ESTRICTAMENTE NECESARIO
+func end() -> void:
+	conversation.clear()
+	conversation_displayer.visible = false
+	remove_question_buttons()
+	currentConversationChoice = null
+
+#Metodo que recibe la ruta de un fichero de conversacion
+#Lo devuelve en forma de array de arrays
+func read_file(path : String) -> Array[Resource]:
+	#Comprueba si el fichero en la ruta recibida existe.
+	if !FileAccess.file_exists(path):
+		#Si el fichero no existe, saca un error por la consola y devuelve null
+		print("ERROR")
+		print("No se ha encontrado el fichero " + path + ".")
+	#Objeto lector del fichero
+	var file : FileAccess = FileAccess.open(path, FileAccess.READ)
+	var conversation : Array[Resource]
+	while(!file.eof_reached()):
+		var line = file.get_csv_line()
+		match line[0]:
+			"text":
+				conversation.append(ConversationText.new(bool(int(line[1])),line[2],int(line[3]) - 1))
+			"choice":
+				var choise = ConversationChoice.new(bool(int(line[1])),int(line[2]) - 1,line[3])
+				for i in range(0,(line.size() - 4) / 2,1):
+					choise.options.append(Option.new(line[4 + (i * 2)],int(line[5 + (i * 2)]) - 1))
+				conversation.append(choise)
+			"end":
+				conversation.append(null)
+	#El fichero se cierra despues de leer
+	file.close()
+	return conversation
+
+#Metodo principal del sistema de conversaciones.
+#Recibe un objeto de todo ConversationText y lo interpreta para empezar una conversacion
+#METODO PARA DISEÑADORES
+
+func start(_conversation : Array[Resource]) -> void:
+	remove_question_buttons()
+	conversation_displayer.advertise_when_finished_displaying_text = false
+	#remove_question_buttons()
+	animation_player.play("RESET")
+	iterator = 0
+	text_displayer.visible_characters = 0
+	conversation = _conversation
+	#conversation_displayer.face_image.texture = conversation.face_image
+	conversation_displayer.visible = true
+	next()
+
+func read_and_start(path : String) -> void:
+	start(read_file(path))
+
+#Sirve para saltar de la fase de la conversacion actual a la siguiente
+#Este metodo ignora si el texto se ha mostrado por completo o no
+#Cuando una conversacion llega a su fase final:
+#En caso de que el objeto ConversationText tenga alojada un objeto ConversationOption,
+#ejecutara el metodo show_questions()
+#En caso contrario ejecuta el metodo end()
+#NO DEBE SER UTILIZADO POR EL DISEÑADOR AMENOS QUE SEA ESTRICTAMENTE NECESARIO
+func next() -> void:
+	if conversation.size() > iterator:
+		if conversation[iterator] is ConversationText:
+			show_ConversationText(conversation[iterator])
+		elif conversation[iterator] is ConversationChoice:
+			show_ConversationChoice(conversation[iterator])
+		else:
+			end()
+
+#Sirve para saltar la animacion de mostrar el texto.
+#En caso de que la animacion ya haya terminado, se ejecuta el metodo next()
+#METODO PARA DISEÑADORES
+func skip() -> void:
+	if conversation != null:
+		if animation_player.get_current_animation() == "Show_text" and text_displayer.text.length() > conversation_displayer.visible_characters:
+			conversation_displayer.visible_characters = 500
+			animation_player.play("RESET")
+		else:
+			next()
+
+func show_ConversationText(conversationText : ConversationText):
+	text_displayer.text = conversationText.text
+	iterator = conversationText.next
+	show_text(conversationText.skip_animation)
+
+var currentConversationChoice : ConversationChoice
+func show_ConversationChoice(conversationChoice : ConversationChoice):
+	if currentConversationChoice != conversationChoice:
+		currentConversationChoice = conversationChoice
+		text_displayer.text = conversationChoice.text
+		if conversationChoice.show_responses_at_the_end_of_text == true:
+			conversation_displayer.advertise_when_finished_displaying_text = true
+		else:
+			show_optionss()
+		show_text(true)
+	elif conversationChoice.response_on_skipping != -1:
+		option_was_chosen(conversationChoice.options[conversationChoice.response_on_skipping])
+
+func finished_displaying_text():
+	if currentConversationChoice != null:
+		show_optionss()
+
+#Crea y muestra los botones con las respectivos datos del objeto QuestionOption que tenga el ConversationText actual
+#NO DEBE SER UTILIZADO POR EL DISEÑADOR
+func show_optionss():
+	remove_question_buttons()
+	var options : Array[Option] = conversation[iterator].options
+	for i in range(0,options.size(),1):
+		var button : Conversation_button = button_displayer_preload.instantiate()
+		button.option = options[i]
+		conversation_displayer.button_list.add_child(button)
+
+func option_was_chosen(option : Option):
+	currentConversationChoice = null
+	iterator = option.next
+	remove_question_buttons()
+	next()
+
+#Quita todos los nodos de tipo boton de la conversacion actual
+#NO DEBE SER UTILIZADO POR EL DISEÑADOR
+func remove_question_buttons() -> void:
+	for button in conversation_displayer.button_list.get_children():
+		conversation_displayer.button_list.remove_child(button)
+		button.queue_free() 
+
+func show_text(animate : bool):
+	animation_player.play("RESET")
+	if animate == true:
+		conversation_displayer.visible_characters = 0
+		text_displayer.visible_characters = 0
+		animation_player.play("Show_text")
+	else:
+		conversation_displayer.visible_characters = 500

@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://oo7p7wyjcem4"]
+
+[ext_resource type="Texture2D" uid="uid://c6pdugexo8ony" path="res://System/Cursor/Cursor.png" id="1_a3d65"]
+
+[node name="Cursor_layout" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("1_a3d65")
