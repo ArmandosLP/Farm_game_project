@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://d0n68v3wymcg0"]
+[gd_scene load_steps=19 format=3 uid="uid://d0n68v3wymcg0"]
 
 [ext_resource type="Script" path="res://Map/Player.gd" id="1_gmgb3"]
 [ext_resource type="Texture2D" uid="uid://8ahjsn3uruk2" path="res://Assets/Character1_sprite.png" id="2_ur3am"]
+[ext_resource type="Script" path="res://addons/smoothing/smoothing_2d.gd" id="3_yxdgs"]
 
 [sub_resource type="Animation" id="Animation_5ve5q"]
 resource_name = "Idle_down"
@@ -10,7 +11,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Player_sprite:frame")
+tracks/0/path = NodePath("Smoothing2D/Player_sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -27,7 +28,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Player_sprite:frame")
+tracks/0/path = NodePath("Smoothing2D/Player_sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -44,7 +45,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Player_sprite:frame")
+tracks/0/path = NodePath("Smoothing2D/Player_sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -61,7 +62,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Player_sprite:frame")
+tracks/0/path = NodePath("Smoothing2D/Player_sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -76,7 +77,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Player_sprite:frame")
+tracks/0/path = NodePath("Smoothing2D/Player_sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -94,7 +95,7 @@ step = 0.15
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Player_sprite:frame")
+tracks/0/path = NodePath("Smoothing2D/Player_sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -112,7 +113,7 @@ step = 0.15
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Player_sprite:frame")
+tracks/0/path = NodePath("Smoothing2D/Player_sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -129,7 +130,7 @@ step = 0.15
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Player_sprite:frame")
+tracks/0/path = NodePath("Smoothing2D/Player_sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -147,7 +148,7 @@ step = 0.15
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Player_sprite:frame")
+tracks/0/path = NodePath("Smoothing2D/Player_sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -164,7 +165,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Player_sprite:frame")
+tracks/0/path = NodePath("Smoothing2D/Player_sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -181,7 +182,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Player_sprite:frame")
+tracks/0/path = NodePath("Smoothing2D/Player_sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -198,7 +199,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Player_sprite:frame")
+tracks/0/path = NodePath("Smoothing2D/Player_sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -215,7 +216,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Player_sprite:frame")
+tracks/0/path = NodePath("Smoothing2D/Player_sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -248,13 +249,10 @@ size = Vector2(9, 5)
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_gmgb3")
 
-[node name="Player_sprite" type="Sprite2D" parent="."]
-z_index = 5
-texture_filter = 1
-texture = ExtResource("2_ur3am")
-hframes = 6
-vframes = 8
-frame = 24
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+position_smoothing_speed = 15.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
@@ -262,9 +260,17 @@ libraries = {
 "": SubResource("AnimationLibrary_1tjt7")
 }
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.5, 2.5)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 4.5)
 shape = SubResource("RectangleShape2D_utwlw")
+
+[node name="Smoothing2D" type="Node2D" parent="."]
+script = ExtResource("3_yxdgs")
+
+[node name="Player_sprite" type="Sprite2D" parent="Smoothing2D"]
+z_index = 5
+texture_filter = 1
+texture = ExtResource("2_ur3am")
+hframes = 6
+vframes = 8
+frame = 24

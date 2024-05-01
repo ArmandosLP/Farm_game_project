@@ -1,4 +1,5 @@
-res://Map/Player.tscn
-res://Conversation_system_v2/Scenes/Conversation_button.tscn
 res://Conversation_system_v2/Scenes/Conversation_displayer.tscn
-res://System/Cursor/cursor_layout.tscn
+res://Map/Player.gd
+res://Map/Mundo_de_pruebas.tscn
+res://Structure_base.tscn
+res://Map/Player.tscn

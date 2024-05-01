@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-@onready var sprite = $Player_sprite
 @onready var animation_player = %AnimationPlayer
 
 @export var walking_speed = 100
@@ -56,7 +55,6 @@ func animate_sprite():
 			direction = "left"
 	if movement_blocker:
 		animation_player.play(state + "_" + direction)
-		
 
 func _input(event):
 	if Input.is_action_just_pressed("ui_up"):
@@ -64,16 +62,12 @@ func _input(event):
 	if Input.is_action_just_pressed("ui_down"):
 		Conversation.skip()
 	if Input.is_action_just_pressed("Full_screen_key"):
-		print(DisplayServer.window_get_mode())
 		if DisplayServer.window_get_mode() != 0:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-		
-		
+
 var movement_blocker := true
 func can_move(can : bool):
 	movement_blocker = can
 	animation_player.play("Idle" + "_" + direction)
-
-
