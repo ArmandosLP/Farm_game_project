@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://cdraf436wlgqe"]
 
-[ext_resource type="Script" path="res://Conversation_system_v2/Scripts/Conversation_displayer.gd" id="1_ned13"]
-[ext_resource type="Texture2D" uid="uid://dpt3ya20krrfp" path="res://Assets/placeholder.jpg" id="2_dc0dq"]
-[ext_resource type="FontFile" uid="uid://ckdkjdb6ovipj" path="res://Assets/Text_fonts/m5x7.ttf" id="3_8nsib"]
-[ext_resource type="Texture2D" uid="uid://cia71gr215401" path="res://Conversation_system_v2/Sprites/tile_0010.png" id="4_almih"]
+[ext_resource type="Script" path="res://Conversation_System/Scripts/Conversation_displayer.gd" id="1_pau2g"]
+[ext_resource type="Texture2D" uid="uid://cia71gr215401" path="res://Conversation_System/Sprites/tile_0010.png" id="2_kklyc"]
+[ext_resource type="Texture2D" uid="uid://dpt3ya20krrfp" path="res://Assets/placeholder.jpg" id="3_1yqcq"]
+[ext_resource type="FontFile" uid="uid://ckdkjdb6ovipj" path="res://Assets/Text_fonts/m5x7.ttf" id="4_5fhpc"]
 
 [sub_resource type="Animation" id="Animation_xoehg"]
 length = 0.001
@@ -31,11 +31,11 @@ _data = {
 }
 
 [sub_resource type="Theme" id="Theme_whx6g"]
-default_font = ExtResource("3_8nsib")
+default_font = ExtResource("4_5fhpc")
 default_font_size = 32
 
 [node name="CanvasLayer" type="CanvasLayer"]
-script = ExtResource("1_ned13")
+script = ExtResource("1_pau2g")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
@@ -84,6 +84,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 
 [node name="Contenedor_imagen" type="PanelContainer" parent="MarginContainer/VBoxContainer/Conversation_container/HBoxContainer"]
+unique_name_in_owner = true
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
@@ -93,7 +94,7 @@ size_flags_vertical = 8
 [node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/VBoxContainer/Conversation_container/HBoxContainer/Contenedor_imagen"]
 texture_filter = 1
 layout_mode = 2
-texture = ExtResource("4_almih")
+texture = ExtResource("2_kklyc")
 patch_margin_left = 12
 patch_margin_top = 12
 patch_margin_right = 12
@@ -113,16 +114,17 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-texture = ExtResource("2_dc0dq")
+texture = ExtResource("3_1yqcq")
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/Conversation_container/HBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(600, 152)
 layout_mode = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/VBoxContainer/Conversation_container/HBoxContainer/PanelContainer"]
 texture_filter = 1
 layout_mode = 2
-texture = ExtResource("4_almih")
+texture = ExtResource("2_kklyc")
 patch_margin_left = 12
 patch_margin_top = 12
 patch_margin_right = 12

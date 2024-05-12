@@ -17,7 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Conversation="*res://Conversation_system_v2/Scripts/Conversation_system_autoload.gd"
+Conversation="*res://Conversation_System/Scripts/Conversation_system_autoload.gd"
+InventorySystem="*res://Inventory_System/Scripts/Inventory_system_autoload.gd"
+Items="*res://Inventory_System/Scripts/Items.gd"
 
 [display]
 
@@ -28,6 +30,14 @@ mouse_cursor/custom_image="res://System/Cursor/Cursor.png"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/smoothing/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://Conversation_System/": "yellow",
+"res://Inventory_System/": "orange",
+"res://System/": "gray"
+}
 
 [input]
 

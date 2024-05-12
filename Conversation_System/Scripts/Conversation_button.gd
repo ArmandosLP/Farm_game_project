@@ -3,11 +3,11 @@ class_name Conversation_button
 
 @onready var button_text = %Button_text
 var selected : bool = false
-var option : Option
+var option
 @onready var textura_marco = %Textura_marco
 
 func _ready():
-	button_text.text = option.text
+	button_text.text = option.Text
 
 func _input(event):
 	if selected and event.is_action_released("Mouse_left_click"):

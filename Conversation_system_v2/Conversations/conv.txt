@@ -1,9 +1,0 @@
-text,1,"Hola, esto es una conversacion de prueba. Esta conversacion tiene animacion.",9,,,,,,,,
-text,1,boldbold italicitalic,3,,,,,,,,
-choice,1,2,Que piensas,Estoy indeciso,8,Sigo el camino de Jesus,7
-text,1,tomaste la opcion1,7,,,,,,,,
-text,1,tomaste la opcion2,6,,,,,,,,
-text,1,Aqui termina la conversacion,7,,,,,,,,
-end,,,,,,,,,,,
-text,1,jaja que maricon,7,,,,,,,,
-text,1,continua text,2,,,,,,,,

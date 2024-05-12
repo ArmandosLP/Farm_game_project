@@ -15,7 +15,7 @@ var moving_direction = {
 var moving_vector := Vector2(0,0)
 var run := 0
 
-func _process(delta):
+func _process(_delta):
 	moving_direction = {
 		right = int(Input.is_action_pressed("Movment_right_key")),
 		left = int(Input.is_action_pressed("Movment_left_key")),
@@ -24,7 +24,7 @@ func _process(delta):
 	run = int(Input.is_action_pressed("Movment_run_key"))
 	animate_sprite()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if movement_blocker:
 		move_and_slide()
 	moving_vector = Vector2i(moving_direction.right - moving_direction.left,moving_direction.down - moving_direction.up)
@@ -55,19 +55,16 @@ func animate_sprite():
 			direction = "left"
 	if movement_blocker:
 		animation_player.play(state + "_" + direction)
+	
+var movement_blocker := true
+func can_move(can : bool):
+	movement_blocker = can
+	animation_player.play("Idle" + "_" + direction)
 
-func _input(event):
-	if Input.is_action_just_pressed("ui_up"):
-		Conversation.read_and_start("res://Conversation_system_v2/Conversations/conv.txt")
-	if Input.is_action_just_pressed("ui_down"):
-		Conversation.skip()
+
+func _input(_event):
 	if Input.is_action_just_pressed("Full_screen_key"):
 		if DisplayServer.window_get_mode() != 0:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-
-var movement_blocker := true
-func can_move(can : bool):
-	movement_blocker = can
-	animation_player.play("Idle" + "_" + direction)

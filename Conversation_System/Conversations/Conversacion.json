@@ -1,0 +1,46 @@
+[
+{
+	"Name": "Godot",
+	"Image": null,
+	"Animation": true,
+	"Text": "Esto es un texto de prueba",
+	"Next": 1
+},
+{
+	"Name": "Godot",
+	"Image": null,
+	"Animation": true,
+	"Text": "Otro texto de prueba",
+	"Next": 2
+},
+{
+	"Name": "Godot",
+	"Image": "Debug",
+	"Animation": true,
+	"Text": "Este texto tiene pregunta",
+	"Next": 2,
+	"Show_at_end": true,
+	"Options": 
+	[
+		{
+			"Text": "Te devuelve al principio",
+			"Next": 0
+		},
+		{
+			"Text": "Termina la conversacion",
+			"Next": -1
+		},
+		{
+			"Text": "Te lleva a otro texto",
+			"Next": 3
+		}
+	]
+},
+{
+	"Name": "Godot",
+	"Image": null,
+	"Animation": true,
+	"Text": "Ultimo texto, aqui termina la conversacion",
+	"Next": -1
+}
+]
