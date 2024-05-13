@@ -68,3 +68,7 @@ func _input(_event):
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+			
+	if Input.is_action_just_pressed("ui_down"):
+		const DEBUG_APPLE_ITEM = preload("res://Inventory_System/Resources/Debug_apple_item.tres")
+		print(DEBUG_APPLE_ITEM.name)
