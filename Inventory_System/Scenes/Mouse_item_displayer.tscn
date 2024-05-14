@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://hsrptl2ajxu3"]
+
+[ext_resource type="Script" path="res://Inventory_System/Scripts/Mouse_item_displayer.gd" id="1_6gbh6"]
+[ext_resource type="FontFile" uid="uid://b24ir7q6pu23t" path="res://Assets/m5x7.ttf" id="2_jsum1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_l8bo5"]
+font = ExtResource("2_jsum1")
+font_size = 32
+
+[node name="Item_grid_cell" type="PanelContainer"]
+self_modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+custom_minimum_size = Vector2(52, 52)
+offset_right = 52.0
+offset_bottom = 52.0
+size_flags_horizontal = 6
+size_flags_vertical = 4
+mouse_filter = 2
+script = ExtResource("1_6gbh6")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="Amount" type="Label" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -25.0
+offset_right = 24.0
+offset_bottom = 26.0
+grow_horizontal = 2
+text = "none"
+label_settings = SubResource("LabelSettings_l8bo5")
+horizontal_alignment = 2

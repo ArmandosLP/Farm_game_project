@@ -1,0 +1,124 @@
+[gd_scene load_steps=9 format=3 uid="uid://0yajb0bmtjlh"]
+
+[ext_resource type="Texture2D" uid="uid://cia71gr215401" path="res://Conversation_System/Sprites/tile_0010.png" id="1_pc6eu"]
+[ext_resource type="FontFile" uid="uid://ckdkjdb6ovipj" path="res://Assets/Text_fonts/m5x7.ttf" id="1_ry8lj"]
+[ext_resource type="Script" path="res://Inventory_System/Scripts/Description_displayer.gd" id="1_uu1r6"]
+[ext_resource type="FontFile" uid="uid://b24ir7q6pu23t" path="res://Assets/m5x7.ttf" id="2_7puwj"]
+[ext_resource type="Texture2D" uid="uid://cmt0usyu08ecq" path="res://Assets/Golden_coin.png" id="5_qahfa"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tawot"]
+line_spacing = 0.0
+font = ExtResource("1_ry8lj")
+font_size = 40
+font_color = Color(0.298039, 0.298039, 0.298039, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_eynvh"]
+line_spacing = 0.0
+font = ExtResource("2_7puwj")
+font_size = 24
+font_color = Color(0.439216, 0.439216, 0.439216, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_frdde"]
+line_spacing = 0.0
+font = ExtResource("2_7puwj")
+font_size = 37
+font_color = Color(1, 0.592157, 0, 1)
+
+[node name="DescriptionDisplayer" type="Control"]
+self_modulate = Color(1, 1, 1, 0.988235)
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_uu1r6")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -365.0
+offset_top = -72.0
+offset_bottom = 73.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_right = 8
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+texture = ExtResource("1_pc6eu")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 19
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 19
+theme_override_constants/margin_bottom = 14
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="ItemName" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Manzana
+"
+label_settings = SubResource("LabelSettings_tawot")
+
+[node name="ItemDescription" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+texture_filter = 2
+texture_repeat = 1
+layout_mode = 2
+text = "Esto es la descripcion de un objeto.
+Debe tener varias lineas para asegurar
+el funcionamiento."
+label_settings = SubResource("LabelSettings_eynvh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="ItemPrice" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100"
+label_settings = SubResource("LabelSettings_frdde")
+horizontal_alignment = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer"]
+custom_minimum_size = Vector2(23, 23)
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("5_qahfa")

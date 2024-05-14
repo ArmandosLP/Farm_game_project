@@ -1,0 +1,86 @@
+[gd_scene load_steps=4 format=3 uid="uid://n7kfnnsf70pg"]
+
+[ext_resource type="Texture2D" uid="uid://n6lvukc7x3px" path="res://Conversation_System/Sprites/tile_0011.png" id="1_2e6pa"]
+[ext_resource type="Script" path="res://Inventory_System/Scripts/Hotbar_displayer.gd" id="1_yu66w"]
+[ext_resource type="PackedScene" uid="uid://dm0odku2uau7i" path="res://Inventory_System/Scenes/Item_grid_cell.tscn" id="2_goeky"]
+
+[node name="HotbarDisplayer" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_yu66w")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_filter = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/PanelContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_2e6pa")
+patch_margin_left = 9
+patch_margin_top = 9
+patch_margin_right = 9
+patch_margin_bottom = 9
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Item_grid_container" type="GridContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_filter = 2
+columns = 7
+
+[node name="Item_grid_cell" parent="MarginContainer/PanelContainer/MarginContainer/Item_grid_container" instance=ExtResource("2_goeky")]
+layout_mode = 2
+
+[node name="Item_grid_cell2" parent="MarginContainer/PanelContainer/MarginContainer/Item_grid_container" instance=ExtResource("2_goeky")]
+layout_mode = 2
+
+[node name="Item_grid_cell3" parent="MarginContainer/PanelContainer/MarginContainer/Item_grid_container" instance=ExtResource("2_goeky")]
+layout_mode = 2
+
+[node name="Item_grid_cell4" parent="MarginContainer/PanelContainer/MarginContainer/Item_grid_container" instance=ExtResource("2_goeky")]
+layout_mode = 2
+
+[node name="Item_grid_cell5" parent="MarginContainer/PanelContainer/MarginContainer/Item_grid_container" instance=ExtResource("2_goeky")]
+layout_mode = 2
+
+[node name="Item_grid_cell6" parent="MarginContainer/PanelContainer/MarginContainer/Item_grid_container" instance=ExtResource("2_goeky")]
+layout_mode = 2
+
+[node name="Item_grid_cell7" parent="MarginContainer/PanelContainer/MarginContainer/Item_grid_container" instance=ExtResource("2_goeky")]
+layout_mode = 2

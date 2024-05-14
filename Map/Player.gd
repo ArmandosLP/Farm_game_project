@@ -61,14 +61,13 @@ func can_move(can : bool):
 	movement_blocker = can
 	animation_player.play("Idle" + "_" + direction)
 
-
 func _input(_event):
+	
 	if Input.is_action_just_pressed("Full_screen_key"):
 		if DisplayServer.window_get_mode() != 0:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 			
-	if Input.is_action_just_pressed("ui_down"):
-		const DEBUG_APPLE_ITEM = preload("res://Inventory_System/Resources/Debug_apple_item.tres")
-		print(DEBUG_APPLE_ITEM.name)
+	if Input.is_action_just_pressed("Inventory_action_key"):
+		InventorySystem.open_player_inventory(!InventorySystem.player_inventory_opening)

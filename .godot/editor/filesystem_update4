@@ -1,6 +1,8 @@
+res://Inventory_System/Scenes/Description_displayer.tscn
 res://Map/Mundo_de_pruebas.tscn
-res://Inventory_System/Scenes/Inventory_displayer.tscn
-res://Inventory_System/Scenes/Item_grid_cell.tscn
-res://Inventory_System/Scenes/Mouse_item_cell.tscn
 res://Map/Player.tscn
-res://Map/Player.gd
+res://Inventory_System/Scenes/Inventory_displayer.tscn
+res://Inventory_System/Scenes/Hotbar_displayer.tscn
+res://Inventory_System/Scenes/Hotbar_item_grid_cell.tscn
+res://Inventory_System/Scenes/Item_grid_cell.tscn
+res://Inventory_System/Scenes/Mouse_item_displayer.tscn
