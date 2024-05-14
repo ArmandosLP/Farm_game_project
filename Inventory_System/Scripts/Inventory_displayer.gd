@@ -26,7 +26,5 @@ func update_item_grid_cells():
 	for item_grid_cell in item_grid_container.get_children():
 		item_grid_cell.update()
 
-func check_if_mouse_inside():
-	for item_grid_cell in item_grid_container.get_children():
-		if item_grid_cell.is_mouse_inside():
-			item_grid_cell._on_mouse_entered()
+
+	

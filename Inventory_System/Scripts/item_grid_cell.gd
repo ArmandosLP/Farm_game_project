@@ -11,12 +11,12 @@ var id : int
 @onready var nine_patch_rect = %NinePatchRect
 @onready var amount = %Amount
 
-func _process(_delta):
-	if mouse_inside:
-		if Input.is_action_just_pressed("Mouse_left_click"):
+func _input(event):
+	if event is InputEventMouse and mouse_inside:
+		if event.is_action_pressed("Mouse_left_click"):
 			InventorySystem.left_click(inventory,id)
 			update()
-		elif Input.is_action_just_pressed("Mouse_right_click"):
+		elif event.is_action_pressed("Mouse_right_click"):
 			InventorySystem.right_click(inventory,id)
 
 var mouse_inside = false
@@ -43,7 +43,7 @@ func update():
 		textureRect.texture = null
 		amount.visible = false
 		
-func is_mouse_inside():
-	return Rect2(Vector2(), size).has_point(get_local_mouse_position())
-
-
+func _on_visibility_changed():
+	if inventory != null and inventory.items[id] != null:
+		if visible and Rect2(Vector2(), size).has_point(get_local_mouse_position()):
+			InventorySystem.show_description(inventory,id)

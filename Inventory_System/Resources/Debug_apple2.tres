@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b2ofrsbkdcgpu"]
+
+[ext_resource type="Script" path="res://Inventory_System/Scripts/Item_resource.gd" id="1_yuugg"]
+[ext_resource type="Texture2D" uid="uid://bcwmfrd53ba4n" path="res://Assets/AppleB.png" id="2_f81xv"]
+
+[resource]
+script = ExtResource("1_yuugg")
+name = "Manzana DEBUG2"
+description = "Esto es un item para debuging.
+Se mostraran cinco lineas de descripcion
+Se puede estaquear hasta 8 unidades de
+este objeto en un mismo hueco.
+El valor por defecto es de 20G"
+max_stack = 8
+texture = ExtResource("2_f81xv")
+price = 20

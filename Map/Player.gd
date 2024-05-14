@@ -70,4 +70,8 @@ func _input(_event):
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 			
 	if Input.is_action_just_pressed("Inventory_action_key"):
-		InventorySystem.open_player_inventory(!InventorySystem.player_inventory_opening)
+		if !InventorySystem.inventory_oppened:
+			InventorySystem.open_player_inventory()
+		else:
+			InventorySystem.close_player_inventory()
+		

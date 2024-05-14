@@ -18,11 +18,20 @@ var player_hotbar
 func _ready():
 	player_inventory = Inventory.new()
 	
-	player_inventory.items[0] = Items.DEBUG_APPLE
-	player_inventory.amount[0] = 3
+	player_inventory.items[8] = Items.DEBUG_APPLE
+	player_inventory.amount[8] = 3
 	
-	player_inventory.items[1] = Items.DEBUG_APPLE
-	player_inventory.amount[1] = 3
+	player_inventory.items[5] = Items.DEBUG_APPLE_2
+	player_inventory.amount[5] = 3
+	
+	player_inventory.items[2] = Items.DEBUG_APPLE_3
+	player_inventory.amount[2] = 3
+	
+	player_inventory.items[3] = Items.DEBUG_APPLE_4
+	player_inventory.amount[3] = 3
+	
+	player_inventory.items[9] = Items.DEBUG_APPLE_5
+	player_inventory.amount[9] = 3
 	
 	inventory_displayer = inventory_displayer_preload.instantiate()
 	inventory_displayer.inventory = player_inventory
@@ -108,9 +117,16 @@ func show_description(inventory : Inventory, id : int):
 func hide_description():
 	description_displayer.hide_description()
 
-var player_inventory_opening : bool = false
-func open_player_inventory(state : bool):
-	visible = state
-	player_inventory_opening = state
-	inventory_displayer.check_if_mouse_inside()
-	description_displayer.visible = state
+var inventory_oppened:bool = true 
+
+func open_player_inventory():
+	description_displayer.visible = true
+	inventory_displayer.visible = true
+	inventory_oppened = true
+
+func close_player_inventory():
+	inventory_displayer.visible = false
+	description_displayer.visible = false
+	inventory_oppened = false
+	InventorySystem.hide_description()
+	pass
