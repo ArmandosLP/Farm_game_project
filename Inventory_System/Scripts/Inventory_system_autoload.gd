@@ -141,6 +141,7 @@ func close_player_inventory():
 	player_hotbar.update_all_cells()
 	InventorySystem.hide_description()
 	
+	
 var inventory_list : Array[Inventory] = []
 	
 func add_inventory(inventory : Inventory):
