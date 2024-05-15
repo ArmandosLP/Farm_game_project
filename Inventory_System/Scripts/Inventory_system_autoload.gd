@@ -4,6 +4,9 @@ const description_displayer_preload = preload("res://Inventory_System/Scenes/Des
 const mouse_item_displayer_preload = preload("res://Inventory_System/Scenes/Mouse_item_displayer.tscn")
 const inventory_displayer_preload = preload("res://Inventory_System/Scenes/Inventory_displayer.tscn")
 const hotbar_displayer_preload = preload("res://Inventory_System/Scenes/Hotbar_displayer.tscn")
+const inventory_continer_preload = preload("res://Inventory_System/Scenes/Inventory_continer.tscn")
+
+var inventory_continer : Inventory_continer
 
 var inventory_displayer : Inventory_Displayer
 var mouse_item_displayer : Mouse_item_displayer
@@ -16,6 +19,9 @@ var cursor_amount : int
 var player_inventory : Inventory
 
 func _ready():
+	inventory_continer = inventory_continer_preload.instantiate()
+	add_child(inventory_continer)
+	
 	player_inventory = Inventory.new()
 	
 	player_inventory.items[8] = Items.DEBUG_APPLE
@@ -35,13 +41,13 @@ func _ready():
 	
 	inventory_displayer = inventory_displayer_preload.instantiate()
 	inventory_displayer.inventory = player_inventory
-	add_child(inventory_displayer)
+	inventory_continer.add_inventory_displayer(inventory_displayer)
 	
 	player_hotbar = hotbar_displayer_preload.instantiate()
 	add_child(player_hotbar)
 	
 	mouse_item_displayer = mouse_item_displayer_preload.instantiate()
-	inventory_displayer.add_child(mouse_item_displayer)
+	inventory_continer.add_child(mouse_item_displayer)
 	
 	description_displayer = description_displayer_preload.instantiate()
 	description_displayer.visible = false
@@ -134,8 +140,32 @@ func close_player_inventory():
 	player_hotbar.visible = true
 	player_hotbar.update_all_cells()
 	InventorySystem.hide_description()
-	pass
-
+	
+var inventory_list : Array[Inventory] = []
+	
+func add_inventory(inventory : Inventory):
+	inventory_list.append(inventory)
+	var inventory_continer_displayer = inventory_displayer_preload.instantiate()
+	inventory_continer_displayer.inventory = inventory
+	inventory_continer.add_inventory_displayer(inventory_continer_displayer)
+	
+func remove_displayer(inventory_displayer : Inventory_Displayer):
+	print("test")
+	inventory_continer.remove_inventory_displayer(inventory_displayer)
+	inventory_displayer.queue_free()
+	
+func remove_inventory(inventory : Inventory):
+	var inventory_list_position = inventory_list.find(inventory_displayer.inventory)
+	if inventory_list_position != -1:
+		inventory_list.remove_at(inventory_list_position)
+	
+	
+	
+	
+	
+	
+	
+	
 func hotbar_left_click(inventory : Inventory,id : int):
 	if inventory.items[id] != null:
 		print("Left click")
@@ -143,15 +173,3 @@ func hotbar_left_click(inventory : Inventory,id : int):
 func hotbar_right_click(inventory : Inventory,id : int):
 	if inventory.items[id] != null:
 		print("Right click")
-
-var inventory_continer_displayer : Inventory_Displayer
-func open_inventory_continer(inventory : Inventory):
-	close_inventory_continer()
-	inventory_continer_displayer = inventory_displayer_preload.instantiate()
-	inventory_continer_displayer.inventory = inventory
-	add_child(inventory_continer_displayer)
-
-func close_inventory_continer():
-	if inventory_continer_displayer != null:
-		remove_child(inventory_continer_displayer)
-		inventory_continer_displayer.queue_free()

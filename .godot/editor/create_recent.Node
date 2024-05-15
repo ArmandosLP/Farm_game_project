@@ -1,11 +1,11 @@
+GridContainer
+PanelContainer
 CollisionShape2D
 Area2D
 Sprite2D
 StaticBody2D
 NinePatchRect
 TextureRect
-PanelContainer
-GridContainer
 Control
 MarginContainer
 HBoxContainer

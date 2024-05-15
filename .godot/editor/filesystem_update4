@@ -7,3 +7,6 @@ res://Inventory_System/Scripts/Inventory_system_autoload.gd
 res://Buildings/Chest/Chest.tscn
 res://Buildings/Chest/Chest_structure.gd
 res://Inventory_System/Scenes/Inventory_displayer.tscn
+res://Inventory_System/Scripts/Inventory_displayer.gd
+res://Inventory_System/Scenes/Inventory_continer.tscn
+res://Inventory_System/Scenes/Inventory_continer.gd

@@ -1,4 +1,4 @@
-extends Control
+extends PanelContainer
 class_name Inventory_Displayer
 
 @onready var item_grid_container = %Item_grid_container
