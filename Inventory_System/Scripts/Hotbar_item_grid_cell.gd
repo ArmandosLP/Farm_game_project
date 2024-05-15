@@ -1,14 +1,13 @@
 extends PanelContainer
+class_name Hotbar_grid_cell
 
 @onready var nine_patch_rect = %NinePatchRect
 @onready var textureRect = %TextureRect
 @onready var amount = %Amount
+@onready var selector = %Selector
 
 var inventory : Inventory
 var id : int
-
-func _ready():
-	update()
 
 func update():
 	if inventory.items[id] != null:

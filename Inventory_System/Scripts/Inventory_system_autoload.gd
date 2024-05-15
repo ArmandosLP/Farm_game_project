@@ -8,12 +8,12 @@ const hotbar_displayer_preload = preload("res://Inventory_System/Scenes/Hotbar_d
 var inventory_displayer : Inventory_Displayer
 var mouse_item_displayer : Mouse_item_displayer
 var description_displayer : Item_description_displayer
+var player_hotbar : Hotbar_displayer
 
 var cursor_item : Item
 var cursor_amount : int
 
 var player_inventory : Inventory
-var player_hotbar
 
 func _ready():
 	player_inventory = Inventory.new()
@@ -47,6 +47,8 @@ func _ready():
 	description_displayer.visible = false
 	add_child(description_displayer)
 	
+	close_player_inventory()
+
 func left_click(inventory : Inventory, id : int) -> void:
 	if put_together_cursor_to_cell(inventory,id):
 		pass
@@ -61,7 +63,7 @@ func left_click(inventory : Inventory, id : int) -> void:
 
 func right_click(inventory : Inventory, id : int) -> void:
 	pass
-	
+
 func put_together_cursor_to_cell(inventory : Inventory, cell_id : int) -> bool:
 	if cursor_item != null and cursor_item == inventory.items[cell_id] and cursor_item.max_stack > inventory.amount[cell_id]:
 		if cursor_item.max_stack >= inventory.amount[cell_id] + cursor_amount:
@@ -123,10 +125,33 @@ func open_player_inventory():
 	description_displayer.visible = true
 	inventory_displayer.visible = true
 	inventory_oppened = true
+	player_hotbar.visible = false
 
 func close_player_inventory():
 	inventory_displayer.visible = false
 	description_displayer.visible = false
 	inventory_oppened = false
+	player_hotbar.visible = true
+	player_hotbar.update_all_cells()
 	InventorySystem.hide_description()
 	pass
+
+func hotbar_left_click(inventory : Inventory,id : int):
+	if inventory.items[id] != null:
+		print("Left click")
+
+func hotbar_right_click(inventory : Inventory,id : int):
+	if inventory.items[id] != null:
+		print("Right click")
+
+var inventory_continer_displayer : Inventory_Displayer
+func open_inventory_continer(inventory : Inventory):
+	close_inventory_continer()
+	inventory_continer_displayer = inventory_displayer_preload.instantiate()
+	inventory_continer_displayer.inventory = inventory
+	add_child(inventory_continer_displayer)
+
+func close_inventory_continer():
+	if inventory_continer_displayer != null:
+		remove_child(inventory_continer_displayer)
+		inventory_continer_displayer.queue_free()
