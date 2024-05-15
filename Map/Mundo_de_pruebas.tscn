@@ -2621,5 +2621,11 @@ position = Vector2(1084, 987)
 [node name="StaticBody2D" parent="." instance=ExtResource("5_ipaj3")]
 position = Vector2(1105, 956)
 
+[node name="StaticBody2D3" parent="." instance=ExtResource("5_ipaj3")]
+position = Vector2(1075, 936)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("5_ipaj3")]
+position = Vector2(1105, 936)
+
 [node name="StaticBody2D2" parent="." instance=ExtResource("5_ipaj3")]
 position = Vector2(1075, 956)

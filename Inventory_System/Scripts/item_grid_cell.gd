@@ -44,6 +44,15 @@ func update():
 		amount.visible = false
 		
 func _on_visibility_changed():
+	print(InventorySystem.inventory_oppened)
 	if inventory != null and inventory.items[id] != null:
-		if visible and Rect2(Vector2(), size).has_point(get_local_mouse_position()):
+		if InventorySystem.inventory_oppened and Rect2(Vector2(), size).has_point(get_local_mouse_position()):
+			
 			InventorySystem.show_description(inventory,id)
+
+#func _on_child_entered_tree(node):
+	#if inventory != null and inventory.items[id] != null:
+		#if visible and Rect2(Vector2(), size).has_point(get_local_mouse_position()):
+			#InventorySystem.show_description(inventory,id)
+
+

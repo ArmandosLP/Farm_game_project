@@ -61,6 +61,7 @@ text = "none"
 label_settings = SubResource("LabelSettings_n1s4r")
 horizontal_alignment = 2
 
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

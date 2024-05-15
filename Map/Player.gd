@@ -1,6 +1,8 @@
 extends CharacterBody2D
+class_name Player
 
 @onready var animation_player = %AnimationPlayer
+@onready var interaction_area = %Interaction_area
 
 @export var walking_speed = 100
 @export var running_speed = 130
@@ -15,6 +17,9 @@ var moving_direction = {
 var moving_vector := Vector2(0,0)
 var run := 0
 
+func _ready():
+	InventorySystem.player = self
+
 func _process(_delta):
 	moving_direction = {
 		right = int(Input.is_action_pressed("Movment_right_key")),
@@ -23,7 +28,7 @@ func _process(_delta):
 		down = int(Input.is_action_pressed("Movment_down_key"))}
 	run = int(Input.is_action_pressed("Movment_run_key"))
 	animate_sprite()
-
+	
 func _physics_process(_delta):
 	if movement_blocker:
 		move_and_slide()
@@ -33,7 +38,7 @@ func _physics_process(_delta):
 	else:
 		speed = walking_speed
 	velocity = moving_vector.normalized() * speed
-
+	
 var state = "Idle"
 var direction = "down"
 func animate_sprite():
@@ -55,23 +60,38 @@ func animate_sprite():
 			direction = "left"
 	if movement_blocker:
 		animation_player.play(state + "_" + direction)
-	
+
 var movement_blocker := true
 func can_move(can : bool):
 	movement_blocker = can
 	animation_player.play("Idle" + "_" + direction)
 
 func _input(_event):
-	
 	if Input.is_action_just_pressed("Full_screen_key"):
 		if DisplayServer.window_get_mode() != 0:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-			
+
 	if Input.is_action_just_pressed("Inventory_action_key"):
 		if !InventorySystem.inventory_oppened:
-			InventorySystem.open_player_inventory()
+			InventorySystem.open_inventory()
 		else:
-			InventorySystem.close_player_inventory()
-		
+			InventorySystem.close_inventory()
+
+func get_chests():
+	var chest_list : Array[Chest_Structure]
+	for entity in interaction_area.get_overlapping_bodies():
+		if entity != self and entity.has_method("get_inventory"):
+			chest_list.append(entity)
+	return chest_list
+
+func _on_interaction_area_body_exited(body):
+	if InventorySystem.inventory_oppened:
+		if body != self and body.has_method("get_inventory"):
+			InventorySystem.inventory_displayer_grid.remove_displayer(body.inventory_displayer)
+
+func _on_interaction_area_body_entered(body):
+	if InventorySystem.inventory_oppened:
+		if body != self and body.has_method("get_inventory"):
+			InventorySystem.inventory_displayer_grid.add_displayer(body.inventory_displayer)

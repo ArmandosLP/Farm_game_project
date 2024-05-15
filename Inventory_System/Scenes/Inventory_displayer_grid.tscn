@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b67rlp1u8gr14"]
 
-[ext_resource type="Script" path="res://Inventory_System/Scenes/Inventory_continer.gd" id="1_6aoks"]
+[ext_resource type="Script" path="res://Inventory_System/Scripts/Inventory_displayer_grid.gd" id="1_e7ib6"]
 
 [node name="InventoryContiner" type="Control"]
 layout_mode = 3
@@ -11,7 +11,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_6aoks")
+script = ExtResource("1_e7ib6")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 unique_name_in_owner = true

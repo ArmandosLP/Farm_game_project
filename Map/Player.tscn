@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d0n68v3wymcg0"]
+[gd_scene load_steps=20 format=3 uid="uid://d0n68v3wymcg0"]
 
 [ext_resource type="Script" path="res://Map/Player.gd" id="1_gmgb3"]
 [ext_resource type="Texture2D" uid="uid://8ahjsn3uruk2" path="res://Assets/Character1_sprite.png" id="2_ur3am"]
@@ -246,6 +246,9 @@ _data = {
 "Walk_up": SubResource("Animation_o04pp")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tprbl"]
+size = Vector2(30, 30)
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 3
 y_sort_enabled = true
@@ -278,3 +281,14 @@ texture = ExtResource("2_ur3am")
 hframes = 6
 vframes = 8
 frame = 24
+
+[node name="Interaction_area" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_area"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_tprbl")
+
+[connection signal="area_entered" from="Interaction_area" to="." method="_on_interaction_area_area_entered"]
+[connection signal="body_entered" from="Interaction_area" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="Interaction_area" to="." method="_on_interaction_area_body_exited"]
