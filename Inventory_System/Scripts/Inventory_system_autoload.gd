@@ -38,19 +38,19 @@ func _ready():
 	player_inventory.items[9] = Items.DEBUG_APPLE_5
 	player_inventory.amount[9] = 3
 	
+	description_displayer = description_displayer_preload.instantiate()
+	description_displayer.visible = false
+	add_child(description_displayer)
+	
 	player_inventory_displayer = inventory_displayer_preload.instantiate()
 	player_inventory_displayer.inventory = player_inventory
-	inventory_displayer_grid.add_inventory_displayer(player_inventory_displayer)
+	inventory_displayer_grid.add_displayer(player_inventory_displayer)
 	
 	player_hotbar = hotbar_displayer_preload.instantiate()
 	add_child(player_hotbar)
 	
 	mouse_item_displayer = mouse_item_displayer_preload.instantiate()
 	add_child(mouse_item_displayer)
-	
-	description_displayer = description_displayer_preload.instantiate()
-	description_displayer.visible = false
-	add_child(description_displayer)
 	
 	close_inventory()
 
@@ -133,6 +133,7 @@ func open_inventory():
 	player_hotbar.visible = false
 	inventory_displayer_grid.open(player.get_chests())
 	description_displayer.visible = true
+	inventory_displayer_grid.check_all_displayers_if_mouse_inside()
 
 func close_inventory():
 	description_displayer.visible = false

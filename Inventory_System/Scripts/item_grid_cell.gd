@@ -32,6 +32,7 @@ func _on_mouse_exited():
 	mouse_inside = false
 
 func update():
+	
 	if inventory.items[id] != null:
 		textureRect.texture = inventory.items[id].texture
 		amount.text = str(inventory.amount[id])
@@ -42,17 +43,16 @@ func update():
 	else:
 		textureRect.texture = null
 		amount.visible = false
-		
-func _on_visibility_changed():
-	print(InventorySystem.inventory_oppened)
-	if inventory != null and inventory.items[id] != null:
-		if InventorySystem.inventory_oppened and Rect2(Vector2(), size).has_point(get_local_mouse_position()):
-			
-			InventorySystem.show_description(inventory,id)
 
-#func _on_child_entered_tree(node):
-	#if inventory != null and inventory.items[id] != null:
-		#if visible and Rect2(Vector2(), size).has_point(get_local_mouse_position()):
-			#InventorySystem.show_description(inventory,id)
+var check = false
+func check_if_mouse_inside():
+	check = true
 
-
+func _process(delta):
+	if check:
+		if Rect2(Vector2(), size).has_point(get_local_mouse_position()) and InventorySystem.inventory_oppened:
+			_on_mouse_entered()
+		else:
+			mouse_inside = false
+			nine_patch_rect.texture = TILE_0062
+		check = false

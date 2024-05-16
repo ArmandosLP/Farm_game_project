@@ -5,22 +5,6 @@ const inventory_displayer_preload = preload("res://Inventory_System/Scenes/Inven
 
 @onready var grid_container = %GridContainer
 
-func add_inventory_displayer(displayer : Inventory_Displayer):
-	grid_container.add_child(displayer)
-
-func remove_inventory_displayer(displayer : Inventory_Displayer):
-	grid_container.remove_child(displayer)
-
-func get_inventory_displayer_list():
-	return grid_container.get_children()
-
-#func update():
-	#remove_all_displayers()
-	#for inventory in InventorySystem.inventory_list:
-		#var inventory_displayer = inventory_displayer_preload.instantiate()
-		#inventory_displayer.inventory = inventory
-		#grid_container.add_child(inventory_displayer)
-
 func open(chests : Array[Chest_Structure]):
 	remove_displayers()
 	for chest in chests:
@@ -35,7 +19,15 @@ func remove_displayers():
 func remove_displayer(displayer : Inventory_Displayer):
 	if displayer.get_parent() != null:
 		grid_container.remove_child(displayer)
+		check_all_displayers_if_mouse_inside()
+		InventorySystem.hide_description()
 
 func add_displayer(displayer : Inventory_Displayer):
 	if displayer.get_parent() == null:
 		grid_container.add_child(displayer)
+		check_all_displayers_if_mouse_inside()
+		InventorySystem.hide_description()
+
+func check_all_displayers_if_mouse_inside():
+	for other_displayer in grid_container.get_children():
+		other_displayer.check_if_mouse_inside()

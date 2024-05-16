@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bd305ixouab0c"]
+[gd_scene load_steps=11 format=3 uid="uid://bd305ixouab0c"]
 
 [ext_resource type="Texture2D" uid="uid://b17xjreeh5m6" path="res://Assets/smallburg_terrain_spring.png" id="1_7qnbg"]
 [ext_resource type="Texture2D" uid="uid://b045tr1im1vjh" path="res://Assets/bushes_destruction.png" id="2_mld5q"]
 [ext_resource type="Texture2D" uid="uid://bf7fdv8oug2ox" path="res://Assets/SmallBurg_outside_assets.png" id="3_cmp4h"]
 [ext_resource type="PackedScene" uid="uid://d0n68v3wymcg0" path="res://Map/Player.tscn" id="4_w047g"]
 [ext_resource type="PackedScene" uid="uid://blysvvpt7p728" path="res://Buildings/Chest/Chest.tscn" id="5_ipaj3"]
+[ext_resource type="PackedScene" uid="uid://b1thxkgfuwe1s" path="res://Debuging items/Test.tscn" id="6_imprr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qlr2q"]
 texture = ExtResource("1_7qnbg")
@@ -2629,3 +2630,9 @@ position = Vector2(1105, 936)
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("5_ipaj3")]
 position = Vector2(1075, 956)
+
+[node name="Control" parent="." instance=ExtResource("6_imprr")]
+offset_left = 898.0
+offset_top = 940.0
+offset_right = 898.0
+offset_bottom = 940.0

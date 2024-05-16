@@ -1,3 +1,11 @@
+Label
+TabBar
+TabContainer
+Popup
+Button
+MenuButton
+TextureRect
+MenuBar
 GridContainer
 PanelContainer
 CollisionShape2D
@@ -5,10 +13,3 @@ Area2D
 Sprite2D
 StaticBody2D
 NinePatchRect
-TextureRect
-Control
-MarginContainer
-HBoxContainer
-AnimationPlayer
-Label
-VBoxContainer

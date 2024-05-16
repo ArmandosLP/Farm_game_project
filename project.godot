@@ -36,6 +36,7 @@ enabled=PackedStringArray("res://addons/smoothing/plugin.cfg")
 folder_colors={
 "res://Buildings/": "teal",
 "res://Conversation_System/": "yellow",
+"res://Debuging items/": "gray",
 "res://Inventory_System/": "orange",
 "res://System/": "gray"
 }
