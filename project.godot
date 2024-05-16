@@ -35,6 +35,7 @@ enabled=PackedStringArray("res://addons/smoothing/plugin.cfg")
 
 folder_colors={
 "res://Buildings/": "teal",
+"res://Components/": "purple",
 "res://Conversation_System/": "yellow",
 "res://Debuging items/": "gray",
 "res://Inventory_System/": "orange",
@@ -139,3 +140,7 @@ Hotbar_hotkey_7={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":55,"key_label":0,"unicode":55,"echo":false,"script":null)
 ]
 }
+
+[physics]
+
+common/physics_ticks_per_second=30

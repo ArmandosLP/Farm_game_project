@@ -1,15 +1,9 @@
-res://Inventory_System/Scenes/Inventory_displayer.tscn
 res://Map/Mundo_de_pruebas.tscn
 res://Buildings/Chest/Chest.tscn
 res://Map/Player.tscn
 res://Inventory_System/Scenes/Inventory_displayer_grid.tscn
-res://Inventory_System/Scenes/Description_displayer.tscn
-res://Inventory_System/Scenes/Item_grid_cell.tscn
-res://Inventory_System/Scripts/Inventory_displayer_grid.gd
-res://Inventory_System/Scripts/item_grid_cell.gd
-res://Inventory_System/Scripts/Inventory_displayer.gd
-res://Inventory_System/Scripts/Inventory_system_autoload.gd
-res://Inventory_System/Scenes/Hotbar_item_grid_cell.tscn
-res://Debuging items/Test.tscn
+res://Buildings/Chest/Chest_structure.gd
 res://Map/Player.gd
-res://Inventory_System/Scenes/continer.tscn
+res://Inventory_System/Scripts/Inventory_displayer_grid.gd
+res://Components/Mouse_detector_component.gd
+res://Components/Mouse_detector_component.tscn

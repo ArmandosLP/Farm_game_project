@@ -21,7 +21,6 @@ func _ready():
 	InventorySystem.player = self
 
 func _process(_delta):
-	#print(Engine.get_frames_per_second())
 	moving_direction = {
 		right = int(Input.is_action_pressed("Movment_right_key")),
 		left = int(Input.is_action_pressed("Movment_left_key")),

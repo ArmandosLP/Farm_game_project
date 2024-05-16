@@ -7,7 +7,6 @@ class_name Inventory_displayer_grid
 @onready var tab_0_button = %Tab_0_button
 @onready var tab_1_button = %Tab_1_button
 
-
 var current_displayer_tab:int = 0
 func _ready():
 	hide_buttons()
