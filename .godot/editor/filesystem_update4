@@ -11,3 +11,5 @@ res://Inventory_System/Scripts/Inventory_displayer.gd
 res://Inventory_System/Scripts/Inventory_system_autoload.gd
 res://Inventory_System/Scenes/Hotbar_item_grid_cell.tscn
 res://Debuging items/Test.tscn
+res://Map/Player.gd
+res://Inventory_System/Scenes/continer.tscn

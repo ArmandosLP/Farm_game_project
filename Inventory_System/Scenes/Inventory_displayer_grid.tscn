@@ -1,6 +1,77 @@
-[gd_scene load_steps=2 format=3 uid="uid://b67rlp1u8gr14"]
+[gd_scene load_steps=13 format=3 uid="uid://b67rlp1u8gr14"]
 
 [ext_resource type="Script" path="res://Inventory_System/Scripts/Inventory_displayer_grid.gd" id="1_e7ib6"]
+[ext_resource type="Texture2D" uid="uid://l8c1jd43ubac" path="res://Conversation_System/Sprites/tile_0010B.png" id="2_aelxk"]
+[ext_resource type="FontFile" uid="uid://b24ir7q6pu23t" path="res://Assets/m5x7.ttf" id="2_pleob"]
+[ext_resource type="Texture2D" uid="uid://cia71gr215401" path="res://Conversation_System/Sprites/tile_0010.png" id="3_xmw83"]
+[ext_resource type="Texture2D" uid="uid://b5lcs5vpt6gec" path="res://Conversation_System/Sprites/tile_0010C.png" id="4_cv8s4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_23jge"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8v1of"]
+content_margin_left = 14.0
+texture = ExtResource("2_aelxk")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bs1jv"]
+content_margin_left = 14.0
+texture = ExtResource("4_cv8s4")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7q58a"]
+content_margin_left = 14.0
+texture = ExtResource("3_xmw83")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s4nx0"]
+content_margin_left = 14.0
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+
+[sub_resource type="Theme" id="Theme_xh8im"]
+Button/colors/font_color = Color(0.364706, 0.364706, 0.364706, 1)
+Button/colors/font_focus_color = Color(0.364706, 0.364706, 0.364706, 1)
+Button/colors/font_hover_color = Color(0.266667, 0.266667, 0.266667, 1)
+Button/colors/font_hover_pressed_color = Color(0.364706, 0.364706, 0.364706, 1)
+Button/colors/font_outline_color = Color(0.364706, 0.364706, 0.364706, 1)
+Button/colors/font_pressed_color = Color(0.486275, 0.486275, 0.486275, 1)
+Button/colors/icon_focus_color = Color(0.364706, 0.364706, 0.364706, 1)
+Button/colors/icon_hover_color = Color(0.364706, 0.364706, 0.364706, 1)
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("2_pleob")
+Button/styles/disabled = SubResource("StyleBoxEmpty_23jge")
+Button/styles/focus = SubResource("StyleBoxTexture_8v1of")
+Button/styles/hover = SubResource("StyleBoxTexture_bs1jv")
+Button/styles/normal = SubResource("StyleBoxTexture_7q58a")
+Button/styles/pressed = SubResource("StyleBoxTexture_s4nx0")
+
+[sub_resource type="Theme" id="Theme_dsgui"]
+Button/colors/font_color = Color(0.364706, 0.364706, 0.364706, 1)
+Button/colors/font_focus_color = Color(0.364706, 0.364706, 0.364706, 1)
+Button/colors/font_hover_color = Color(0.266667, 0.266667, 0.266667, 1)
+Button/colors/font_hover_pressed_color = Color(0.364706, 0.364706, 0.364706, 1)
+Button/colors/font_outline_color = Color(0.364706, 0.364706, 0.364706, 1)
+Button/colors/font_pressed_color = Color(0.486275, 0.486275, 0.486275, 1)
+Button/colors/icon_focus_color = Color(0.364706, 0.364706, 0.364706, 1)
+Button/colors/icon_hover_color = Color(0.364706, 0.364706, 0.364706, 1)
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("2_pleob")
+Button/styles/disabled = SubResource("StyleBoxEmpty_23jge")
+Button/styles/focus = SubResource("StyleBoxTexture_8v1of")
+Button/styles/hover = SubResource("StyleBoxTexture_bs1jv")
+Button/styles/normal = SubResource("StyleBoxTexture_7q58a")
+Button/styles/pressed = SubResource("StyleBoxTexture_s4nx0")
 
 [node name="InventoryContiner" type="Control"]
 layout_mode = 3
@@ -13,7 +84,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e7ib6")
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="Continer0" type="GridContainer" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -24,3 +95,41 @@ grow_vertical = 2
 theme_override_constants/h_separation = 12
 theme_override_constants/v_separation = 12
 columns = 2
+
+[node name="Continer1" type="GridContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="Tab_0_button" type="Button" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 0
+offset_left = -402.0
+offset_top = -297.0
+offset_right = -274.0
+offset_bottom = -247.0
+theme = SubResource("Theme_xh8im")
+text = "Tablon 1"
+
+[node name="Tab_1_button" type="Button" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 0
+offset_left = -264.0
+offset_top = -297.0
+offset_right = -136.0
+offset_bottom = -247.0
+theme = SubResource("Theme_dsgui")
+text = "Tablon 2"
+
+[connection signal="button_down" from="Tab_0_button" to="." method="_on_tab_1_button_down"]
+[connection signal="button_down" from="Tab_1_button" to="." method="_on_tab_2_button_down"]

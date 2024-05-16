@@ -2619,13 +2619,25 @@ layer_2/tile_data = PackedInt32Array()
 position = Vector2(1084, 987)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("5_ipaj3")]
-position = Vector2(1105, 956)
+position = Vector2(1155, 959)
 
 [node name="StaticBody2D3" parent="." instance=ExtResource("5_ipaj3")]
-position = Vector2(1075, 936)
+position = Vector2(1140, 959)
 
 [node name="StaticBody2D4" parent="." instance=ExtResource("5_ipaj3")]
-position = Vector2(1105, 936)
+position = Vector2(1126, 959)
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("5_ipaj3")]
-position = Vector2(1075, 956)
+position = Vector2(1113, 959)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("5_ipaj3")]
+position = Vector2(1154, 994)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("5_ipaj3")]
+position = Vector2(1139, 994)
+
+[node name="StaticBody2D7" parent="." instance=ExtResource("5_ipaj3")]
+position = Vector2(1125, 994)
+
+[node name="StaticBody2D8" parent="." instance=ExtResource("5_ipaj3")]
+position = Vector2(1112, 994)

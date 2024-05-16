@@ -48,7 +48,7 @@ var check = false
 func check_if_mouse_inside():
 	check = true
 
-func _process(delta):
+func _process(_delta):
 	if check:
 		if Rect2(Vector2(), size).has_point(get_local_mouse_position()) and InventorySystem.inventory_oppened:
 			_on_mouse_entered()
@@ -56,3 +56,7 @@ func _process(delta):
 			mouse_inside = false
 			nine_patch_rect.texture = TILE_0062
 		check = false
+
+func unchek():
+	mouse_inside = false
+	nine_patch_rect.texture = TILE_0062

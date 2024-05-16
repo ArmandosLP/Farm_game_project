@@ -49,7 +49,7 @@ func animate_sprite():
 		state = "Walk"
 	elif run == 1:
 		state = "Run"
-	
+
 	match moving_vector:
 		Vector2(-1,1),Vector2(0,1),Vector2(1,1):
 			direction = "down"
@@ -81,7 +81,7 @@ func _input(_event):
 			InventorySystem.close_inventory()
 
 func get_chests():
-	var chest_list : Array[Chest_Structure]
+	var chest_list : Array[Chest_Structure] = []
 	for entity in interaction_area.get_overlapping_bodies():
 		if entity != self and entity.has_method("get_inventory"):
 			chest_list.append(entity)

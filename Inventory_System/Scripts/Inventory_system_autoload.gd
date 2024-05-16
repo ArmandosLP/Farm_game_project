@@ -66,7 +66,7 @@ func left_click(inventory : Inventory, id : int) -> void:
 	mouse_item_displayer.update()
 	player_inventory_displayer.update_item_grid_cells()
 
-func right_click(inventory : Inventory, id : int) -> void:
+func right_click(_inventory : Inventory, _id : int) -> void:
 	pass
 
 func put_together_cursor_to_cell(inventory : Inventory, cell_id : int) -> bool:
