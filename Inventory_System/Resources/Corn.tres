@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://ctyabvjl0jyab"]
+
+[ext_resource type="Script" path="res://Inventory_System/Scripts/Item_resource.gd" id="1_4ovk7"]
+[ext_resource type="Texture2D" uid="uid://cai71d6mgue67" path="res://Assets/Corn.png" id="2_aavn8"]
+
+[resource]
+script = ExtResource("1_4ovk7")
+name = "Maiz"
+description = "¿Con esto se hacen la palomitas?"
+max_stack = 16
+texture = ExtResource("2_aavn8")
+price = 7

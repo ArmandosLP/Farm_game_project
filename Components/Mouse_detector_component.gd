@@ -17,8 +17,8 @@ func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouse and mouse_inside:
 		if owner.has_method("mouse_left_click") and event.is_action_pressed("Mouse_left_click"):
 			owner.mouse_left_click()
-		elif owner.has_method("Mouse_right_click") and event.is_action_pressed("Mouse_right_click"):
-			owner.Mouse_right_click()
+		elif owner.has_method("mouse_right_click") and event.is_action_pressed("Mouse_right_click"):
+			owner.mouse_right_click()
 
 func _on_tree_entered():
 	owner.set_meta(&"MouseDetectorComponent",self)

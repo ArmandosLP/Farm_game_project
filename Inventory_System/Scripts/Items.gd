@@ -1,7 +1,7 @@
 extends Node
 
-const DEBUG_APPLE_2 = preload("res://Inventory_System/Resources/Debug_apple2.tres")
-const DEBUG_APPLE_3 = preload("res://Inventory_System/Resources/Debug_apple3.tres")
-const DEBUG_APPLE_4 = preload("res://Inventory_System/Resources/Debug_apple4.tres")
-const DEBUG_APPLE = preload("res://Inventory_System/Resources/Debug_apple.tres")
-const DEBUG_APPLE_5 = preload("res://Inventory_System/Resources/Debug_apple5.tres")
+const LIMON = preload("res://Inventory_System/Resources/Limon.tres")
+const MANZANA_VERDE = preload("res://Inventory_System/Resources/Manzana verde.tres")
+const MANZANA = preload("res://Inventory_System/Resources/Manzana.tres")
+const NARANJA = preload("res://Inventory_System/Resources/Naranja.tres")
+const PERA = preload("res://Inventory_System/Resources/Pera.tres")

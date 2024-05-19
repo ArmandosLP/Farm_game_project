@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dlfoalxpg8q06"]
+
+[ext_resource type="Script" path="res://Inventory_System/Scripts/Item_resource.gd" id="1_0gfkf"]
+[ext_resource type="Texture2D" uid="uid://es8nle5kpepa" path="res://Assets/Apple.png" id="2_wef32"]
+
+[resource]
+script = ExtResource("1_0gfkf")
+name = "Manzana"
+description = "No te tragues las semillas, en serio, 
+no lo hagas, podrías morir."
+max_stack = 16
+texture = ExtResource("2_wef32")
+price = 5

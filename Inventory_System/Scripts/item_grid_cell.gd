@@ -21,6 +21,7 @@ func _input(event):
 
 var mouse_inside = false
 func _on_mouse_entered():
+	InventorySystem.last_focused_cell = self
 	nine_patch_rect.texture = TILE_0062B
 	if inventory.items[id] != null:
 		InventorySystem.show_description(inventory,id)
@@ -32,7 +33,6 @@ func _on_mouse_exited():
 	mouse_inside = false
 
 func update():
-	
 	if inventory.items[id] != null:
 		textureRect.texture = inventory.items[id].texture
 		amount.text = str(inventory.amount[id])
@@ -50,13 +50,13 @@ func check_if_mouse_inside():
 
 func _process(_delta):
 	if check:
-		if Rect2(Vector2(), size).has_point(get_local_mouse_position()) and InventorySystem.inventory_oppened:
+		if Rect2(Vector2(), size).has_point(get_local_mouse_position()):
 			_on_mouse_entered()
 		else:
-			mouse_inside = false
-			nine_patch_rect.texture = TILE_0062
+			unchek()
 		check = false
 
 func unchek():
 	mouse_inside = false
 	nine_patch_rect.texture = TILE_0062
+

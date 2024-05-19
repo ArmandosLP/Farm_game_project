@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cmtoevjq3ctuv"]
+
+[ext_resource type="Script" path="res://Inventory_System/Scripts/Item_resource.gd" id="1_53olp"]
+[ext_resource type="Texture2D" uid="uid://yymkc71ise3v" path="res://Assets/08.png" id="2_m52lo"]
+
+[resource]
+script = ExtResource("1_53olp")
+name = "Naranja"
+description = "El rey de los cítricos nunca decepciona."
+max_stack = 16
+texture = ExtResource("2_m52lo")
+price = 15

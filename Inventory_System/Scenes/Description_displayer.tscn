@@ -41,7 +41,7 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -365.0
 offset_top = -72.0
-offset_bottom = 73.0
+offset_bottom = 35.0
 grow_horizontal = 0
 grow_vertical = 2
 mouse_filter = 2
@@ -88,9 +88,7 @@ unique_name_in_owner = true
 texture_filter = 2
 texture_repeat = 1
 layout_mode = 2
-text = "Esto es la descripcion de un objeto.
-Debe tener varias lineas para asegurar
-el funcionamiento."
+text = "Lorem ipsum"
 label_settings = SubResource("LabelSettings_eynvh")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]

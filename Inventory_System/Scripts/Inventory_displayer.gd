@@ -8,7 +8,7 @@ var inventory : Inventory
 func _ready():
 	remove_item_grid_cells()
 	add_item_grid_cells()
-	update_item_grid_cells()
+	update_all_item_grid_cells()
 
 func remove_item_grid_cells():
 	for item_grid_cell in item_grid_container.get_children():
@@ -22,14 +22,13 @@ func add_item_grid_cells():
 		item_grid_cell.id = id
 		item_grid_container.add_child(item_grid_cell)
 
-func update_item_grid_cells():
+func update_all_item_grid_cells():
 	for item_grid_cell in item_grid_container.get_children():
 		item_grid_cell.update()
+
+func update_item_grid_cell(id : int):
+	item_grid_container.get_child(id).update()
 
 func check_if_mouse_inside():
 	for item_grid_cell in item_grid_container.get_children():
 		item_grid_cell.check_if_mouse_inside()
-		
-func uncheck_all_cells():
-	for item_grid_cell in item_grid_container.get_children():
-		item_grid_cell.unchek()

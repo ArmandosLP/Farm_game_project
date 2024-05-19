@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://be4f53ackwqdg"]
+
+[ext_resource type="Script" path="res://Crop_System/Scenes/Crop_Structure.gd" id="1_wxw0k"]
+[ext_resource type="Texture2D" uid="uid://bih5ttumykxur" path="res://Crop_System/Sprites/farm_terrain.png" id="2_0mxbd"]
+[ext_resource type="PackedScene" uid="uid://dhmg7d1b50blk" path="res://Components/Mouse_detector_component.tscn" id="4_7sisy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xlpq"]
+size = Vector2(14, 14)
+
+[node name="Crop_structure" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_wxw0k")
+
+[node name="Spot" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_0mxbd")
+hframes = 9
+vframes = 7
+frame = 27
+
+[node name="Plant_sprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -8)
+hframes = 6
+
+[node name="MouseDetectorComponent" parent="." instance=ExtResource("4_7sisy")]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseDetectorComponent"]
+shape = SubResource("RectangleShape2D_7xlpq")

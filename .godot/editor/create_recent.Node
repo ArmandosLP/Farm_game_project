@@ -1,4 +1,10 @@
 CollisionShape2D
+Node2D
+Sprite2D
+MarginContainer
+PanelContainer
+AnimationPlayer
+AnimatedSprite2D
 Area2D
 GridContainer
 Button
@@ -6,9 +12,3 @@ HBoxContainer
 Label
 TabBar
 TabContainer
-Popup
-MenuButton
-TextureRect
-MenuBar
-PanelContainer
-Sprite2D

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b33twge1kw410"]
+
+[ext_resource type="Script" path="res://Components/Player_interaction_detector_component.gd" id="1_whvmm"]
+
+[node name="PlayerInteractionDetectorComponent" type="Node"]
+script = ExtResource("1_whvmm")
+
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
