@@ -74,6 +74,7 @@ func _input(_event):
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	if Input.is_action_just_pressed("Debug_key"):
-		InventorySystem.add_item(InventorySystem.player_inventory_displayer,Items.MANZANA,7)
+		CropSystemAutoload.update_all_crops()
+	if Input.is_action_just_pressed("Debug_key2"):
+		InventorySystem.add_item(InventorySystem.player_inventory_displayer,Items.CORN_SEEDS,7)
 	
-

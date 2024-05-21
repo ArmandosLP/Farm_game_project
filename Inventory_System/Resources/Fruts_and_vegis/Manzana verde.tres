@@ -10,3 +10,4 @@ description = "Tiene un sabor ácido muy intenso."
 max_stack = 16
 texture = ExtResource("2_vi5y8")
 price = 4
+can_be_planted = false

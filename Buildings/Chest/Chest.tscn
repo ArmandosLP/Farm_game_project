@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://blysvvpt7p728"]
+[gd_scene load_steps=14 format=3 uid="uid://blysvvpt7p728"]
 
 [ext_resource type="Script" path="res://Buildings/Chest/Chest_structure.gd" id="1_onba6"]
 [ext_resource type="Texture2D" uid="uid://bki8h40b7tqug" path="res://Assets/chest1.png" id="2_6iy7h"]
@@ -13,6 +13,9 @@ size = Vector2(14, 11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6x381"]
 size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dgk0y"]
+size = Vector2(20, 19)
 
 [sub_resource type="Animation" id="Animation_denax"]
 length = 0.001
@@ -123,6 +126,7 @@ physics_material_override = SubResource("PhysicsMaterial_iuicb")
 script = ExtResource("1_onba6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -5.5)
 shape = SubResource("RectangleShape2D_4um52")
 
@@ -147,11 +151,17 @@ hframes = 5
 unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MouseDetectorComponent"]
+visible = false
 position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_6x381")
 
 [node name="PlayerInteractionDetectorComponent" parent="." instance=ExtResource("4_dvnon")]
 unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerInteractionDetectorComponent"]
+visible = false
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_dgk0y")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true

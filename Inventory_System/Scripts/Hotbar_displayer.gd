@@ -35,6 +35,7 @@ func hotbar_scroll(event : InputEvent):
 			else:
 				selected_hotbar_cell -= 1
 		hotbar_grid_cells[selected_hotbar_cell].selector.visible = true
+		InventorySystem.hotbar_index = selected_hotbar_cell
 
 func hotking(event : InputEvent):
 	if event is InputEventKey:
@@ -43,6 +44,7 @@ func hotking(event : InputEvent):
 				hotbar_grid_cells[selected_hotbar_cell].selector.visible = false
 				selected_hotbar_cell = i
 				hotbar_grid_cells[selected_hotbar_cell].selector.visible = true
+				InventorySystem.hotbar_index = selected_hotbar_cell
 				break
 
 func _ready():

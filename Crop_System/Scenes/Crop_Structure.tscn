@@ -1,15 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://be4f53ackwqdg"]
+[gd_scene load_steps=8 format=3 uid="uid://be4f53ackwqdg"]
 
-[ext_resource type="Script" path="res://Crop_System/Scenes/Crop_Structure.gd" id="1_wxw0k"]
+[ext_resource type="Script" path="res://Crop_System/Scripts/Crop_Structure.gd" id="1_o81ld"]
 [ext_resource type="Texture2D" uid="uid://bih5ttumykxur" path="res://Crop_System/Sprites/farm_terrain.png" id="2_0mxbd"]
+[ext_resource type="Texture2D" uid="uid://bwoaahxom2e2g" path="res://Crop_System/Sprites/Plants/corn_crop_lifecycle.png" id="3_e1ysr"]
 [ext_resource type="PackedScene" uid="uid://dhmg7d1b50blk" path="res://Components/Mouse_detector_component.tscn" id="4_7sisy"]
+[ext_resource type="PackedScene" uid="uid://b33twge1kw410" path="res://Components/Player_interaction_detector_component.tscn" id="5_ju3no"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xlpq"]
 size = Vector2(14, 14)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6kdwr"]
+size = Vector2(25, 24)
+
 [node name="Crop_structure" type="Node2D"]
 texture_filter = 1
-script = ExtResource("1_wxw0k")
+script = ExtResource("1_o81ld")
 
 [node name="Spot" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -20,11 +25,25 @@ frame = 27
 
 [node name="Plant_sprite" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(0, -8)
+z_index = 3
+y_sort_enabled = true
+position = Vector2(0, 3)
+texture = ExtResource("3_e1ysr")
+offset = Vector2(0, -10)
 hframes = 6
+frame = 1
 
 [node name="MouseDetectorComponent" parent="." instance=ExtResource("4_7sisy")]
 unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MouseDetectorComponent"]
+visible = false
 shape = SubResource("RectangleShape2D_7xlpq")
+
+[node name="PlayerInteractionDetectorComponent" parent="." instance=ExtResource("5_ju3no")]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerInteractionDetectorComponent"]
+visible = false
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_6kdwr")

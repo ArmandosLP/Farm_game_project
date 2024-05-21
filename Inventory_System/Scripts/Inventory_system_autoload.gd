@@ -16,6 +16,8 @@ var continer_displayer:Continer_Displayer
 var cursor_item:Item
 var cursor_amount:int
 
+var hotbar_index : int
+
 var player_inventory:Inventory
 
 var inventory_oppened:bool = false 
@@ -192,16 +194,10 @@ func close_continer():
 		allow_continer_interaction(true)
 
 func hotbar_left_click(inventory : Inventory,id : int):
-	if inventory.items[id] != null:
-		pass
+	pass
 
 func hotbar_right_click(inventory : Inventory,id : int):
-	if inventory.items[id] != null:
-		inventory.amount[id] -= 1
-		if inventory.amount[id] == 0:
-			inventory.items[id] = null
-		player_hotbar.update_all_cells()
-		player_inventory_displayer.update_item_grid_cell(id)
+	pass
 
 var player_inventory_interaction : bool = true
 func allow_player_inventory_interaction(state : bool):
@@ -276,3 +272,16 @@ func add_item(inventory_displayer : Inventory_Displayer ,item : Item, amount : i
 				inventory_displayer.update_item_grid_cell(i)
 	player_hotbar.update_all_cells()
 	return amount_to_add
+
+func reduce_item(inventory_displayer : Inventory_Displayer ,id : int, amount : int) -> bool:
+	if inventory_displayer.inventory.amount[id] >= amount:
+		inventory_displayer.inventory.amount[id] -= amount
+		if inventory_displayer.inventory.amount[id] == 0:
+			inventory_displayer.inventory.items[id] = null
+		inventory_displayer.update_item_grid_cell(id)
+		player_hotbar.update_all_cells()
+		return true
+	else:
+		inventory_displayer.update_item_grid_cell(id)
+		player_hotbar.update_all_cells()
+		return false
