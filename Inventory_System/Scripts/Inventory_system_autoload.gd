@@ -1,14 +1,14 @@
 extends CanvasLayer
 
 const description_displayer_preload = preload("res://Inventory_System/Scenes/Description_displayer.tscn")
-const mouse_item_displayer_preload = preload("res://Inventory_System/Scenes/Mouse_item_displayer.tscn")
-const inventory_displayer_preload = preload("res://Inventory_System/Scenes/Inventory_displayer.tscn")
+const mouse_item_displayer_preload = preload("res://Inventory_system_v2/displayers/Cursor_item_displayer.tscn")
+const inventory_displayer_preload = preload("res://Inventory_system_v2/displayers/Inventory_displayer.tscn")
 const hotbar_displayer_preload = preload("res://Inventory_System/Scenes/Hotbar_displayer.tscn")
 const continer_displayer_preload = preload("res://Inventory_System/Scenes/Continer_displayer.tscn")
 
 var player_inventory_displayer:Inventory_Displayer
 
-var mouse_item_displayer:Mouse_item_displayer
+var mouse_item_displayer:Cursor_item_displayer
 var description_displayer:Item_description_displayer
 var player_hotbar:Hotbar_displayer
 var continer_displayer:Continer_Displayer
@@ -173,7 +173,7 @@ func close_inventory():
 		description_displayer.visible = false
 		player_hotbar.visible = true
 		player_hotbar.update_all_cells()
-		InventorySystem.hide_description()
+		#InventorySystem.hide_description()
 		uncheck_last_focused_cell()
 		inventory_oppened = false
 
@@ -185,7 +185,7 @@ func open_continer(displayer : Inventory_Displayer):
 
 func close_continer():
 	if continer_oppened:
-		InventorySystem.allow_player_inventory_interaction(true)
+		#InventorySystem.allow_player_inventory_interaction(true)
 		player_hotbar.update_all_cells()
 		player_hotbar.visible = true
 		continer_displayer.close_continer()

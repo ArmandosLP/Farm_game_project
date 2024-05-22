@@ -30,16 +30,16 @@ func update():
 			phase += 1
 			plant_sprite.frame = phase
 
-func mouse_left_click():
-	if player_interaction_detector_component.player_inside:
-		var hand_item : Item = InventorySystem.player_inventory.items[InventorySystem.hotbar_index]
-		if planted == null and hand_item != null and hand_item.can_be_planted:
-			plant(hand_item.plant_resource)
-			InventorySystem.reduce_item(InventorySystem.player_inventory_displayer,InventorySystem.hotbar_index,1)
+#func mouse_left_click():
+	#if player_interaction_detector_component.player_inside:
+		#var hand_item : Item = InventorySystem.player_inventory.items[InventorySystem.hotbar_index]
+		#if planted == null and hand_item != null and hand_item.can_be_planted:
+			#plant(hand_item.plant_resource)
+			#InventorySystem.reduce_item(InventorySystem.player_inventory_displayer,InventorySystem.hotbar_index,1)
 
 func cultivate():
 	if planted != null and phase == planted.grow_time_for_phase.size():
-		InventorySystem.add_item(InventorySystem.player_inventory_displayer,planted.reward_item,1)
+		#InventorySystem.add_item(InventorySystem.player_inventory_displayer,planted.reward_item,1)
 		planted = null
 		phase = 0
 		age = 0

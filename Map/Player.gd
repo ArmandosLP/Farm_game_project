@@ -34,7 +34,7 @@ func _physics_process(_delta):
 	if movement_blocker:
 		move_and_slide()
 		moving_vector = Vector2i(moving_direction.right - moving_direction.left,moving_direction.down - moving_direction.up)
-		if moving_direction.run == 1 and !InventorySystem.inventory_oppened:
+		if moving_direction.run == 1: #and !InventorySystem.inventory_oppened
 			speed = running_speed
 		else:
 			speed = walking_speed
@@ -76,5 +76,4 @@ func _input(_event):
 	if Input.is_action_just_pressed("Debug_key"):
 		CropSystemAutoload.update_all_crops()
 	if Input.is_action_just_pressed("Debug_key2"):
-		InventorySystem.add_item(InventorySystem.player_inventory_displayer,Items.CORN_SEEDS,7)
-	
+		InventoryManager.set_visibility(!InventoryManager.get_visibility())

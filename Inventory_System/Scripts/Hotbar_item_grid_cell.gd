@@ -10,13 +10,14 @@ var inventory : Inventory
 var id : int
 
 func update():
-	if inventory.items[id] != null:
-		textureRect.texture = inventory.items[id].texture
-		amount.text = str(inventory.amount[id])
-		if inventory.amount[id] <= 1:
-			amount.visible = false
-		else:
-			amount.visible = true
-	else:
-		textureRect.texture = null
-		amount.visible = false
+	pass
+	#if inventory.items[id] != null:
+		#textureRect.texture = inventory.items[id].texture
+		#amount.text = str(inventory.amount[id])
+		#if inventory.amount[id] <= 1:
+			#amount.visible = false
+		#else:
+			#amount.visible = true
+	#else:
+		#textureRect.texture = null
+		#amount.visible = false

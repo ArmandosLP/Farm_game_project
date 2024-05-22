@@ -19,9 +19,9 @@ config/icon="res://icon.svg"
 
 StaticSystemScript="*res://System/StaticSystemScript.gd"
 Conversation="*res://Conversation_System/Scripts/Conversation_system_autoload.gd"
-InventorySystem="*res://Inventory_System/Scripts/Inventory_system_autoload.gd"
 Items="*res://Inventory_System/Scripts/Items.gd"
 CropSystemAutoload="*res://Crop_System/Scripts/Crop_System_Autoload.gd"
+InventoryManager="*res://Inventory_system_v2/scripts/inventory_manager.gd"
 
 [display]
 
@@ -42,6 +42,7 @@ folder_colors={
 "res://Crop_System/": "orange",
 "res://Debuging items/": "gray",
 "res://Inventory_System/": "pink",
+"res://Inventory_system_v2/": "green",
 "res://System/": "gray"
 }
 

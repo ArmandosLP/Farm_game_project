@@ -1,4 +1,5 @@
 res://Map/Player.tscn
 res://Map/Mundo_de_pruebas.tscn
-res://Crop_System/Scenes/Crop_Structure.tscn
-res://Buildings/Chest/Chest.tscn
+res://Inventory_system_v2/displayers/displayer_grid.tscn
+res://Inventory_system_v2/displayers/Inventory_displayer.tscn
+res://Inventory_system_v2/displayers/Cursor_item_displayer.tscn

@@ -8,19 +8,20 @@ var inventory : Inventory
 var hotbar_grid_cells: Array[Hotbar_grid_cell] = []
 var selected_hotbar_cell : int
 
-func _input(event):
-	if !InventorySystem.inventory_oppened:
-		hotbar_scroll(event)
-		hotking(event)
-		hotbar_use_action(event)
+#func _input(event):
+	#if !InventorySystem.inventory_oppened:
+		#hotbar_scroll(event)
+		#hotking(event)
+		#hotbar_use_action(event)
 
 func hotbar_use_action(event : InputEvent):
 	if event is InputEventMouse:
 		if event.is_action_pressed("Mouse_left_click"):
-			InventorySystem.hotbar_left_click(inventory,selected_hotbar_cell)
+			pass
+			#InventorySystem.hotbar_left_click(inventory,selected_hotbar_cell)
 		if event.is_action_pressed("Mouse_right_click"):
-			InventorySystem.hotbar_right_click(inventory,selected_hotbar_cell)
-
+			#InventorySystem.hotbar_right_click(inventory,selected_hotbar_cell)
+			pass
 func hotbar_scroll(event : InputEvent):
 	if event is InputEventMouse:
 		hotbar_grid_cells[selected_hotbar_cell].selector.visible = false
@@ -35,7 +36,7 @@ func hotbar_scroll(event : InputEvent):
 			else:
 				selected_hotbar_cell -= 1
 		hotbar_grid_cells[selected_hotbar_cell].selector.visible = true
-		InventorySystem.hotbar_index = selected_hotbar_cell
+		#InventorySystem.hotbar_index = selected_hotbar_cell
 
 func hotking(event : InputEvent):
 	if event is InputEventKey:
@@ -44,11 +45,11 @@ func hotking(event : InputEvent):
 				hotbar_grid_cells[selected_hotbar_cell].selector.visible = false
 				selected_hotbar_cell = i
 				hotbar_grid_cells[selected_hotbar_cell].selector.visible = true
-				InventorySystem.hotbar_index = selected_hotbar_cell
+				#InventorySystem.hotbar_index = selected_hotbar_cell
 				break
 
 func _ready():
-	inventory = InventorySystem.player_inventory
+	#inventory = InventorySystem.player_inventory
 	selected_hotbar_cell = 0
 	remove_item_grid_cells()
 	add_hotbar_grid_cells()
