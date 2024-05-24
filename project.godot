@@ -15,6 +15,10 @@ run/main_scene="res://Map/Mundo_de_pruebas.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout=""
+
 [autoload]
 
 StaticSystemScript="*res://System/StaticSystemScript.gd"
@@ -40,7 +44,6 @@ folder_colors={
 "res://Components/": "purple",
 "res://Conversation_System/": "yellow",
 "res://Crop_System/": "orange",
-"res://Debuging items/": "gray",
 "res://Inventory_system_v2/": "green",
 "res://System/": "gray"
 }

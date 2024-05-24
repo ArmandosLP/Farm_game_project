@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1716548509
+::res://::1716549720
 icon.svg::CompressedTexture2D::1637912819358601862::1710905769::1714135279::1::::<><>::
 ::res://addons/::1715719794
 ::res://addons/smoothing/::1715719794
@@ -35,6 +35,10 @@ house_building_assets_shadows.png::CompressedTexture2D::3504890339190944049::171
 house_doors.png::CompressedTexture2D::4479284635627171452::1714388395::1714388399::1::::<><>::
 house_interiors_assets.png::CompressedTexture2D::4327971646843782994::1714345183::1714346226::1::::<><>::
 housing_system_roofs.png::CompressedTexture2D::5838003905454169518::1714345183::1714346260::1::::<><>::
+::res://Audio/::1716549181
+::res://Audio/sound_effects/::1716550498
+grass_running.wav::AudioStreamWAV::1942345205896664035::1716549188::1716549721::1::::<><>::
+grass_walking.wav::AudioStreamWAV::735320994897063459::1716550479::1716550502::1::::<><>::
 ::res://Buildings/::1715771629
 ::res://Buildings/Chest/::1716547956
 Chest.tscn::PackedScene::3209174564419773647::1716547956::0::1::::<><>::res://Buildings/Chest/Chest_structure.gd<>uid://bki8h40b7tqug::::res://Assets/chest1.png<>uid://dhmg7d1b50blk::::res://Components/Mouse_detector_component.tscn<>uid://dkmfwi50n4and::::res://Assets/chest2.png<>uid://b33twge1kw410::::res://Components/Player_interaction_detector_component.tscn
@@ -75,7 +79,6 @@ Plant.gd::GDScript::-1::1716155131::0::1::::Plant<>Resource<>::
 farm_terrain.png::CompressedTexture2D::2964238546360424037::1716154129::1716154131::1::::<><>::
 ::res://Crop_System/Sprites/Plants/::1716201798
 corn_crop_lifecycle.png::CompressedTexture2D::3959476936133801668::1716201797::1716201798::1::::<><>::
-::res://Debuging items/::1715858546
 ::res://Inventory_system_v2/::1716548493
 ::res://Inventory_system_v2/displayers/::1716547918
 ::res://Inventory_system_v2/displayers/Scenes/::1716548022
@@ -93,25 +96,25 @@ hotbar_displayer.gd::GDScript::-1::1716548135::0::1::::Hotbar_displayer<>Control
 hotbar_item_cell.gd::GDScript::-1::1716413321::0::1::::Hotbar_item_cell<>PanelContainer<>::
 inventory_displayer.gd::GDScript::-1::1716548149::0::1::::Inventory_Displayer<>PanelContainer<>::
 item_grid_cell.gd::GDScript::-1::1716411997::0::1::::Item_grid_cell_displayer<>PanelContainer<>::
-::res://Inventory_system_v2/Items/::1716548509
+::res://Inventory_system_v2/Items/::1716548527
 Corn.tres::Resource/Resource::6155977365827329241::1716547926::0::1::::<><>::res://Inventory_system_v2/scripts/Item_resource.gd<>uid://cai71d6mgue67::::res://Assets/Corn.png
-Corn_seeds.tres::Resource/Item::7882817330052664698::1716548509::0::1::::<><>::res://Inventory_system_v2/scripts/Item_resource.gd<>uid://cd0bqokvh2vyt::::res://Crop_System/Resources/corn_plant.tres<>uid://dj7v8lnvvwikh::::res://Assets/Corn_seeds.png
-Items.gd::GDScript::-1::1716208400::0::1::::<>Node<>::
+Corn_seeds.tres::Resource/Resource::7882817330052664698::1716548509::0::1::::<><>::res://Inventory_system_v2/scripts/Item_resource.gd<>uid://cd0bqokvh2vyt::::res://Crop_System/Resources/corn_plant.tres<>uid://dj7v8lnvvwikh::::res://Assets/Corn_seeds.png
+Items.gd::GDScript::-1::1716548527::0::1::::<>Node<>::
 Limon.tres::Resource/Resource::8125526629598983863::1716547926::0::1::::<><>::res://Inventory_system_v2/scripts/Item_resource.gd<>uid://c45sofocrlcs0::::res://Assets/12.png
 Manzana verde.tres::Resource/Resource::4310755641360584170::1716547926::0::1::::<><>::res://Inventory_system_v2/scripts/Item_resource.gd<>uid://bcwmfrd53ba4n::::res://Assets/AppleB.png
 Manzana.tres::Resource/Resource::7942511871744907705::1716547926::0::1::::<><>::res://Inventory_system_v2/scripts/Item_resource.gd<>uid://es8nle5kpepa::::res://Assets/Apple.png
 Naranja.tres::Resource/Resource::5655188967102154777::1716547926::0::1::::<><>::res://Inventory_system_v2/scripts/Item_resource.gd<>uid://yymkc71ise3v::::res://Assets/08.png
 Pera.tres::Resource/Resource::4265879680800341144::1716547926::0::1::::<><>::res://Inventory_system_v2/scripts/Item_resource.gd<>uid://oetaty1dx27a::::res://Assets/02.png
-::res://Inventory_system_v2/old_script/::1716548496
-Inventory_system_autoload.gd::GDScript::-1::1716327266::0::1::::<>CanvasLayer<>::
+::res://Inventory_system_v2/old_script/::1716548527
+Inventory_system_autoload.gd::GDScript::-1::1716548527::0::1::::<>CanvasLayer<>::
 ::res://Inventory_system_v2/scripts/::1716548114
 inventory_manager.gd::GDScript::-1::1716548114::0::1::::<>CanvasLayer<>::
 inventory_resource.gd::GDScript::-1::1716320990::0::1::::Inventory<>Resource<>::
 Item_resource.gd::GDScript::-1::1716203155::0::1::::Item<>Resource<>::
-::res://Map/::1716548227
-Mundo_de_pruebas.tscn::PackedScene::2656361746737307800::1716548227::0::1::::<><>::uid://b17xjreeh5m6::::res://Assets/smallburg_terrain_spring.png<>uid://b045tr1im1vjh::::res://Assets/bushes_destruction.png<>uid://bf7fdv8oug2ox::::res://Assets/SmallBurg_outside_assets.png<>uid://d0n68v3wymcg0::::res://Map/Player.tscn<>uid://bih5ttumykxur::::res://Crop_System/Sprites/farm_terrain.png<>uid://blysvvpt7p728::::res://Buildings/Chest/Chest.tscn<>uid://be4f53ackwqdg::::res://Crop_System/Scenes/Crop_Structure.tscn
-Player.gd::GDScript::-1::1716547465::0::1::::Player<>CharacterBody2D<>::
-Player.tscn::PackedScene::8942762358084514061::1716547956::0::1::::<><>::res://Map/Player.gd<>res://Map/Player_interaction_area.gd<>uid://8ahjsn3uruk2::::res://Assets/Character1_sprite.png<>res://addons/smoothing/smoothing_2d.gd
+::res://Map/::1716550286
+Mundo_de_pruebas.tscn::PackedScene::2656361746737307800::1716550286::0::1::::<><>::uid://b17xjreeh5m6::::res://Assets/smallburg_terrain_spring.png<>uid://b045tr1im1vjh::::res://Assets/bushes_destruction.png<>uid://bf7fdv8oug2ox::::res://Assets/SmallBurg_outside_assets.png<>uid://d0n68v3wymcg0::::res://Map/Player.tscn<>uid://bih5ttumykxur::::res://Crop_System/Sprites/farm_terrain.png<>uid://blysvvpt7p728::::res://Buildings/Chest/Chest.tscn<>uid://be4f53ackwqdg::::res://Crop_System/Scenes/Crop_Structure.tscn
+Player.gd::GDScript::-1::1716550286::0::1::::Player<>CharacterBody2D<>::
+Player.tscn::PackedScene::8942762358084514061::1716550286::0::1::::<><>::res://Map/Player.gd<>res://Map/Player_interaction_area.gd<>uid://8ahjsn3uruk2::::res://Assets/Character1_sprite.png<>res://addons/smoothing/smoothing_2d.gd<>uid://kqgvnsexrea2::::res://Audio/sound_effects/grass_walking.wav
 Player_interaction_area.gd::GDScript::-1::1716204779::0::1::::<>Area2D<>::
 ::res://System/::1715980712
 StaticSystemScript.gd::GDScript::-1::1715980712::0::1::::<>Node<>::

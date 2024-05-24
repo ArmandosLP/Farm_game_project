@@ -1,8 +1,9 @@
 extends CharacterBody2D
 class_name Player
 
+@onready var timer = %Timer
 @onready var animation_player = %AnimationPlayer
-
+@onready var audio_stream_player = $AudioStreamPlayer
 @export var walking_speed = 100
 @export var running_speed = 130
 var speed = walking_speed
@@ -14,12 +15,14 @@ var moving_direction = {
 	down = 0,
 	run = 0}
 
+
 var moving_vector := Vector2(0,0)
-var run := 0
+
 
 func _ready():
 	StaticSystemScript.player = self
 	Engine.max_fps = 144
+
 
 func _process(_delta):
 	moving_direction = {
@@ -29,6 +32,9 @@ func _process(_delta):
 		down = int(Input.is_action_pressed("Movment_down_key")),
 		run = int(Input.is_action_pressed("Movment_run_key"))}
 	animate_sprite()
+	play_sound_effects()
+	
+
 
 func _physics_process(_delta):
 	if movement_blocker:
@@ -39,6 +45,7 @@ func _physics_process(_delta):
 		else:
 			speed = walking_speed
 		velocity = moving_vector.normalized() * speed
+
 
 var state = "Idle"
 var direction = "down"
@@ -62,10 +69,14 @@ func animate_sprite():
 	if movement_blocker:
 		animation_player.play(state + "_" + direction)
 
+
 var movement_blocker := true
-func can_move(can : bool):
-	movement_blocker = can
-	animation_player.play("Idle" + "_" + direction)
+func can_move(state : bool):
+	movement_blocker = state
+	if !movement_blocker:
+		animation_player.play("Idle" + "_" + direction)
+		moving_vector = Vector2i(0,0)
+
 
 func _input(_event):
 	if Input.is_action_just_pressed("Full_screen_key"):
@@ -79,3 +90,20 @@ func _input(_event):
 		InventoryManager.set_visibility(!InventoryManager.get_visibility())
 
 
+func play_sound_effects():
+	if timer.is_stopped():
+		timer.start()
+
+const GRASS_RUNNING = preload("res://Audio/sound_effects/grass_running.wav")
+const GRASS_WALKING = preload("res://Audio/sound_effects/grass_walking.wav")
+
+func _on_timer_timeout():
+	var pitch : Vector2
+	match moving_direction.run:
+		0:
+			pitch = Vector2(1.3,1.6)
+		1:
+			pitch = Vector2(1.8,2.2)
+	if moving_vector != Vector2(0,0):
+		audio_stream_player.pitch_scale = randf_range(pitch.x,pitch.y)
+		audio_stream_player.play()

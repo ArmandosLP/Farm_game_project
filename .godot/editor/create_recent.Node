@@ -1,3 +1,5 @@
+Timer
+AudioStreamPlayer2D
 GridContainer
 CollisionShape2D
 Area2D
@@ -11,4 +13,3 @@ Button
 HBoxContainer
 Label
 TabBar
-TabContainer
