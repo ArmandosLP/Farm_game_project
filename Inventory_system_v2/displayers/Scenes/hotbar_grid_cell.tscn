@@ -1,27 +1,27 @@
 [gd_scene load_steps=7 format=3 uid="uid://byk13uvx3kgnp"]
 
-[ext_resource type="Script" path="res://Inventory_System/Scripts/Hotbar_item_grid_cell.gd" id="1_3qh2l"]
-[ext_resource type="Texture2D" uid="uid://c1ubrj3cynxef" path="res://Conversation_System/Sprites/tile_0062.png" id="2_1tf58"]
-[ext_resource type="Texture2D" uid="uid://es8nle5kpepa" path="res://Assets/Apple.png" id="3_bfupv"]
-[ext_resource type="Texture2D" uid="uid://dskvvp5rwotgv" path="res://Conversation_System/Sprites/tile_0039.png" id="3_fbard"]
-[ext_resource type="FontFile" uid="uid://b24ir7q6pu23t" path="res://Assets/m5x7.ttf" id="4_8bvro"]
+[ext_resource type="Script" path="res://Inventory_system_v2/displayers/Scripts/hotbar_item_cell.gd" id="1_cxy48"]
+[ext_resource type="Texture2D" uid="uid://c1ubrj3cynxef" path="res://Conversation_System/Sprites/tile_0062.png" id="2_xqdo4"]
+[ext_resource type="Texture2D" uid="uid://dskvvp5rwotgv" path="res://Conversation_System/Sprites/tile_0039.png" id="3_y8pqc"]
+[ext_resource type="Texture2D" uid="uid://es8nle5kpepa" path="res://Assets/Apple.png" id="4_0ffqb"]
+[ext_resource type="FontFile" uid="uid://b24ir7q6pu23t" path="res://Assets/m5x7.ttf" id="5_d01sv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7k3k6"]
-font = ExtResource("4_8bvro")
+font = ExtResource("5_d01sv")
 font_size = 32
 
-[node name="Hotbar_item_grid_cell" type="PanelContainer"]
+[node name="Hotbar_item_cell" type="PanelContainer"]
 self_modulate = Color(1, 1, 1, 0)
 texture_filter = 1
 custom_minimum_size = Vector2(52, 52)
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_3qh2l")
+script = ExtResource("1_cxy48")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
-texture = ExtResource("2_1tf58")
+texture = ExtResource("2_xqdo4")
 patch_margin_left = 21
 patch_margin_top = 24
 patch_margin_right = 15
@@ -37,7 +37,7 @@ mouse_filter = 2
 [node name="NinePatchRect" type="NinePatchRect" parent="Selector"]
 texture_filter = 1
 layout_mode = 2
-texture = ExtResource("3_fbard")
+texture = ExtResource("3_y8pqc")
 patch_margin_left = 15
 patch_margin_top = 15
 patch_margin_right = 15
@@ -56,7 +56,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("3_bfupv")
+texture = ExtResource("4_0ffqb")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 2
@@ -76,3 +76,5 @@ grow_horizontal = 2
 text = "none"
 label_settings = SubResource("LabelSettings_7k3k6")
 horizontal_alignment = 2
+
+[connection signal="draw" from="." to="." method="_on_draw"]

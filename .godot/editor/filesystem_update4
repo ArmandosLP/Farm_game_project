@@ -1,5 +1,11 @@
 res://Map/Player.tscn
 res://Map/Mundo_de_pruebas.tscn
-res://Inventory_system_v2/displayers/displayer_grid.tscn
-res://Inventory_system_v2/displayers/Inventory_displayer.tscn
-res://Inventory_system_v2/displayers/Cursor_item_displayer.tscn
+res://Buildings/Chest/Chest.tscn
+res://Map/Player.gd
+res://Inventory_system_v2/displayers/Hotbar_displayer.gd
+res://Inventory_system_v2/scripts/inventory_manager.gd
+res://Inventory_System/Scenes/Continer_displayer.tscn
+res://Inventory_System/Scenes/continer.tscn
+res://Inventory_system_v2/displayers/Scenes/hotbar_grid_cell.tscn
+res://Inventory_system_v2/displayers/Scripts/hotbar_displayer.gd
+res://Inventory_system_v2/displayers/Scripts/inventory_displayer.gd

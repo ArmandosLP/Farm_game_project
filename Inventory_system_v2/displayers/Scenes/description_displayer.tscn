@@ -1,26 +1,26 @@
 [gd_scene load_steps=9 format=3 uid="uid://0yajb0bmtjlh"]
 
-[ext_resource type="Texture2D" uid="uid://cia71gr215401" path="res://Conversation_System/Sprites/tile_0010.png" id="1_pc6eu"]
-[ext_resource type="FontFile" uid="uid://ckdkjdb6ovipj" path="res://Assets/Text_fonts/m5x7.ttf" id="1_ry8lj"]
-[ext_resource type="Script" path="res://Inventory_System/Scripts/Description_displayer.gd" id="1_uu1r6"]
-[ext_resource type="FontFile" uid="uid://b24ir7q6pu23t" path="res://Assets/m5x7.ttf" id="2_7puwj"]
-[ext_resource type="Texture2D" uid="uid://cmt0usyu08ecq" path="res://Assets/Golden_coin.png" id="5_qahfa"]
+[ext_resource type="Script" path="res://Inventory_system_v2/displayers/Scripts/description_displayer.gd" id="1_1grdq"]
+[ext_resource type="Texture2D" uid="uid://cia71gr215401" path="res://Conversation_System/Sprites/tile_0010.png" id="2_5wr14"]
+[ext_resource type="FontFile" uid="uid://ckdkjdb6ovipj" path="res://Assets/Text_fonts/m5x7.ttf" id="3_m2rh5"]
+[ext_resource type="FontFile" uid="uid://b24ir7q6pu23t" path="res://Assets/m5x7.ttf" id="4_gosc8"]
+[ext_resource type="Texture2D" uid="uid://cmt0usyu08ecq" path="res://Assets/Golden_coin.png" id="5_481n1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tawot"]
 line_spacing = 0.0
-font = ExtResource("1_ry8lj")
+font = ExtResource("3_m2rh5")
 font_size = 40
 font_color = Color(0.298039, 0.298039, 0.298039, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_eynvh"]
 line_spacing = 0.0
-font = ExtResource("2_7puwj")
+font = ExtResource("4_gosc8")
 font_size = 24
 font_color = Color(0.439216, 0.439216, 0.439216, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_frdde"]
 line_spacing = 0.0
-font = ExtResource("2_7puwj")
+font = ExtResource("4_gosc8")
 font_size = 37
 font_color = Color(1, 0.592157, 0, 1)
 
@@ -30,7 +30,7 @@ texture_filter = 1
 layout_mode = 3
 anchors_preset = 0
 mouse_filter = 2
-script = ExtResource("1_uu1r6")
+script = ExtResource("1_1grdq")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -55,7 +55,7 @@ mouse_filter = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/PanelContainer"]
 layout_mode = 2
-texture = ExtResource("1_pc6eu")
+texture = ExtResource("2_5wr14")
 patch_margin_left = 12
 patch_margin_top = 12
 patch_margin_right = 12
@@ -119,4 +119,4 @@ size_flags_vertical = 4
 custom_minimum_size = Vector2(23, 23)
 layout_mode = 2
 size_flags_horizontal = 8
-texture = ExtResource("5_qahfa")
+texture = ExtResource("5_481n1")

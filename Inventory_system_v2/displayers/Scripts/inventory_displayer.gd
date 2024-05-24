@@ -2,7 +2,8 @@ extends PanelContainer
 class_name Inventory_Displayer
 
 @onready var item_grid_container = %Item_grid_container
-const item_grid_cell_preload = preload("res://Inventory_system_v2/displayers/Item_grid_cell.tscn")
+
+const ITEM_GRID_CELL = preload("res://Inventory_system_v2/displayers/Scenes/item_grid_cell.tscn")
 
 var inventory : Inventory
 
@@ -21,7 +22,7 @@ func build(_inventory : Inventory):
 			item_grid_container.get_child(i).visible = false
 
 
-func update_item_grid_cell(inventory : Inventory, id : int):
+func update_item_grid_cell(inventory:Inventory,id:int):
 	item_grid_container.get_child(id).update(inventory)
 
 
@@ -38,6 +39,6 @@ func remove_item_grid_cells():
 
 func add_item_grid_cells():
 	for id in range(0,28,1):
-		var item_grid_cell = item_grid_cell_preload.instantiate()
+		var item_grid_cell = ITEM_GRID_CELL.instantiate()
 		item_grid_cell.id = id
 		item_grid_container.add_child(item_grid_cell)

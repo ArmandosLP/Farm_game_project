@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://ryixvn4qhpxw"]
 
-[ext_resource type="Script" path="res://Inventory_system_v2/displayers/inventory_displayer.gd" id="1_12a2t"]
+[ext_resource type="Script" path="res://Inventory_system_v2/displayers/Scripts/inventory_displayer.gd" id="1_12a2t"]
 [ext_resource type="Texture2D" uid="uid://n6lvukc7x3px" path="res://Conversation_System/Sprites/tile_0011.png" id="2_pklxk"]
-[ext_resource type="PackedScene" uid="uid://dm0odku2uau7i" path="res://Inventory_system_v2/displayers/Item_grid_cell.tscn" id="3_a0g4m"]
+[ext_resource type="PackedScene" uid="uid://dm0odku2uau7i" path="res://Inventory_system_v2/displayers/Scenes/item_grid_cell.tscn" id="3_a0g4m"]
 
 [node name="PanelContainer" type="PanelContainer"]
 self_modulate = Color(1, 1, 1, 0)

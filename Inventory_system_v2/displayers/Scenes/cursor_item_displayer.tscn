@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://hsrptl2ajxu3"]
 
-[ext_resource type="Script" path="res://Inventory_system_v2/displayers/Cursor_item_displayer.gd" id="1_mpkes"]
+[ext_resource type="Script" path="res://Inventory_system_v2/displayers/Scripts/cursor_item_displayer.gd" id="1_mpkes"]
 [ext_resource type="Texture2D" uid="uid://c45sofocrlcs0" path="res://Assets/12.png" id="2_7kwer"]
 [ext_resource type="FontFile" uid="uid://b24ir7q6pu23t" path="res://Assets/m5x7.ttf" id="3_mfjng"]
 

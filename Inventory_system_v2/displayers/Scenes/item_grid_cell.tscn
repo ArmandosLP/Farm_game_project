@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dm0odku2uau7i"]
 
-[ext_resource type="Script" path="res://Inventory_system_v2/displayers/item_grid_cell.gd" id="1_tcpb5"]
+[ext_resource type="Script" path="res://Inventory_system_v2/displayers/Scripts/item_grid_cell.gd" id="1_tcpb5"]
 [ext_resource type="Texture2D" uid="uid://c1ubrj3cynxef" path="res://Conversation_System/Sprites/tile_0062.png" id="2_a5n8l"]
 [ext_resource type="Texture2D" uid="uid://es8nle5kpepa" path="res://Assets/Apple.png" id="3_6dpqs"]
 [ext_resource type="FontFile" uid="uid://b24ir7q6pu23t" path="res://Assets/m5x7.ttf" id="4_0c53l"]
@@ -62,5 +62,6 @@ label_settings = SubResource("LabelSettings_n1s4r")
 horizontal_alignment = 2
 
 [connection signal="draw" from="." to="." method="_on_draw"]
+[connection signal="hidden" from="." to="." method="_on_hidden"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
