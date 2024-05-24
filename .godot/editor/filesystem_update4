@@ -9,3 +9,5 @@ res://Inventory_System/Scenes/continer.tscn
 res://Inventory_system_v2/displayers/Scenes/hotbar_grid_cell.tscn
 res://Inventory_system_v2/displayers/Scripts/hotbar_displayer.gd
 res://Inventory_system_v2/displayers/Scripts/inventory_displayer.gd
+res://Inventory_system_v2/old_script/Inventory_system_autoload.gd
+res://Inventory_system_v2/Items/Items.gd

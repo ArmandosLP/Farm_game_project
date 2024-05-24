@@ -74,8 +74,7 @@ func _input(_event):
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	if Input.is_action_just_pressed("Debug_key"):
-		var item = preload("res://Inventory_System/Resources/Fruts_and_vegis/Manzana.tres")
-		InventoryManager.add_item(InventoryManager.ply_inventory,item,100)
+		InventoryManager.add_item(InventoryManager.ply_inventory,Items.MANZANA,100)
 	if Input.is_action_just_pressed("Inventory_action_key"):
 		InventoryManager.set_visibility(!InventoryManager.get_visibility())
 

@@ -225,10 +225,7 @@ func _input(event):
 
 var quick_acces_key:bool = false
 func _physics_process(delta):
-	if Input.is_action_pressed("Inventory_quick_access"):
-		quick_acces_key = true
-	else:
-		quick_acces_key = false
+	quick_acces_key = Input.is_action_pressed("Inventory_quick_access")
 
 func set_item_player_inventory(grid_cell : int, item : Item, amount : int):
 	if player_inventory.items[grid_cell] == null:

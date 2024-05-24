@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Inventory_system_v2/scripts/Item_resource.gd" id="1_k2ts5"]
 [ext_resource type="Resource" uid="uid://cd0bqokvh2vyt" path="res://Crop_System/Resources/corn_plant.tres" id="1_lodqx"]
-[ext_resource type="Texture2D" uid="uid://dj7v8lnvvwikh" path="res://Inventory_System/Resources/Seeds/Sprites/Corn_seeds.png" id="2_noo40"]
+[ext_resource type="Texture2D" uid="uid://dj7v8lnvvwikh" path="res://Assets/Corn_seeds.png" id="2_noo40"]
 
 [resource]
 script = ExtResource("1_k2ts5")
