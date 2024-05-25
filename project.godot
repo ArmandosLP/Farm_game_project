@@ -26,6 +26,7 @@ Conversation="*res://Conversation_System/Scripts/Conversation_system_autoload.gd
 Items="*res://Inventory_system_v2/Items/Items.gd"
 CropSystemAutoload="*res://Crop_System/Scripts/Crop_System_Autoload.gd"
 InventoryManager="*res://Inventory_system_v2/scripts/inventory_manager.gd"
+SaveSystem="*res://Save_files/SaveSystem.gd"
 
 [display]
 
