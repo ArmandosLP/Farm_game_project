@@ -21,8 +21,8 @@ func build(_inventory:Inventory):
 		hotbar_grid.get_child(i).update(inventory)
 
 
-func update_cell(inventory:Inventory,id:int):
-	hotbar_grid.get_child(id).update(inventory)
+func update_cell(_inventory:Inventory,_id:int):
+	hotbar_grid.get_child(_id).update(_inventory)
 
 
 func _input(event):

@@ -1,5 +1,5 @@
 extends CanvasLayer
-
+"""
 const description_displayer_preload = preload("res://Inventory_System/Scenes/Description_displayer.tscn")
 const mouse_item_displayer_preload = preload("res://Inventory_system_v2/displayers/Cursor_item_displayer.tscn")
 const inventory_displayer_preload = preload("res://Inventory_system_v2/displayers/Inventory_displayer.tscn")
@@ -282,3 +282,4 @@ func reduce_item(inventory_displayer : Inventory_Displayer ,id : int, amount : i
 		inventory_displayer.update_item_grid_cell(id)
 		player_hotbar.update_all_cells()
 		return false
+"""

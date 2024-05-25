@@ -16,7 +16,7 @@ func _on_mouse_exited():
 		owner.mouse_exited()
 
 
-func _on_input_event(viewport, event, shape_idx):
+func _on_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouse and mouse_inside:
 		if owner.has_method("mouse_left_click") and event.is_action_pressed("Mouse_left_click"):
 			owner.mouse_left_click()

@@ -26,6 +26,10 @@ var cursor_amount : int
 var allow_inventory_interaction : bool = true
 
 func _ready():
+	#initialize()
+	pass
+
+func initialize():
 	displayer_grid = DISPLAYER_GRID.instantiate()
 	add_child(displayer_grid)
 	displayer_grid.visible = false
@@ -52,7 +56,6 @@ func _ready():
 	cont_inventory_displayer = INVENTORY_DISPLAYER.instantiate()
 	cont_inventory_displayer.visible = false
 	displayer_grid.add_child(cont_inventory_displayer)
-
 
 func left_click(inventory:Inventory,id:int) -> void:
 	if cursor_item != null and inventory.items[id] == null:

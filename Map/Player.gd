@@ -71,8 +71,8 @@ func animate_sprite():
 
 
 var movement_blocker := true
-func can_move(state : bool):
-	movement_blocker = state
+func can_move(_state : bool):
+	movement_blocker = _state
 	if !movement_blocker:
 		animation_player.play("Idle" + "_" + direction)
 		moving_vector = Vector2i(0,0)

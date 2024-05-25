@@ -22,8 +22,8 @@ func build(_inventory : Inventory):
 			item_grid_container.get_child(i).visible = false
 
 
-func update_item_grid_cell(inventory:Inventory,id:int):
-	item_grid_container.get_child(id).update(inventory)
+func update_item_grid_cell(_inventory:Inventory,_id:int):
+	item_grid_container.get_child(_id).update(_inventory)
 
 
 func check_if_mouse_inside():

@@ -1,0 +1,92 @@
+[gd_scene load_steps=6 format=3 uid="uid://dm7yax1v01ur"]
+
+[ext_resource type="Script" path="res://System/Main_menu/main_menu.gd" id="1_i5ssf"]
+[ext_resource type="Texture2D" uid="uid://din5p8wc0pw43" path="res://System/Main_menu/Background.png" id="1_wxp4m"]
+[ext_resource type="Texture2D" uid="uid://iv5dr1r8l8ra" path="res://System/Main_menu/logo.png" id="2_q23ve"]
+[ext_resource type="FontFile" uid="uid://ckdkjdb6ovipj" path="res://Assets/Text_fonts/m5x7.ttf" id="3_dsxm6"]
+[ext_resource type="Theme" uid="uid://fcgge5refwpd" path="res://System/Main_menu/button_theme.tres" id="4_ck8hg"]
+
+[node name="PanelContainer" type="PanelContainer"]
+self_modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i5ssf")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_wxp4m")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_top = 42
+theme_override_constants/margin_bottom = 40
+
+[node name="GameLogo" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("2_q23ve")
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="new_game" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+size_flags_stretch_ratio = 5.85
+theme = ExtResource("4_ck8hg")
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("3_dsxm6")
+theme_override_font_sizes/font_size = 48
+action_mode = 0
+text = "Partida nueva"
+
+[node name="load_game" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+size_flags_vertical = 4
+size_flags_stretch_ratio = 5.85
+theme = ExtResource("4_ck8hg")
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("3_dsxm6")
+theme_override_font_sizes/font_size = 48
+text = "Cargar partida"
+
+[node name="options" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+size_flags_vertical = 4
+size_flags_stretch_ratio = 5.85
+theme = ExtResource("4_ck8hg")
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("3_dsxm6")
+theme_override_font_sizes/font_size = 48
+text = "Opciones"
+
+[node name="leave" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+size_flags_vertical = 4
+size_flags_stretch_ratio = 5.85
+theme = ExtResource("4_ck8hg")
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("3_dsxm6")
+theme_override_font_sizes/font_size = 48
+text = "Salir"
+
+[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/new_game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/load_game" to="." method="_on_load_game_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/leave" to="." method="_on_leave_pressed"]
