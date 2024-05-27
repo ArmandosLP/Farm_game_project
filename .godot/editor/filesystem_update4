@@ -2,10 +2,11 @@ res://Map/Mundo_de_pruebas.tscn
 res://System/Main_menu/button_theme.tres
 res://System/Main_menu/main_menu.tscn
 res://System/Main_menu/options_menu.tscn
-res://System/Main_menu/lable.tres
-res://System/Main_menu/checkbox.tres
-res://System/Main_menu/options_menu.gd
 res://Map/Player.tscn
 res://Map/Player.gd
-res://System/Main_menu/main_menu.gd
 res://Save_files/player_inventory.json
+res://Save_files/config.json
+res://Save_files/SaveSystem.gd
+res://System/Main_menu/options_menu.gd
+res://System/Main_menu/main_menu.gd
+res://System/StaticSystemScript.gd

@@ -34,4 +34,13 @@ func load_game():
 				)
 	fileWirter.close()
 
-
+func read_config_file() -> Dictionary:
+	var fileWirter := FileAccess.open("res://Save_files/config.json",FileAccess.READ)
+	var config = JSON.parse_string(fileWirter.get_as_text())
+	fileWirter.close()
+	return config
+	
+func save_config_file(config : Dictionary) -> void:
+	var fileWirter := FileAccess.open("res://Save_files/config.json",FileAccess.WRITE)
+	fileWirter.store_line(JSON.stringify(config))
+	fileWirter.close()

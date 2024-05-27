@@ -93,12 +93,12 @@ const GRASS_RUNNING = preload("res://Audio/sound_effects/grass_running.wav")
 const GRASS_WALKING = preload("res://Audio/sound_effects/grass_walking.wav")
 
 func _on_timer_timeout():
-	var pitch : Vector2
+	var pitch : int
 	match moving_direction.run:
 		0:
-			pitch = Vector2(1.3,1.6)
+			pitch = randf_range(1.3,1.6)
 		1:
-			pitch = Vector2(1.8,2.2)
+			pitch = randf_range(1.8,2.2)
 	if moving_vector != Vector2(0,0):
-		audio_stream_player.pitch_scale = randf_range(pitch.x,pitch.y)
+		audio_stream_player.pitch_scale = pitch
 		audio_stream_player.play()

@@ -1,6 +1,11 @@
 extends PanelContainer
 
-
+func _ready():
+	var config = SaveSystem.read_config_file()
+	if config.fullscreen:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 
 func _on_new_game_pressed():
