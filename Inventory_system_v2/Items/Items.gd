@@ -7,7 +7,7 @@ const MANZANA_VERDE = preload("res://Inventory_system_v2/Items/Manzana verde.tre
 const MANZANA = preload("res://Inventory_system_v2/Items/Manzana.tres")
 const NARANJA = preload("res://Inventory_system_v2/Items/Naranja.tres")
 const PERA = preload("res://Inventory_system_v2/Items/Pera.tres")
-
+const JADE_RING = preload("res://Inventory_system_v2/Items/Jade_ring.tres")
 
 var id : Dictionary = {
 	1: CORN,
@@ -17,6 +17,8 @@ var id : Dictionary = {
 	5: MANZANA,
 	6: NARANJA,
 	7: PERA,
+	10: JADE_RING
 }
 
-
+func get_item_by_id(_id : int):
+	return id[_id]

@@ -5,8 +5,10 @@
 
 [resource]
 script = ExtResource("1_53olp")
+id = 6
 name = "Naranja"
 description = "El rey de los cítricos nunca decepciona."
 max_stack = 16
 texture = ExtResource("2_m52lo")
 price = 15
+can_be_planted = false

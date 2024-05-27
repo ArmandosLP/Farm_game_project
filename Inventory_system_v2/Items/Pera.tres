@@ -5,9 +5,11 @@
 
 [resource]
 script = ExtResource("1_1nr28")
+id = 7
 name = "Pera"
 description = "¿A alguien le gustan las
 peras no irónicamente?"
 max_stack = 16
 texture = ExtResource("2_ll3bm")
 price = 3
+can_be_planted = false

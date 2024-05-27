@@ -6,6 +6,7 @@
 
 [resource]
 script = ExtResource("1_k2ts5")
+id = 2
 name = "Semillas de maiz"
 description = "Se pueden plantar
 para obtener maiz."

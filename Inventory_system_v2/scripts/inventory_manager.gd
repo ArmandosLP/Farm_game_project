@@ -164,11 +164,15 @@ func add_item(inventory:Inventory,item:Item,amount:int) -> int:
 				update_displayer(inventory,i)
 	return _amount
 
+func set_item(inventory:Inventory,grid_cell:int,item:Item,amount:int) -> void:
+	inventory.items[grid_cell] = item
+	inventory.amount[grid_cell] = amount
+	update_displayer(inventory,grid_cell)
 
 func update_displayer(inventory:Inventory,id:int):
 	if inventory == ply_inventory:
 		ply_inventory_displayer.update_item_grid_cell(ply_inventory,id)
-		if !get_visibility():
+		if !get_visibility() and id < 7:
 			hotbar_displayer.update_cell(inventory,id)
 	elif inventory == cont_inventory:
 		cont_inventory_displayer.update_item_grid_cell(cont_inventory,id)

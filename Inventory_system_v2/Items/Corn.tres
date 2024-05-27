@@ -5,8 +5,10 @@
 
 [resource]
 script = ExtResource("1_4ovk7")
+id = 1
 name = "Maiz"
 description = "¿Con esto se hacen la palomitas?"
 max_stack = 16
 texture = ExtResource("2_aavn8")
 price = 7
+can_be_planted = false

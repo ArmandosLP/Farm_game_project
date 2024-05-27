@@ -5,9 +5,11 @@
 
 [resource]
 script = ExtResource("1_0gfkf")
+id = 5
 name = "Manzana"
 description = "No te tragues las semillas, en serio, 
 no lo hagas, podrías morir."
 max_stack = 16
 texture = ExtResource("2_wef32")
 price = 5
+can_be_planted = false

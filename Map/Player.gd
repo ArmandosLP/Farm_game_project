@@ -79,11 +79,6 @@ func can_move(_state : bool):
 
 
 func _input(_event):
-	if Input.is_action_just_pressed("Full_screen_key"):
-		if DisplayServer.window_get_mode() != 0:
-			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-		else:
-			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	if Input.is_action_just_pressed("Debug_key"):
 		InventoryManager.add_item(InventoryManager.ply_inventory,Items.MANZANA,100)
 	if Input.is_action_just_pressed("Inventory_action_key"):

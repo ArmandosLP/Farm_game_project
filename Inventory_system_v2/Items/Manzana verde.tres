@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_nfpay")
+id = 4
 name = "Manzana verde"
 description = "Tiene un sabor ácido muy intenso."
 max_stack = 16
