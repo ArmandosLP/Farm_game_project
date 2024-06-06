@@ -13,3 +13,7 @@ class_name Item
 @export_group("Seed propieties")
 @export var can_be_planted : bool = false
 @export var plant_resource : Plant
+
+@export_group("Tool propieties")
+@export var can_be_used_as_tool : bool = false
+@export var tool_resource : Tool

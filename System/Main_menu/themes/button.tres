@@ -1,0 +1,44 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://fcgge5refwpd"]
+
+[ext_resource type="Texture2D" uid="uid://ck0euls37td8d" path="res://System/Main_menu/sprites/tile_0062B.png" id="1_fbbre"]
+[ext_resource type="Texture2D" uid="uid://b7jroqr44l6i5" path="res://System/Main_menu/sprites/tile_0062.png" id="2_nr6iv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_61r20"]
+texture = ExtResource("2_nr6iv")
+texture_margin_left = 21.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 18.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pyuwj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mp0rw"]
+texture = ExtResource("1_fbbre")
+texture_margin_left = 21.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 18.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xucvj"]
+texture = ExtResource("2_nr6iv")
+texture_margin_left = 21.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 18.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nhftk"]
+texture = ExtResource("2_nr6iv")
+texture_margin_left = 21.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 18.0
+modulate_color = Color(0.772549, 0.772549, 0.772549, 1)
+
+[resource]
+Button/colors/font_color = Color(0.87451, 0.87451, 0.87451, 1)
+Button/colors/font_disabled_color = Color(0.87451, 0.87451, 0.87451, 1)
+Button/styles/disabled = SubResource("StyleBoxTexture_61r20")
+Button/styles/focus = SubResource("StyleBoxEmpty_pyuwj")
+Button/styles/hover = SubResource("StyleBoxTexture_mp0rw")
+Button/styles/normal = SubResource("StyleBoxTexture_xucvj")
+Button/styles/pressed = SubResource("StyleBoxTexture_nhftk")

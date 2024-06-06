@@ -1,0 +1,11 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://cvle4tnux5tw6"]
+
+[ext_resource type="Texture2D" uid="uid://bpbcv8xgapbcp" path="res://System/Main_menu/sprites/tile_1000B.png" id="1_bw742"]
+[ext_resource type="Texture2D" uid="uid://x6dxq78ajoea" path="res://System/Main_menu/sprites/tile_1000.png" id="2_y4oav"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vl8u7"]
+
+[resource]
+CheckBox/icons/checked = ExtResource("1_bw742")
+CheckBox/icons/unchecked = ExtResource("2_y4oav")
+CheckBox/styles/focus = SubResource("StyleBoxEmpty_vl8u7")

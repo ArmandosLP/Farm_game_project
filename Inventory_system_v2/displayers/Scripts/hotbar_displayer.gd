@@ -29,16 +29,15 @@ func _input(event):
 	if !InventoryManager.get_visibility():
 		hotbar_scroll(event)
 		hotking(event)
-	#hotbar_use_action(event)
+		hotbar_action(event)
 
-#func hotbar_use_action(event : InputEvent):
-	#if event is InputEventMouse:
-		#if event.is_action_pressed("Mouse_left_click"):
-			#pass
-			##InventorySystem.hotbar_left_click(inventory,selected_hotbar_cell)
-		#if event.is_action_pressed("Mouse_right_click"):
-			##InventorySystem.hotbar_right_click(inventory,selected_hotbar_cell)
-			#pass
+
+func hotbar_action(event : InputEvent):
+	if event is InputEventMouse:
+		if event.is_action_pressed("Mouse_left_click"):
+			InventoryManager.hotbar_action(inventory.items[selected_cell])
+		if event.is_action_pressed("Mouse_right_click"):
+			pass
 
 
 func hotbar_scroll(event : InputEvent):

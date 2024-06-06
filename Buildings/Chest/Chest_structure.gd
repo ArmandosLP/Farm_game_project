@@ -16,7 +16,7 @@ func _ready():
 	inventory = Inventory.new()
 
 
-func mouse_left_click():
+func mouse_right_click():
 	if player_detector.player_inside and !InventoryManager.get_visibility():
 		StaticSystemScript.player.can_move(false)
 		if !oppened:

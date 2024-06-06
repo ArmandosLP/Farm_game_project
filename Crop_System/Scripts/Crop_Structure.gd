@@ -10,8 +10,8 @@ var phase : int
 var age : int
 
 func _ready():
-	CropSystemAutoload.add_crop(self)
-
+	#CropSystemAutoload.add_crop(self)
+	pass
 func plant(_planted : Plant):
 	plant_sprite.z_index = 2 
 	planted = _planted

@@ -13,3 +13,4 @@ max_stack = 16
 texture = ExtResource("2_hy3o0")
 price = 12
 can_be_planted = false
+can_be_used_as_tool = false

@@ -25,9 +25,11 @@ var cursor_amount : int
 
 var allow_inventory_interaction : bool = true
 
+
 func _ready():
 	#initialize()
 	pass
+
 
 func initialize():
 	displayer_grid = DISPLAYER_GRID.instantiate()
@@ -57,6 +59,7 @@ func initialize():
 	cont_inventory_displayer.visible = false
 	displayer_grid.add_child(cont_inventory_displayer)
 
+
 func left_click(inventory:Inventory,id:int) -> void:
 	if cursor_item != null and inventory.items[id] == null:
 		put_item(inventory,id)
@@ -74,6 +77,12 @@ func left_click(inventory:Inventory,id:int) -> void:
 
 func right_click(inventory:Inventory,id:int) -> void:
 	pass
+
+
+func hotbar_action(item : Item):
+	if item != null:
+		if item.can_be_used_as_tool:
+			ProfessionsManager.use_tool(item)
 
 
 func set_visibility(change:bool) -> void:
@@ -164,10 +173,12 @@ func add_item(inventory:Inventory,item:Item,amount:int) -> int:
 				update_displayer(inventory,i)
 	return _amount
 
+
 func set_item(inventory:Inventory,grid_cell:int,item:Item,amount:int) -> void:
 	inventory.items[grid_cell] = item
 	inventory.amount[grid_cell] = amount
 	update_displayer(inventory,grid_cell)
+
 
 func update_displayer(inventory:Inventory,id:int):
 	if inventory == ply_inventory:

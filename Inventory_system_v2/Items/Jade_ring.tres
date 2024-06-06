@@ -13,3 +13,4 @@ max_stack = 1
 texture = ExtResource("2_insfm")
 price = 150
 can_be_planted = false
+can_be_used_as_tool = false

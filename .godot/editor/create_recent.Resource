@@ -1,4 +1,5 @@
 Item
+Tool
 Plant
 Resource
 ConversationText

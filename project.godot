@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Farm_Game_Project"
-run/main_scene="res://System/Main_menu/main_menu.tscn"
+run/main_scene="res://System/Main_menu/scenes/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -23,9 +23,9 @@ buses/default_bus_layout=""
 
 StaticSystemScript="*res://System/StaticSystemScript.gd"
 Conversation="*res://Conversation_System/Scripts/Conversation_system_autoload.gd"
-Items="*res://Inventory_system_v2/Items/Items.gd"
-CropSystemAutoload="*res://Crop_System/Scripts/Crop_System_Autoload.gd"
+Items="*res://Inventory_system_v2/scripts/Items.gd"
 InventoryManager="*res://Inventory_system_v2/scripts/inventory_manager.gd"
+ProfessionsManager="*res://Professions_system/scripts/professions_manager.gd"
 SaveSystem="*res://Save_files/SaveSystem.gd"
 
 [display]
@@ -46,6 +46,7 @@ folder_colors={
 "res://Conversation_System/": "yellow",
 "res://Crop_System/": "orange",
 "res://Inventory_system_v2/": "green",
+"res://Professions_system/": "gray",
 "res://System/": "gray"
 }
 
