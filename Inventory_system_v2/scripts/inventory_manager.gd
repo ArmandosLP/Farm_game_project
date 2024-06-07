@@ -204,16 +204,17 @@ func update_displayer(inventory:Inventory,id:int):
 
 
 func drop_item(inventory:Inventory,id:int):
-	spawn_item(inventory.items[id],inventory.amount[id],StaticSystemScript.player.position)
+	spawn_item(inventory.items[id],inventory.amount[id],StaticSystemScript.player.position,false)
 	inventory.items[id] = null
 	inventory.amount[id] = 0
 	description_displayer.hide_desc()
 
 
 const GROUND_ITEM = preload("res://Buildings/Ground_item/Ground_item.tscn")
-func spawn_item(item:Item,amount:int,where:Vector2):
+func spawn_item(item:Item,amount:int,where:Vector2,instant_lootable:bool):
 	var ground_item = GROUND_ITEM.instantiate()
 	ground_item.item = item
 	ground_item.amount = amount
 	ground_item.position = where
 	StaticSystemScript.map.add_child(ground_item)
+	ground_item.timer_is_out = instant_lootable

@@ -1,16 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://84v0oxo0t4h7"]
+[gd_scene load_steps=7 format=3 uid="uid://84v0oxo0t4h7"]
 
 [ext_resource type="Script" path="res://Buildings/Rock/rock.gd" id="1_kk05l"]
 [ext_resource type="Texture2D" uid="uid://bnmo2ynb6rpqy" path="res://Buildings/Rock/rocks.png" id="2_y3no7"]
+[ext_resource type="Resource" uid="uid://cogarwxpqjsbo" path="res://Inventory_system_v2/Items/Jade_ring.tres" id="2_yvmlk"]
 [ext_resource type="PackedScene" uid="uid://ydlq48uu0ecv" path="res://Components/Tool_interaction_component.tscn" id="3_i04nc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_md1rf"]
 radius = 5.0
 
+[sub_resource type="Curve" id="Curve_7lpyo"]
+_data = [Vector2(0.00607903, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [node name="StaticBody2D" type="StaticBody2D"]
 script = ExtResource("1_kk05l")
+item = ExtResource("2_yvmlk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 texture = ExtResource("2_y3no7")
 hframes = 15
 vframes = 3
@@ -21,3 +28,26 @@ visible = false
 shape = SubResource("CircleShape2D_md1rf")
 
 [node name="ToolInteractionComponent" parent="." instance=ExtResource("3_i04nc")]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
+emitting = false
+amount = 6
+lifetime = 0.8
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(0, -1)
+spread = 119.05
+gravity = Vector2(0, 0)
+initial_velocity_min = 4.0
+initial_velocity_max = 20.0
+scale_amount_min = 3.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_7lpyo")
+color = Color(0.160784, 0.231373, 0.286275, 1)
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.6
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

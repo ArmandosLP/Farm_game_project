@@ -1,10 +1,7 @@
 res://Map/Mundo_de_pruebas.tscn
 res://System/Main_menu/scenes/preloads.gd
-res://Map/Player.gd
 res://Buildings/Ground_item/Ground_item.tscn
-res://Buildings/Ground_item/Ground_item.gd
-res://Inventory_system_v2/scripts/inventory_resource.gd
-res://Inventory_system_v2/displayers/Scripts/item_grid_cell.gd
-res://Inventory_system_v2/displayers/Scenes/inventory_displayer.tscn
-res://Inventory_system_v2/displayers/Scenes/item_grid_cell.tscn
+res://Buildings/Rock/rock.tscn
+res://Buildings/Rock/rock.gd
 res://Inventory_system_v2/scripts/inventory_manager.gd
+res://Map/Player.gd
