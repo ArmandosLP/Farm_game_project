@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://mpc8nrkwumjw"]
+
+[ext_resource type="Script" path="res://Buildings/Ground_item/Ground_item.gd" id="1_g70vr"]
+[ext_resource type="Texture2D" uid="uid://es8nle5kpepa" path="res://Assets/Apple.png" id="2_b7eno"]
+[ext_resource type="PackedScene" uid="uid://b33twge1kw410" path="res://Components/Player_interaction_detector_component.tscn" id="3_mys4r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_26lnw"]
+radius = 30.0167
+
+[node name="GroundItem" type="Node2D"]
+script = ExtResource("1_g70vr")
+
+[node name="Item_sprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_b7eno")
+
+[node name="PlayerInteractionDetectorComponent" parent="." instance=ExtResource("3_mys4r")]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerInteractionDetectorComponent"]
+visible = false
+shape = SubResource("CircleShape2D_26lnw")
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 1.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

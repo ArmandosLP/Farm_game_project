@@ -23,6 +23,7 @@ func build(_inventory : Inventory):
 
 
 func update_item_grid_cell(_inventory:Inventory,_id:int):
+	item_grid_container.get_child(_id).check_mouse_inside()
 	item_grid_container.get_child(_id).update(_inventory)
 
 

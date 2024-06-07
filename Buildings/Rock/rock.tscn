@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://84v0oxo0t4h7"]
+
+[ext_resource type="Script" path="res://Buildings/Rock/rock.gd" id="1_kk05l"]
+[ext_resource type="Texture2D" uid="uid://bnmo2ynb6rpqy" path="res://Buildings/Rock/rocks.png" id="2_y3no7"]
+[ext_resource type="PackedScene" uid="uid://ydlq48uu0ecv" path="res://Components/Tool_interaction_component.tscn" id="3_i04nc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_md1rf"]
+radius = 5.0
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_kk05l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_y3no7")
+hframes = 15
+vframes = 3
+frame = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_md1rf")
+
+[node name="ToolInteractionComponent" parent="." instance=ExtResource("3_i04nc")]

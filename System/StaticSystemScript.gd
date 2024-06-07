@@ -1,6 +1,7 @@
 extends Node
 
 var player : Player
+var map : Node2D
 
 func _input(event):
 	if event.is_action("Stop_key"):

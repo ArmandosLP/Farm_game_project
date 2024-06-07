@@ -1,4 +1,4 @@
-extends Node
+extends Area2D
 class_name PlayerInteractionDetectorComponent
 
 var player_inside:bool = false

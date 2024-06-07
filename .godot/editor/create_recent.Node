@@ -1,3 +1,10 @@
+Node
+Timer
+CollisionShape2D
+Sprite2D
+CharacterBody2D
+StaticBody2D
+Area2D
 HBoxContainer
 VBoxContainer
 AnimationPlayer
@@ -6,9 +13,3 @@ PanelContainer
 Label
 MarginContainer
 AspectRatioContainer
-Container
-HSplitContainer
-VSeparator
-Control
-SplitContainer
-NinePatchRect

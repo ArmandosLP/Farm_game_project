@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bd305ixouab0c"]
+[gd_scene load_steps=18 format=3 uid="uid://bd305ixouab0c"]
 
 [ext_resource type="Texture2D" uid="uid://b17xjreeh5m6" path="res://Assets/smallburg_terrain_spring.png" id="1_7qnbg"]
 [ext_resource type="Texture2D" uid="uid://b045tr1im1vjh" path="res://Assets/bushes_destruction.png" id="2_mld5q"]
@@ -7,6 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://bih5ttumykxur" path="res://Crop_System/Sprites/farm_terrain.png" id="5_bx34h"]
 [ext_resource type="PackedScene" uid="uid://blysvvpt7p728" path="res://Buildings/Chest/Chest.tscn" id="5_ipaj3"]
 [ext_resource type="PackedScene" uid="uid://be4f53ackwqdg" path="res://Crop_System/Scenes/Crop_Structure.tscn" id="7_5full"]
+[ext_resource type="Script" path="res://Map/Mundo_de_pruebas.gd" id="7_lgjyo"]
+[ext_resource type="PackedScene" uid="uid://84v0oxo0t4h7" path="res://Buildings/Rock/rock.tscn" id="8_2wv51"]
+[ext_resource type="PackedScene" uid="uid://mpc8nrkwumjw" path="res://Buildings/Ground_item/Ground_item.tscn" id="9_yptmc"]
+[ext_resource type="Resource" uid="uid://dlfoalxpg8q06" path="res://Inventory_system_v2/Items/Manzana.tres" id="10_eopjr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qlr2q"]
 texture = ExtResource("1_7qnbg")
@@ -2796,6 +2800,36 @@ layer_1/tile_data = PackedInt32Array()
 layer_2/name = "Estructuras"
 layer_2/y_sort_enabled = true
 layer_2/tile_data = PackedInt32Array(3735624, 1, 65536, 3735625, 1, 65536, 3735626, 1, 65536, 3735627, 1, 65536, 3539016, 1, 65536, 3539017, 1, 65536, 3539018, 1, 65536, 3539019, 1, 65536)
+script = ExtResource("7_lgjyo")
 
 [node name="Player" parent="." instance=ExtResource("4_w047g")]
-position = Vector2(1104, 906)
+position = Vector2(1093, 905)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("8_2wv51")]
+position = Vector2(1027, 911)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("8_2wv51")]
+position = Vector2(1019, 885)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("8_2wv51")]
+position = Vector2(1049, 895)
+
+[node name="GroundItem3" parent="." instance=ExtResource("9_yptmc")]
+position = Vector2(1120, 925)
+item = ExtResource("10_eopjr")
+
+[node name="GroundItem4" parent="." instance=ExtResource("9_yptmc")]
+position = Vector2(1148, 974)
+item = ExtResource("10_eopjr")
+
+[node name="GroundItem5" parent="." instance=ExtResource("9_yptmc")]
+position = Vector2(1210, 996)
+item = ExtResource("10_eopjr")
+
+[node name="GroundItem7" parent="." instance=ExtResource("9_yptmc")]
+position = Vector2(1091, 973)
+item = ExtResource("10_eopjr")
+
+[node name="GroundItem6" parent="." instance=ExtResource("9_yptmc")]
+position = Vector2(1049, 1010)
+item = ExtResource("10_eopjr")

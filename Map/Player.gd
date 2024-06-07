@@ -22,6 +22,7 @@ func _ready():
 	StaticSystemScript.player = self
 
 func _physics_process(_delta):
+	print(Engine.get_frames_per_second())
 	moving_direction = {
 		right = int(Input.is_action_pressed("Movment_right_key")),
 		left = int(Input.is_action_pressed("Movment_left_key")),
@@ -61,13 +62,16 @@ func animate_sprite_movment():
 
 	animation_player.play(state + "_" + direction)
 
+
 func animate_tool_action():
 	can_move(false)
 	animation_player.play("Pickaxe_" + direction)
 
+
 func tool_animation_ended():
 	can_move(true)
-	
+
+
 var movement_blocker := true
 func can_move(_state : bool):
 	movement_blocker = _state
@@ -77,9 +81,13 @@ func can_move(_state : bool):
 
 
 func _input(event):
+	if Input.is_action_pressed("Hotbar_hotkey_1"):
+		InventoryManager.spawn_item(Items.MANZANA,1,position + Vector2(randf_range(-10,10),randf_range(-10,10) + 50))
+	
 	if Input.is_action_just_pressed("Debug_key"):
 		InventoryManager.add_item(InventoryManager.ply_inventory,Items.PICKAXE_DEBUG,3)
-	if Input.is_action_just_pressed("Inventory_action_key"):
+	
+	if event.is_action_pressed("Inventory_action_key"):
 		InventoryManager.set_visibility(!InventoryManager.get_visibility())
 
 

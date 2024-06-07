@@ -61,28 +61,42 @@ func initialize():
 
 
 func left_click(inventory:Inventory,id:int) -> void:
-	if cursor_item != null and inventory.items[id] == null:
-		put_item(inventory,id)
-		description_displayer.show_desc(inventory.items[id])
-	elif cursor_item == null and inventory.items[id] != null:
-		take_item(inventory,id)
-		description_displayer.hide_desc()
-	elif cursor_item == inventory.items[id] and cursor_item != null:
-		joid_items(inventory,id)
-		description_displayer.show_desc(inventory.items[id])
-	elif cursor_item != null and inventory.items[id] != null:
-		exchange_items(inventory,id)
+	if !Input.is_action_pressed("Inventory_drop_key"):
+		if cursor_item != null and inventory.items[id] == null:
+			put_item(inventory,id)
+			description_displayer.show_desc(inventory.items[id])
+		elif cursor_item == null and inventory.items[id] != null:
+			take_item(inventory,id)
+			description_displayer.hide_desc()
+		elif cursor_item == inventory.items[id] and cursor_item != null:
+			join_items(inventory,id)
+			description_displayer.show_desc(inventory.items[id])
+		elif cursor_item != null and inventory.items[id] != null:
+			exchange_items(inventory,id)
+	elif inventory.items[id] != null:
+		drop_item(inventory,id)
 	cursor_item_displayer.update()
 
 
 func right_click(inventory:Inventory,id:int) -> void:
-	pass
+	if cursor_item == null and inventory.items[id] != null:
+		cursor_item = inventory.items[id]
+		cursor_amount = inventory.amount[id] / 2 + inventory.amount[id] % 2
+		inventory.amount[id] /= 2
+		if inventory.amount[id] == 0: inventory.items[id] = null
+	elif cursor_item != null:
+		if inventory.items[id] == null: inventory.items[id] = cursor_item
+		if inventory.items[id] == cursor_item and inventory.amount[id] < inventory.items[id].max_stack:
+			inventory.amount[id] += 1
+			cursor_amount -= 1
+			if cursor_amount == 0: cursor_item = null	
+	cursor_item_displayer.update()
 
 
 func hotbar_action(item : Item):
 	if item != null:
 		if item.can_be_used_as_tool:
-			ProfessionsManager.use_tool(item)
+			ProfessionsManager.start_tool_action(item)
 
 
 func set_visibility(change:bool) -> void:
@@ -98,8 +112,8 @@ func get_visibility() -> bool:
 	return displayer_grid.visible
 
 
-func joid_items(inventory:Inventory,id:int) -> void:
-	if inventory.amount[id] + cursor_amount < cursor_item.max_stack:
+func join_items(inventory:Inventory,id:int) -> void:
+	if inventory.amount[id] + cursor_amount <= cursor_item.max_stack:
 		inventory.amount[id] += cursor_amount
 		cursor_amount = 0
 		cursor_item = null
@@ -187,3 +201,19 @@ func update_displayer(inventory:Inventory,id:int):
 			hotbar_displayer.update_cell(inventory,id)
 	elif inventory == cont_inventory:
 		cont_inventory_displayer.update_item_grid_cell(cont_inventory,id)
+
+
+func drop_item(inventory:Inventory,id:int):
+	spawn_item(inventory.items[id],inventory.amount[id],StaticSystemScript.player.position)
+	inventory.items[id] = null
+	inventory.amount[id] = 0
+	description_displayer.hide_desc()
+
+
+const GROUND_ITEM = preload("res://Buildings/Ground_item/Ground_item.tscn")
+func spawn_item(item:Item,amount:int,where:Vector2):
+	var ground_item = GROUND_ITEM.instantiate()
+	ground_item.item = item
+	ground_item.amount = amount
+	ground_item.position = where
+	StaticSystemScript.map.add_child(ground_item)

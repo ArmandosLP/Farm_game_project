@@ -29,7 +29,7 @@ func update(_inventory : Inventory): #Recibe un inventario para actualizar sus d
 	if inventory.items[id] != null:
 		textureRect.texture = inventory.items[id].texture
 		amount.text = str(inventory.amount[id])
-		if inventory.amount[id] <= 1:
+		if inventory.amount[id] <= 1: 
 			amount.visible = false
 		else:
 			amount.visible = true
@@ -59,3 +59,8 @@ func _on_draw(): #Comprueba si el raton esta dentro al ser dibujado
 func _on_hidden(): #Al ocultarse, si el raton esta dentro, deja de estar seleccionado
 	if mouse_inside:
 		_on_mouse_exited()
+
+
+func check_mouse_inside():
+	if Rect2(Vector2(), size).has_point(get_local_mouse_position()) and InventoryManager.get_visibility():
+		_on_mouse_entered()
