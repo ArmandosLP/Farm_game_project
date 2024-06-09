@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Inventory_system_v2/displayers/Scripts/item_grid_cell.gd" id="1_tcpb5"]
 [ext_resource type="Texture2D" uid="uid://c1ubrj3cynxef" path="res://Conversation_System/Sprites/tile_0062.png" id="2_a5n8l"]
-[ext_resource type="Texture2D" uid="uid://es8nle5kpepa" path="res://Assets/Apple.png" id="3_6dpqs"]
-[ext_resource type="FontFile" uid="uid://b24ir7q6pu23t" path="res://Assets/m5x7.ttf" id="4_0c53l"]
+[ext_resource type="Texture2D" uid="uid://es8nle5kpepa" path="res://Assets/Sprites/Apple.png" id="3_6dpqs"]
+[ext_resource type="FontFile" uid="uid://b24ir7q6pu23t" path="res://Assets/Sprites/m5x7.ttf" id="4_0c53l"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_n1s4r"]
 font = ExtResource("4_0c53l")

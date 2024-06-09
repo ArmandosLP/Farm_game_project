@@ -28,6 +28,7 @@ visible = false
 shape = SubResource("CircleShape2D_md1rf")
 
 [node name="ToolInteractionComponent" parent="." instance=ExtResource("3_i04nc")]
+required_tool_type = 1
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 unique_name_in_owner = true

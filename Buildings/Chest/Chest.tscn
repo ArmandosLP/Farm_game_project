@@ -1,9 +1,9 @@
 [gd_scene load_steps=14 format=3 uid="uid://blysvvpt7p728"]
 
 [ext_resource type="Script" path="res://Buildings/Chest/Chest_structure.gd" id="1_onba6"]
-[ext_resource type="Texture2D" uid="uid://bki8h40b7tqug" path="res://Assets/chest1.png" id="2_6iy7h"]
+[ext_resource type="Texture2D" uid="uid://bki8h40b7tqug" path="res://Assets/Sprites/chest1.png" id="2_6iy7h"]
 [ext_resource type="PackedScene" uid="uid://dhmg7d1b50blk" path="res://Components/Mouse_detector_component.tscn" id="3_1h874"]
-[ext_resource type="Texture2D" uid="uid://dkmfwi50n4and" path="res://Assets/chest2.png" id="3_86y6a"]
+[ext_resource type="Texture2D" uid="uid://dkmfwi50n4and" path="res://Assets/Sprites/chest2.png" id="3_86y6a"]
 [ext_resource type="PackedScene" uid="uid://b33twge1kw410" path="res://Components/Player_interaction_detector_component.tscn" id="4_dvnon"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_iuicb"]

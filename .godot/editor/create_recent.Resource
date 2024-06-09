@@ -1,3 +1,4 @@
+Shop
 Item
 Tool
 Plant

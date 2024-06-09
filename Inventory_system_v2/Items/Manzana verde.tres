@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b2ofrsbkdcgpu"]
 
 [ext_resource type="Script" path="res://Inventory_system_v2/scripts/Item_resource.gd" id="1_nfpay"]
-[ext_resource type="Texture2D" uid="uid://bcwmfrd53ba4n" path="res://Assets/AppleB.png" id="2_vi5y8"]
+[ext_resource type="Texture2D" uid="uid://bcwmfrd53ba4n" path="res://Assets/Sprites/AppleB.png" id="2_vi5y8"]
 
 [resource]
 script = ExtResource("1_nfpay")

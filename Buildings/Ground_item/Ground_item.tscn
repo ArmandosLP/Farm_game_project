@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://mpc8nrkwumjw"]
 
 [ext_resource type="Script" path="res://Buildings/Ground_item/Ground_item.gd" id="1_g70vr"]
-[ext_resource type="Texture2D" uid="uid://es8nle5kpepa" path="res://Assets/Apple.png" id="2_b7eno"]
+[ext_resource type="Texture2D" uid="uid://es8nle5kpepa" path="res://Assets/Sprites/Apple.png" id="2_b7eno"]
 [ext_resource type="PackedScene" uid="uid://b33twge1kw410" path="res://Components/Player_interaction_detector_component.tscn" id="3_mys4r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_26lnw"]

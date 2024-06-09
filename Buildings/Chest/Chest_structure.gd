@@ -12,6 +12,7 @@ var inventory : Inventory
 var oppened : bool = false
 
 
+
 func _ready():
 	inventory = Inventory.new()
 

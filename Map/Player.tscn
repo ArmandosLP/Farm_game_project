@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Map/Player.gd" id="1_gmgb3"]
 [ext_resource type="Script" path="res://Map/Player_interaction_area.gd" id="2_2ubhs"]
-[ext_resource type="Texture2D" uid="uid://8ahjsn3uruk2" path="res://Assets/Character1_sprite.png" id="2_ur3am"]
+[ext_resource type="Texture2D" uid="uid://8ahjsn3uruk2" path="res://Assets/Sprites/Character1_sprite.png" id="2_ur3am"]
 [ext_resource type="Script" path="res://Map/Tool_action_area.gd" id="3_ggueu"]
 [ext_resource type="Script" path="res://addons/smoothing/smoothing_2d.gd" id="3_yxdgs"]
 [ext_resource type="AudioStream" uid="uid://kqgvnsexrea2" path="res://Audio/sound_effects/grass_walking.wav" id="5_mj55j"]

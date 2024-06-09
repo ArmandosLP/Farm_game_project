@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Shop" load_steps=7 format=3 uid="uid://c37kv1y5uo7he"]
+
+[ext_resource type="Script" path="res://Inventory_system_v2/Economy_system/Scripts/shop_resource.gd" id="1_rrd67"]
+[ext_resource type="Script" path="res://Inventory_system_v2/Economy_system/Scripts/salling_item_resource.gd" id="2_58afr"]
+[ext_resource type="Resource" uid="uid://dlfoalxpg8q06" path="res://Inventory_system_v2/Items/Manzana.tres" id="3_acqro"]
+
+[sub_resource type="Resource" id="Resource_afp0i"]
+script = ExtResource("2_58afr")
+selling_items = ExtResource("3_acqro")
+amount = 1
+price_modifier = 1.0
+
+[sub_resource type="Resource" id="Resource_n8be5"]
+script = ExtResource("2_58afr")
+amount = 1
+price_modifier = 1.0
+
+[sub_resource type="Resource" id="Resource_yteyn"]
+script = ExtResource("2_58afr")
+amount = 1
+price_modifier = 1.0
+
+[resource]
+script = ExtResource("1_rrd67")
+selling_items = Array[ExtResource("2_58afr")]([SubResource("Resource_afp0i"), SubResource("Resource_n8be5"), SubResource("Resource_yteyn")])

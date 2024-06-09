@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_ln5vp")
-type = 0
+type = 1
+tier = 1

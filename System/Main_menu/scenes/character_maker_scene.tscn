@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b7jroqr44l6i5" path="res://System/Main_menu/sprites/tile_0062.png" id="3_vea1m"]
 [ext_resource type="Texture2D" uid="uid://ck0euls37td8d" path="res://System/Main_menu/sprites/tile_0062B.png" id="4_fyu0g"]
 [ext_resource type="Texture2D" uid="uid://ds00dn7tiolui" path="res://System/Main_menu/sprites/tile_0010C.png" id="7_87jp1"]
-[ext_resource type="Theme" uid="uid://cciho8772x3fi" path="res://System/Main_menu/themes/lable.tres" id="7_tqht5"]
+[ext_resource type="Theme" uid="uid://cciho8772x3fi" path="res://Assets/themes/lable.tres" id="7_tqht5"]
 [ext_resource type="Script" path="res://System/Main_menu/scenes/Direction.gd" id="10_mhrth"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_61r20"]

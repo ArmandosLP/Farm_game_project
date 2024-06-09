@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://yya3cp2fmcgl"]
+
+[ext_resource type="Script" path="res://Buildings/Shop_structure/Shop_structure.gd" id="1_k1fcn"]
+[ext_resource type="Texture2D" uid="uid://dawdmkx15oi6s" path="res://Assets/Sprites/Jade_ring.png" id="2_2yrxc"]
+[ext_resource type="PackedScene" uid="uid://b33twge1kw410" path="res://Components/Player_interaction_detector_component.tscn" id="3_6616c"]
+[ext_resource type="PackedScene" uid="uid://dhmg7d1b50blk" path="res://Components/Mouse_detector_component.tscn" id="4_tqibl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2fnmv"]
+size = Vector2(30, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ir1k7"]
+size = Vector2(30, 33)
+
+[node name="ShopStructure" type="Node2D"]
+script = ExtResource("1_k1fcn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("2_2yrxc")
+
+[node name="PlayerInteractionDetectorComponent" parent="." instance=ExtResource("3_6616c")]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerInteractionDetectorComponent"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_2fnmv")
+
+[node name="MouseDetectorComponent" parent="." instance=ExtResource("4_tqibl")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseDetectorComponent"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_ir1k7")

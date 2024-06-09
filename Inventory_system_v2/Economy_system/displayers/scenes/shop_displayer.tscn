@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsfewblut8xab"]
+
+[ext_resource type="Texture2D" uid="uid://bots6k8ptyyp4" path="res://Inventory_system_v2/Economy_system/sprites/tile_0011.png" id="1_0kltx"]
+[ext_resource type="Script" path="res://Inventory_system_v2/Economy_system/displayers/scripts/shop_displayer.gd" id="1_s5tx0"]
+[ext_resource type="PackedScene" uid="uid://c04aqmj5iqk86" path="res://Inventory_system_v2/Economy_system/displayers/scenes/shop_grid_cell.tscn" id="2_velpi"]
+
+[node name="ShopDisplayer" type="PanelContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(600, 236)
+offset_left = 276.0
+offset_top = 206.0
+offset_right = 876.0
+offset_bottom = 442.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_s5tx0")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_0kltx")
+patch_margin_left = 9
+patch_margin_top = 9
+patch_margin_right = 9
+patch_margin_bottom = 9
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Shop_grid_continer" type="VBoxContainer" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = -2
+
+[node name="PanelContainer2" parent="MarginContainer/Shop_grid_continer" instance=ExtResource("2_velpi")]
+layout_mode = 2
+
+[node name="PanelContainer3" parent="MarginContainer/Shop_grid_continer" instance=ExtResource("2_velpi")]
+layout_mode = 2
+
+[node name="PanelContainer4" parent="MarginContainer/Shop_grid_continer" instance=ExtResource("2_velpi")]
+layout_mode = 2
+
+[node name="PanelContainer5" parent="MarginContainer/Shop_grid_continer" instance=ExtResource("2_velpi")]
+layout_mode = 2

@@ -5,8 +5,8 @@
 [ext_resource type="FontFile" uid="uid://ckdkjdb6ovipj" path="res://Assets/Text_fonts/m5x7.ttf" id="3_1t0om"]
 [ext_resource type="Texture2D" uid="uid://b7jroqr44l6i5" path="res://System/Main_menu/sprites/tile_0062.png" id="4_lwl4x"]
 [ext_resource type="Texture2D" uid="uid://ck0euls37td8d" path="res://System/Main_menu/sprites/tile_0062B.png" id="5_0rm1c"]
-[ext_resource type="Theme" uid="uid://cvle4tnux5tw6" path="res://System/Main_menu/themes/checkbox.tres" id="6_0mfh0"]
-[ext_resource type="Theme" uid="uid://cciho8772x3fi" path="res://System/Main_menu/themes/lable.tres" id="7_pje8p"]
+[ext_resource type="Theme" uid="uid://cvle4tnux5tw6" path="res://Assets/themes/checkbox.tres" id="6_0mfh0"]
+[ext_resource type="Theme" uid="uid://cciho8772x3fi" path="res://Assets/themes/lable.tres" id="7_pje8p"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_61r20"]
 content_margin_right = 16.0

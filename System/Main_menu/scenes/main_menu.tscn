@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://System/Main_menu/scenes/main_menu.gd" id="1_rwn3v"]
 [ext_resource type="Texture2D" uid="uid://din5p8wc0pw43" path="res://System/Main_menu/sprites/Background.png" id="2_btglc"]
 [ext_resource type="Texture2D" uid="uid://iv5dr1r8l8ra" path="res://System/Main_menu/sprites/logo.png" id="3_l0k31"]
-[ext_resource type="Theme" uid="uid://fcgge5refwpd" path="res://System/Main_menu/themes/button.tres" id="4_46tjp"]
+[ext_resource type="Theme" uid="uid://fcgge5refwpd" path="res://Assets/themes/button.tres" id="4_46tjp"]
 [ext_resource type="FontFile" uid="uid://ckdkjdb6ovipj" path="res://Assets/Text_fonts/m5x7.ttf" id="5_vnq3m"]
 
 [node name="PanelContainer" type="PanelContainer"]

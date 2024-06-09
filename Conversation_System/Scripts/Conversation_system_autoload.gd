@@ -172,6 +172,6 @@ func read_file(path : String):
 
 #Galeria de imagenes
 var face_gallery = {
-	"Debug": preload("res://Assets/placeholder.jpg"), #Cara debug para pruebas
+	"Debug": preload("res://Conversation_System/Sprites/placeholder.jpg"), #Cara debug para pruebas
 	"Null": null
 }

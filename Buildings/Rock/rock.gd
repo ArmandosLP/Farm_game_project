@@ -9,7 +9,7 @@ var health : int = 1
 @export var item:Item
 
 
-func tool_interaction(_tool):
+func tool_action(_tool):
 	health -= 1
 	if health <= 0:
 		destroy()
@@ -24,4 +24,3 @@ func destroy():
 
 func _on_timer_timeout():
 	queue_free()
-

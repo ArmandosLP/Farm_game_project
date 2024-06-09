@@ -5,6 +5,7 @@ const DESCRIPTION_DISPLAYER = preload("res://Inventory_system_v2/displayers/Scen
 const DISPLAYER_GRID = preload("res://Inventory_system_v2/displayers/Scenes/displayer_grid.tscn")
 const HOTBAR_DISPLAYER = preload("res://Inventory_system_v2/displayers/Scenes/hotbar_displayer.tscn")
 const INVENTORY_DISPLAYER = preload("res://Inventory_system_v2/displayers/Scenes/inventory_displayer.tscn")
+const SHOP_DISPLAYER = preload("res://Inventory_system_v2/Economy_system/displayers/scenes/shop_displayer.tscn")
 
 var displayer_grid : GridContainer #Contenedor de todos los inventarios
 
@@ -25,6 +26,8 @@ var cursor_amount : int
 
 var allow_inventory_interaction : bool = true
 
+var shop : Shop
+var shop_displayer : Shop_Displayer
 
 func _ready():
 	#initialize()
@@ -42,6 +45,10 @@ func initialize():
 	
 	hotbar_displayer = HOTBAR_DISPLAYER.instantiate()
 	add_child(hotbar_displayer)
+	
+	shop_displayer = SHOP_DISPLAYER.instantiate()
+	shop_displayer.visible = false
+	displayer_grid.add_child(shop_displayer)
 	
 	ply_inventory_displayer = INVENTORY_DISPLAYER.instantiate()
 	displayer_grid.add_child(ply_inventory_displayer)
@@ -108,6 +115,39 @@ func set_visibility(change:bool) -> void:
 			close_continer()
 
 
+func close_continer():
+	cont_inventory = null
+	cont_inventory_displayer.visible = false
+	displayer_grid.visible = false
+	hotbar_displayer.visible = true
+	StaticSystemScript.player.can_move(true)
+
+
+func open_continer(inventory:Inventory):
+	displayer_grid.columns = 2
+	cont_inventory = inventory
+	cont_inventory_displayer.build(cont_inventory)
+	hotbar_displayer.visible = false
+	cont_inventory_displayer.visible = true
+	displayer_grid.visible = true
+
+
+func open_shop(_shop : Shop):
+	displayer_grid.columns = 1
+	shop = _shop
+	shop_displayer.build(shop)
+	shop_displayer.visible = true
+	hotbar_displayer.visible = false
+	displayer_grid.visible = true
+
+
+func close_shop():
+	shop = null
+	hotbar_displayer.visible = true
+	shop_displayer.visible = false
+	displayer_grid.visible = false
+	
+	
 func get_visibility() -> bool:
 	return displayer_grid.visible
 
@@ -143,22 +183,6 @@ func exchange_items(inventory:Inventory,id:int) -> void:
 	inventory.items[id] = extra_item
 	cursor_amount = inventory.amount[id]
 	inventory.amount[id] = extra_amount
-
-
-func open_continer(inventory:Inventory):
-	cont_inventory = inventory
-	cont_inventory_displayer.build(cont_inventory)
-	hotbar_displayer.visible = false
-	cont_inventory_displayer.visible = true
-	displayer_grid.visible = true
-
-
-func close_continer():
-	cont_inventory = null
-	cont_inventory_displayer.visible = false
-	displayer_grid.visible = false
-	hotbar_displayer.visible = true
-	StaticSystemScript.player.can_move(true)
 
 
 func add_item(inventory:Inventory,item:Item,amount:int) -> int:

@@ -46,6 +46,7 @@ folder_colors={
 "res://Conversation_System/": "yellow",
 "res://Crop_System/": "orange",
 "res://Inventory_system_v2/": "green",
+"res://Inventory_system_v2/Economy_system/": "yellow",
 "res://Professions_system/": "gray",
 "res://System/": "gray"
 }
