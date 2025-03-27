@@ -22,6 +22,7 @@ func mouse_right_click():
 		StaticSystemScript.player.can_move(false)
 		if !oppened:
 			InventoryManager.allow_inventory_interaction = false
+			ProfessionsManager.allow_tool_interaction = false
 			animation_player.play("open")
 		else:
 			InventoryManager.open_continer(inventory)
@@ -31,6 +32,7 @@ func mouse_right_click():
 func chest_opening_animation_ended():
 	InventoryManager.open_continer(inventory)
 	InventoryManager.allow_inventory_interaction = true
+	ProfessionsManager.allow_tool_interaction = true
 
 
 func player_exited_area():

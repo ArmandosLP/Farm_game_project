@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b2ofrsbkdcgpu"]
 
-[ext_resource type="Script" path="res://Inventory_system_v2/scripts/Item_resource.gd" id="1_nfpay"]
+[ext_resource type="Script" uid="uid://hb8d2l7t5ox2" path="res://Inventory_system_v2/scripts/Item_resource.gd" id="1_nfpay"]
 [ext_resource type="Texture2D" uid="uid://bcwmfrd53ba4n" path="res://Assets/Sprites/AppleB.png" id="2_vi5y8"]
 
 [resource]
@@ -12,3 +12,4 @@ max_stack = 16
 texture = ExtResource("2_vi5y8")
 price = 4
 can_be_planted = false
+can_be_used_as_tool = false

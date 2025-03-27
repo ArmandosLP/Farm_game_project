@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://be4f53ackwqdg"]
 
-[ext_resource type="Script" path="res://Crop_System/Scripts/Crop_Structure.gd" id="1_o81ld"]
+[ext_resource type="Script" uid="uid://cx58yna6j1sgy" path="res://Crop_System/Scripts/Crop_Structure.gd" id="1_o81ld"]
 [ext_resource type="Texture2D" uid="uid://bih5ttumykxur" path="res://Crop_System/Sprites/farm_terrain.png" id="2_0mxbd"]
 [ext_resource type="Texture2D" uid="uid://bwoaahxom2e2g" path="res://Crop_System/Sprites/Plants/corn_crop_lifecycle.png" id="3_e1ysr"]
 [ext_resource type="PackedScene" uid="uid://dhmg7d1b50blk" path="res://Components/Mouse_detector_component.tscn" id="4_7sisy"]

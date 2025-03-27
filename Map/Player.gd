@@ -19,7 +19,7 @@ var moving_direction = {
 var movment_vector := Vector2(0,0)
 
 func _ready():
-	StaticSystemScript.player = self
+	StaticSystemScript.set_player(self)
 
 func _physics_process(_delta):
 	moving_direction = {
@@ -85,6 +85,8 @@ func _input(event):
 	
 	if event.is_action_pressed("Inventory_action_key"):
 		InventoryManager.set_visibility(!InventoryManager.get_visibility())
+		
+		
 
 
 func play_sound_effects():

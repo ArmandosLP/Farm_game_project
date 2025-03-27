@@ -5,13 +5,14 @@ class_name Rock
 @onready var sprite_2d = %Sprite2D
 @onready var timer = %Timer
 
-var health : int = 1
+var health : int = 10
 @export var item:Item
-
+var broken:bool = false
 
 func tool_action(_tool):
 	health -= 1
-	if health <= 0:
+	if health <= 0 and !broken:
+		broken = true
 		destroy()
 
 

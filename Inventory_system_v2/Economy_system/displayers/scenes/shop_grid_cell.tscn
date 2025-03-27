@@ -1,14 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://c04aqmj5iqk86"]
+[gd_scene load_steps=6 format=3 uid="uid://c04aqmj5iqk86"]
 
+[ext_resource type="Script" uid="uid://brkefxwsxnmom" path="res://Inventory_system_v2/Economy_system/displayers/scripts/shop_grid_cell.gd" id="1_emv7s"]
 [ext_resource type="Texture2D" uid="uid://bots6k8ptyyp4" path="res://Inventory_system_v2/Economy_system/sprites/tile_0011.png" id="1_esks7"]
 [ext_resource type="Texture2D" uid="uid://es8nle5kpepa" path="res://Assets/Sprites/Apple.png" id="2_vyckc"]
 [ext_resource type="Theme" uid="uid://cciho8772x3fi" path="res://Assets/themes/lable.tres" id="3_8xmd8"]
+[ext_resource type="Texture2D" uid="uid://cmt0usyu08ecq" path="res://Assets/Sprites/Golden_coin.png" id="5_eotpl"]
 
 [node name="ShopGridCell" type="PanelContainer"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(300, 0)
+script = ExtResource("1_emv7s")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
+[node name="GridCellRect" type="NinePatchRect" parent="."]
+unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("1_esks7")
 patch_margin_left = 9
@@ -18,27 +22,49 @@ patch_margin_bottom = 9
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 2
 theme_override_constants/margin_top = 2
-theme_override_constants/margin_right = 7
+theme_override_constants/margin_right = 14
 theme_override_constants/margin_bottom = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+mouse_filter = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+[node name="ItemTexture" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 texture = ExtResource("2_vyckc")
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="Nombre" type="Label" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("3_8xmd8")
 text = "Manzana"
 
-[node name="Label2" type="Label" parent="MarginContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 2
+
+[node name="Price" type="Label" parent="MarginContainer/HBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
 theme = ExtResource("3_8xmd8")
-text = "200G"
+text = "200"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_eotpl")
+
+[connection signal="draw" from="." to="." method="_on_draw"]
+[connection signal="hidden" from="." to="." method="_on_hidden"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

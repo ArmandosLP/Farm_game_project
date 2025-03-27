@@ -9,6 +9,7 @@ const NARANJA = preload("res://Inventory_system_v2/Items/Naranja.tres")
 const PERA = preload("res://Inventory_system_v2/Items/Pera.tres")
 const JADE_RING = preload("res://Inventory_system_v2/Items/Jade_ring.tres")
 const PICKAXE_DEBUG = preload("res://Inventory_system_v2/Items/Pickaxe_debug.tres")
+const MI_ITEM = preload("res://Inventory_system_v2/Items/mi item.tres")
 
 var id : Dictionary = {
 	1: CORN,
@@ -20,6 +21,7 @@ var id : Dictionary = {
 	7: PERA,
 	10: JADE_RING,
 	11: PICKAXE_DEBUG,
+	99: MI_ITEM,
 }
 
 func get_item_by_id(_id : int):

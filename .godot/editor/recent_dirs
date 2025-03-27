@@ -1,11 +1,13 @@
-res://Inventory_system_v2/Economy_system/shops
+res://Inventory_system_v2/Items
+C:/Users/elarm/Desktop/Godot/Proyectos/Farm_Game_Project/Save_files
 res://Inventory_system_v2/Economy_system/Scripts
+C:/Users/elarm/Desktop/Godot/Proyectos/Farm_Game_Project/Conversation_System/Conversations
 res://Inventory_system_v2/Economy_system/displayers/scripts
+res://Inventory_system_v2/Economy_system/displayers/scenes
+res://Inventory_system_v2/Economy_system/shops
 res://
 res://Professions_system/scripts
-res://Inventory_system_v2/Items
 res://Professions_system/Tools
-C:/Users/Arman/Desktop/Godot/Farm_game_project/Save_files
 res://Save_files
 res://System/Main_menu
 res://Inventory_system_v2/scripts

@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://c53d636hm5mxn"]
 
-[ext_resource type="Script" path="res://System/Main_menu/scenes/character_sprite/character_sprites.gd" id="1_be8b2"]
+[ext_resource type="Script" uid="uid://12skvhpiobl4" path="res://System/Main_menu/scenes/character_sprite/character_sprites.gd" id="1_be8b2"]
 [ext_resource type="Texture2D" uid="uid://dpihv17scx48u" path="res://System/Main_menu/scenes/character_sprite/idle/character_body/character_idle_body_light.png" id="1_wru60"]
 [ext_resource type="Texture2D" uid="uid://ctvb15ijrajr2" path="res://System/Main_menu/scenes/character_sprite/idle/clothes/chest/shirt_solids/character_idle_clothes_chest_colored_shirt_blue_light.png" id="2_js3t3"]
 [ext_resource type="Texture2D" uid="uid://cix4rktf8337i" path="res://System/Main_menu/scenes/character_sprite/idle/clothes/chest/jackets/character_idle_clothes_chest_jackets_blue.png" id="3_kx7sh"]
@@ -460,11 +460,11 @@ tracks/6/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2xnd1"]
 _data = {
-"Idle_down": SubResource("Animation_707k8"),
-"Idle_left": SubResource("Animation_hlayd"),
-"Idle_right": SubResource("Animation_wmlo4"),
-"Idle_up": SubResource("Animation_gb5tx"),
-"RESET": SubResource("Animation_j7kqj")
+&"Idle_down": SubResource("Animation_707k8"),
+&"Idle_left": SubResource("Animation_hlayd"),
+&"Idle_right": SubResource("Animation_wmlo4"),
+&"Idle_up": SubResource("Animation_gb5tx"),
+&"RESET": SubResource("Animation_j7kqj")
 }
 
 [node name="CharacterSprites" type="Node2D"]

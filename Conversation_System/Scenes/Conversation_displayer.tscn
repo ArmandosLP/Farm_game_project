@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cdraf436wlgqe"]
 
-[ext_resource type="Script" path="res://Conversation_System/Scripts/Conversation_displayer.gd" id="1_pau2g"]
+[ext_resource type="Script" uid="uid://tov6dw3fhfd3" path="res://Conversation_System/Scripts/Conversation_displayer.gd" id="1_pau2g"]
 [ext_resource type="Texture2D" uid="uid://cia71gr215401" path="res://Conversation_System/Sprites/tile_0010.png" id="2_kklyc"]
 [ext_resource type="Texture2D" uid="uid://dpt3ya20krrfp" path="res://Conversation_System/Sprites/placeholder.jpg" id="3_1yqcq"]
 [ext_resource type="FontFile" uid="uid://ckdkjdb6ovipj" path="res://Assets/Text_fonts/m5x7.ttf" id="4_5fhpc"]
@@ -26,8 +26,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_on6xw"]
 _data = {
-"RESET": SubResource("Animation_xoehg"),
-"Show_text": SubResource("Animation_ik8id")
+&"RESET": SubResource("Animation_xoehg"),
+&"Show_text": SubResource("Animation_ik8id")
 }
 
 [sub_resource type="Theme" id="Theme_whx6g"]
@@ -40,7 +40,7 @@ script = ExtResource("1_pau2g")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 libraries = {
-"": SubResource("AnimationLibrary_on6xw")
+&"": SubResource("AnimationLibrary_on6xw")
 }
 
 [node name="MarginContainer" type="MarginContainer" parent="."]

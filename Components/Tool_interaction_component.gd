@@ -12,7 +12,8 @@ func _on_tree_entered():
 
 
 func _on_tree_exited():
-	owner.remove_meta(&"ToolInteractionComponent")
+	if owner != null:
+		owner.remove_meta(&"ToolInteractionComponent")
 
 
 func tool_interaction(tool_resource : Tool):
@@ -22,4 +23,3 @@ func tool_interaction(tool_resource : Tool):
 		if required_tool_type == Tool.TOOL_TYPE.NONE or required_tool_type == tool_resource.type:
 			if required_tier == -1 or tool_resource.tier >= required_tier:
 				owner.tool_action(tool_resource)
-

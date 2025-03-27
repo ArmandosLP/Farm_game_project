@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dhmg7d1b50blk"]
 
-[ext_resource type="Script" path="res://Components/Mouse_detector_component.gd" id="1_c4a3m"]
+[ext_resource type="Script" uid="uid://8bkuc3uikar1" path="res://Components/Mouse_detector_component.gd" id="1_c4a3m"]
 
 [node name="MouseDetectorComponent" type="Area2D"]
 script = ExtResource("1_c4a3m")

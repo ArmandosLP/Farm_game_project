@@ -1,10 +1,10 @@
 [gd_scene load_steps=28 format=3 uid="uid://d0n68v3wymcg0"]
 
-[ext_resource type="Script" path="res://Map/Player.gd" id="1_gmgb3"]
-[ext_resource type="Script" path="res://Map/Player_interaction_area.gd" id="2_2ubhs"]
+[ext_resource type="Script" uid="uid://bbs0uedercysk" path="res://Map/Player.gd" id="1_gmgb3"]
+[ext_resource type="Script" uid="uid://c18lm1s6k0wkw" path="res://Map/Player_interaction_area.gd" id="2_2ubhs"]
 [ext_resource type="Texture2D" uid="uid://8ahjsn3uruk2" path="res://Assets/Sprites/Character1_sprite.png" id="2_ur3am"]
-[ext_resource type="Script" path="res://Map/Tool_action_area.gd" id="3_ggueu"]
-[ext_resource type="Script" path="res://addons/smoothing/smoothing_2d.gd" id="3_yxdgs"]
+[ext_resource type="Script" uid="uid://t3reikryvt3g" path="res://Map/Tool_action_area.gd" id="3_ggueu"]
+[ext_resource type="Script" uid="uid://bkk25mkccwx8l" path="res://addons/smoothing/smoothing_2d.gd" id="3_yxdgs"]
 [ext_resource type="AudioStream" uid="uid://kqgvnsexrea2" path="res://Audio/sound_effects/grass_walking.wav" id="5_mj55j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_utwlw"]
@@ -474,23 +474,23 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1tjt7"]
 _data = {
-"Idle_down": SubResource("Animation_5ve5q"),
-"Idle_left": SubResource("Animation_1c5ju"),
-"Idle_right": SubResource("Animation_4aq0b"),
-"Idle_up": SubResource("Animation_na7et"),
-"Pickaxe_down": SubResource("Animation_k504t"),
-"Pickaxe_left": SubResource("Animation_ufqva"),
-"Pickaxe_right": SubResource("Animation_yhby0"),
-"Pickaxe_up": SubResource("Animation_am1w0"),
-"RESET": SubResource("Animation_eedji"),
-"Run_down": SubResource("Animation_gab5m"),
-"Run_left": SubResource("Animation_vgc2b"),
-"Run_right": SubResource("Animation_nvj4d"),
-"Run_up": SubResource("Animation_qu7u3"),
-"Walk_down": SubResource("Animation_tvbic"),
-"Walk_left": SubResource("Animation_qnykk"),
-"Walk_right": SubResource("Animation_ny6pv"),
-"Walk_up": SubResource("Animation_o04pp")
+&"Idle_down": SubResource("Animation_5ve5q"),
+&"Idle_left": SubResource("Animation_1c5ju"),
+&"Idle_right": SubResource("Animation_4aq0b"),
+&"Idle_up": SubResource("Animation_na7et"),
+&"Pickaxe_down": SubResource("Animation_k504t"),
+&"Pickaxe_left": SubResource("Animation_ufqva"),
+&"Pickaxe_right": SubResource("Animation_yhby0"),
+&"Pickaxe_up": SubResource("Animation_am1w0"),
+&"RESET": SubResource("Animation_eedji"),
+&"Run_down": SubResource("Animation_gab5m"),
+&"Run_left": SubResource("Animation_vgc2b"),
+&"Run_right": SubResource("Animation_nvj4d"),
+&"Run_up": SubResource("Animation_qu7u3"),
+&"Walk_down": SubResource("Animation_tvbic"),
+&"Walk_left": SubResource("Animation_qnykk"),
+&"Walk_right": SubResource("Animation_ny6pv"),
+&"Walk_up": SubResource("Animation_o04pp")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tprbl"]
@@ -517,7 +517,7 @@ shape = SubResource("RectangleShape2D_utwlw")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 libraries = {
-"": SubResource("AnimationLibrary_1tjt7")
+&"": SubResource("AnimationLibrary_1tjt7")
 }
 
 [node name="Player_interaction_area" type="Area2D" parent="."]

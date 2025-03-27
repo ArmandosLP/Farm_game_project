@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://djw330gue5r7o"]
 
-[ext_resource type="Script" path="res://Inventory_system_v2/scripts/Item_resource.gd" id="1_idwcm"]
+[ext_resource type="Script" uid="uid://hb8d2l7t5ox2" path="res://Inventory_system_v2/scripts/Item_resource.gd" id="1_idwcm"]
 [ext_resource type="Texture2D" uid="uid://dlim1aakajamg" path="res://Inventory_system_v2/Items/Textures/pickaxe.png" id="2_04l66"]
 [ext_resource type="Resource" uid="uid://bdb23e6w7sovd" path="res://Professions_system/Tools/Pickaxe_debug.tres" id="3_bwgc0"]
 

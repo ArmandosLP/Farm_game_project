@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://byk13uvx3kgnp"]
 
-[ext_resource type="Script" path="res://Inventory_system_v2/displayers/Scripts/hotbar_item_cell.gd" id="1_cxy48"]
+[ext_resource type="Script" uid="uid://begiukjuoqvis" path="res://Inventory_system_v2/displayers/Scripts/hotbar_item_cell.gd" id="1_cxy48"]
 [ext_resource type="Texture2D" uid="uid://c1ubrj3cynxef" path="res://Conversation_System/Sprites/tile_0062.png" id="2_xqdo4"]
 [ext_resource type="Texture2D" uid="uid://dskvvp5rwotgv" path="res://Conversation_System/Sprites/tile_0039.png" id="3_y8pqc"]
 [ext_resource type="Texture2D" uid="uid://es8nle5kpepa" path="res://Assets/Sprites/Apple.png" id="4_0ffqb"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://blysvvpt7p728"]
 
-[ext_resource type="Script" path="res://Buildings/Chest/Chest_structure.gd" id="1_onba6"]
+[ext_resource type="Script" uid="uid://dwwigc3mcopn3" path="res://Buildings/Chest/Chest_structure.gd" id="1_onba6"]
 [ext_resource type="Texture2D" uid="uid://bki8h40b7tqug" path="res://Assets/Sprites/chest1.png" id="2_6iy7h"]
 [ext_resource type="PackedScene" uid="uid://dhmg7d1b50blk" path="res://Components/Mouse_detector_component.tscn" id="3_1h874"]
 [ext_resource type="Texture2D" uid="uid://dkmfwi50n4and" path="res://Assets/Sprites/chest2.png" id="3_86y6a"]
@@ -116,9 +116,9 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3q4uy"]
 _data = {
-"RESET": SubResource("Animation_denax"),
-"close": SubResource("Animation_gdalc"),
-"open": SubResource("Animation_lb8ct")
+&"RESET": SubResource("Animation_denax"),
+&"close": SubResource("Animation_gdalc"),
+&"open": SubResource("Animation_lb8ct")
 }
 
 [node name="Chest_structure" type="StaticBody2D"]

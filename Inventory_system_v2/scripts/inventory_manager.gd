@@ -72,14 +72,18 @@ func left_click(inventory:Inventory,id:int) -> void:
 		if cursor_item != null and inventory.items[id] == null:
 			put_item(inventory,id)
 			description_displayer.show_desc(inventory.items[id])
+			
 		elif cursor_item == null and inventory.items[id] != null:
 			take_item(inventory,id)
 			description_displayer.hide_desc()
+			
 		elif cursor_item == inventory.items[id] and cursor_item != null:
 			join_items(inventory,id)
 			description_displayer.show_desc(inventory.items[id])
+			
 		elif cursor_item != null and inventory.items[id] != null:
 			exchange_items(inventory,id)
+			
 	elif inventory.items[id] != null:
 		drop_item(inventory,id)
 	cursor_item_displayer.update()
@@ -189,7 +193,7 @@ func add_item(inventory:Inventory,item:Item,amount:int) -> int:
 	var _amount = amount
 	for i in range(0,inventory.items.size(),1):
 		if inventory.items[i] == item and inventory.amount[i] < item.max_stack:
-			if item.max_stack > inventory.amount[i] + _amount: 
+			if item.max_stack >= inventory.amount[i] + _amount: 
 				inventory.amount[i] += _amount
 				_amount = 0
 				update_displayer(inventory,i)
@@ -240,5 +244,5 @@ func spawn_item(item:Item,amount:int,where:Vector2,instant_lootable:bool):
 	ground_item.item = item
 	ground_item.amount = amount
 	ground_item.position = where
-	StaticSystemScript.map.add_child(ground_item)
+	StaticSystemScript.map.ground_item_list.add_child(ground_item)
 	ground_item.timer_is_out = instant_lootable

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://biqhhimfn3qm8"]
+
+[ext_resource type="Script" uid="uid://hb8d2l7t5ox2" path="res://Inventory_system_v2/scripts/Item_resource.gd" id="1_s73xq"]
+[ext_resource type="Texture2D" uid="uid://cmt0usyu08ecq" path="res://Assets/Sprites/Golden_coin.png" id="2_6jhe7"]
+
+[resource]
+script = ExtResource("1_s73xq")
+id = 99
+name = "test"
+description = "testing"
+max_stack = 1
+texture = ExtResource("2_6jhe7")
+price = 9999
+can_be_planted = false
+can_be_used_as_tool = false

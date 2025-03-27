@@ -1,15 +1,15 @@
 [gd_scene load_steps=17 format=3 uid="uid://cq22hqejprpaf"]
 
-[ext_resource type="Script" path="res://System/Main_menu/scenes/character_maker_scene.gd" id="1_r2yq7"]
+[ext_resource type="Script" uid="uid://coyl4yxo8rg7g" path="res://System/Main_menu/scenes/character_maker_scene.gd" id="1_r2yq7"]
 [ext_resource type="PackedScene" uid="uid://c53d636hm5mxn" path="res://System/Main_menu/scenes/character_sprite/character_sprites.tscn" id="1_x3scw"]
 [ext_resource type="FontFile" uid="uid://ckdkjdb6ovipj" path="res://Assets/Text_fonts/m5x7.ttf" id="2_gqjt5"]
-[ext_resource type="Script" path="res://System/Main_menu/scenes/preloads.gd" id="3_86slr"]
+[ext_resource type="Script" uid="uid://b8m25a7k4xdcd" path="res://System/Main_menu/scenes/preloads.gd" id="3_86slr"]
 [ext_resource type="Texture2D" uid="uid://cqvdr25tydphq" path="res://System/Main_menu/sprites/tile_0010.png" id="3_ah7t2"]
 [ext_resource type="Texture2D" uid="uid://b7jroqr44l6i5" path="res://System/Main_menu/sprites/tile_0062.png" id="3_vea1m"]
 [ext_resource type="Texture2D" uid="uid://ck0euls37td8d" path="res://System/Main_menu/sprites/tile_0062B.png" id="4_fyu0g"]
 [ext_resource type="Texture2D" uid="uid://ds00dn7tiolui" path="res://System/Main_menu/sprites/tile_0010C.png" id="7_87jp1"]
 [ext_resource type="Theme" uid="uid://cciho8772x3fi" path="res://Assets/themes/lable.tres" id="7_tqht5"]
-[ext_resource type="Script" path="res://System/Main_menu/scenes/Direction.gd" id="10_mhrth"]
+[ext_resource type="Script" uid="uid://iuvwum4cquk0" path="res://System/Main_menu/scenes/Direction.gd" id="10_mhrth"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_61r20"]
 content_margin_right = 16.0

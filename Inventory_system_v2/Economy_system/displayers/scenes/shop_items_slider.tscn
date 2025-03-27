@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://d12jbjsrwjiss"]
+
+[ext_resource type="Script" uid="uid://dylr7eiadga4k" path="res://Inventory_system_v2/Economy_system/displayers/scripts/shop_items_slider.gd" id="1_6exuh"]
+[ext_resource type="Texture2D" uid="uid://cwl3x5nxg4nyj" path="res://Inventory_system_v2/Economy_system/sprites/tile_0010.png" id="1_eo0gm"]
+[ext_resource type="Texture2D" uid="uid://c22bq1887l8o2" path="res://Inventory_system_v2/Economy_system/sprites/tile_0024.png" id="3_rujbf"]
+[ext_resource type="PackedScene" uid="uid://dhmg7d1b50blk" path="res://Components/Mouse_detector_component.tscn" id="4_43lgn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g0f0s"]
+radius = 12.0416
+
+[node name="ShopItemsSlider" type="PanelContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(34, 100)
+offset_right = 34.0
+offset_bottom = 100.0
+mouse_filter = 2
+script = ExtResource("1_6exuh")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_eo0gm")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_right = 12
+
+[node name="SliderSpace" type="PanelContainer" parent="MarginContainer"]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SliderControl" type="Control" parent="MarginContainer/SliderSpace"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Slider" type="PanelContainer" parent="MarginContainer/SliderSpace/SliderControl"]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 1
+offset_left = -11.0
+offset_right = 21.0
+offset_bottom = 32.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/SliderSpace/SliderControl/Slider"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("3_rujbf")
+
+[node name="MouseDetectorComponent" parent="MarginContainer/SliderSpace/SliderControl/Slider" instance=ExtResource("4_43lgn")]
+position = Vector2(16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/SliderSpace/SliderControl/Slider/MouseDetectorComponent"]
+visible = false
+shape = SubResource("CircleShape2D_g0f0s")
+
+[connection signal="draw" from="." to="." method="_on_draw"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="draw" from="MarginContainer/SliderSpace" to="." method="_on_slider_space_draw"]

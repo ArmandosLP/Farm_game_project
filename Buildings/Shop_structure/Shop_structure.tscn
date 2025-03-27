@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://yya3cp2fmcgl"]
 
-[ext_resource type="Script" path="res://Buildings/Shop_structure/Shop_structure.gd" id="1_k1fcn"]
+[ext_resource type="Script" uid="uid://c01wvwl07nb00" path="res://Buildings/Shop_structure/Shop_structure.gd" id="1_k1fcn"]
 [ext_resource type="Texture2D" uid="uid://dawdmkx15oi6s" path="res://Assets/Sprites/Jade_ring.png" id="2_2yrxc"]
 [ext_resource type="PackedScene" uid="uid://b33twge1kw410" path="res://Components/Player_interaction_detector_component.tscn" id="3_6616c"]
 [ext_resource type="PackedScene" uid="uid://dhmg7d1b50blk" path="res://Components/Mouse_detector_component.tscn" id="4_tqibl"]

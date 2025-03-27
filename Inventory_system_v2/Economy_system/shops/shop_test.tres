@@ -1,25 +1,70 @@
-[gd_resource type="Resource" script_class="Shop" load_steps=7 format=3 uid="uid://c37kv1y5uo7he"]
+[gd_resource type="Resource" script_class="Shop" load_steps=20 format=3 uid="uid://c37kv1y5uo7he"]
 
-[ext_resource type="Script" path="res://Inventory_system_v2/Economy_system/Scripts/shop_resource.gd" id="1_rrd67"]
-[ext_resource type="Script" path="res://Inventory_system_v2/Economy_system/Scripts/salling_item_resource.gd" id="2_58afr"]
+[ext_resource type="Script" uid="uid://cn2bj5g74ya8c" path="res://Inventory_system_v2/Economy_system/Scripts/shop_resource.gd" id="1_rrd67"]
+[ext_resource type="Script" uid="uid://c3i01oownves5" path="res://Inventory_system_v2/Economy_system/Scripts/salling_item_resource.gd" id="2_58afr"]
+[ext_resource type="Resource" uid="uid://cmtoevjq3ctuv" path="res://Inventory_system_v2/Items/Naranja.tres" id="2_xsgv6"]
 [ext_resource type="Resource" uid="uid://dlfoalxpg8q06" path="res://Inventory_system_v2/Items/Manzana.tres" id="3_acqro"]
+[ext_resource type="Resource" uid="uid://dn1cibk34pdoh" path="res://Inventory_system_v2/Items/Limon.tres" id="5_ioi2m"]
+[ext_resource type="Resource" uid="uid://b11ood3xwlvbk" path="res://Inventory_system_v2/Items/Pera.tres" id="6_xeamb"]
+[ext_resource type="Resource" uid="uid://cogarwxpqjsbo" path="res://Inventory_system_v2/Items/Jade_ring.tres" id="7_mfjux"]
+[ext_resource type="Resource" uid="uid://djw330gue5r7o" path="res://Inventory_system_v2/Items/Pickaxe_debug.tres" id="8_83vyb"]
+[ext_resource type="Resource" uid="uid://dkkq35j4nco1o" path="res://Inventory_system_v2/Items/Corn_seeds.tres" id="9_6wn6p"]
+[ext_resource type="Resource" uid="uid://biqhhimfn3qm8" path="res://Inventory_system_v2/Items/mi item.tres" id="10_08ke4"]
 
 [sub_resource type="Resource" id="Resource_afp0i"]
 script = ExtResource("2_58afr")
-selling_items = ExtResource("3_acqro")
+item = ExtResource("2_xsgv6")
 amount = 1
 price_modifier = 1.0
 
 [sub_resource type="Resource" id="Resource_n8be5"]
 script = ExtResource("2_58afr")
+item = ExtResource("3_acqro")
 amount = 1
 price_modifier = 1.0
 
 [sub_resource type="Resource" id="Resource_yteyn"]
 script = ExtResource("2_58afr")
+item = ExtResource("5_ioi2m")
 amount = 1
 price_modifier = 1.0
 
+[sub_resource type="Resource" id="Resource_bhy04"]
+script = ExtResource("2_58afr")
+item = ExtResource("6_xeamb")
+amount = 1
+price_modifier = 1.0
+
+[sub_resource type="Resource" id="Resource_3w7l1"]
+script = ExtResource("2_58afr")
+item = ExtResource("7_mfjux")
+amount = 1
+price_modifier = 1.0
+
+[sub_resource type="Resource" id="Resource_d7ish"]
+script = ExtResource("2_58afr")
+item = ExtResource("8_83vyb")
+amount = 1
+price_modifier = 1.0
+
+[sub_resource type="Resource" id="Resource_yik84"]
+script = ExtResource("2_58afr")
+item = ExtResource("9_6wn6p")
+amount = 1
+price_modifier = 1.0
+
+[sub_resource type="Resource" id="Resource_bq5a0"]
+script = ExtResource("2_58afr")
+item = ExtResource("5_ioi2m")
+amount = 1
+price_modifier = 1.0
+
+[sub_resource type="Resource" id="Resource_m4325"]
+script = ExtResource("2_58afr")
+item = ExtResource("10_08ke4")
+amount = 9
+price_modifier = 0.01
+
 [resource]
 script = ExtResource("1_rrd67")
-selling_items = Array[ExtResource("2_58afr")]([SubResource("Resource_afp0i"), SubResource("Resource_n8be5"), SubResource("Resource_yteyn")])
+selling_items = Array[ExtResource("2_58afr")]([SubResource("Resource_afp0i"), SubResource("Resource_n8be5"), SubResource("Resource_yteyn"), SubResource("Resource_bhy04"), SubResource("Resource_3w7l1"), SubResource("Resource_d7ish"), SubResource("Resource_yik84"), SubResource("Resource_bq5a0"), SubResource("Resource_m4325")])

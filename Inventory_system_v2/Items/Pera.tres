@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b11ood3xwlvbk"]
 
-[ext_resource type="Script" path="res://Inventory_system_v2/scripts/Item_resource.gd" id="1_1nr28"]
+[ext_resource type="Script" uid="uid://hb8d2l7t5ox2" path="res://Inventory_system_v2/scripts/Item_resource.gd" id="1_1nr28"]
 [ext_resource type="Texture2D" uid="uid://oetaty1dx27a" path="res://Assets/Sprites/02.png" id="2_ll3bm"]
 
 [resource]
@@ -13,3 +13,4 @@ max_stack = 16
 texture = ExtResource("2_ll3bm")
 price = 3
 can_be_planted = false
+can_be_used_as_tool = false

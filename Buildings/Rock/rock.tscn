@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://84v0oxo0t4h7"]
 
-[ext_resource type="Script" path="res://Buildings/Rock/rock.gd" id="1_kk05l"]
+[ext_resource type="Script" uid="uid://c4pwx3at8j2tv" path="res://Buildings/Rock/rock.gd" id="1_kk05l"]
 [ext_resource type="Texture2D" uid="uid://bnmo2ynb6rpqy" path="res://Buildings/Rock/rocks.png" id="2_y3no7"]
 [ext_resource type="Resource" uid="uid://cogarwxpqjsbo" path="res://Inventory_system_v2/Items/Jade_ring.tres" id="2_yvmlk"]
 [ext_resource type="PackedScene" uid="uid://ydlq48uu0ecv" path="res://Components/Tool_interaction_component.tscn" id="3_i04nc"]

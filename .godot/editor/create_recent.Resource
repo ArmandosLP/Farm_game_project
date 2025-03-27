@@ -1,5 +1,6 @@
-Shop
 Item
+JSON
+Shop
 Tool
 Plant
 Resource
